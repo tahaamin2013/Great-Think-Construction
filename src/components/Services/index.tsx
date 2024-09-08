@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { encode, decode } from "blurhash";
 import { furtherCategories, services } from "@/store/Constructionservices";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AnimatePresence, motion } from "framer-motion";
@@ -24,12 +25,16 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; // 3 rows of 3 items each
+  const itemsPerPage = 9;
 
   const normalizeCategory = (category: string) =>
     category.toLowerCase().replace(/ /g, "-");
@@ -46,19 +51,51 @@ const ServicesSection: React.FC = () => {
   const currentItems = filteredServices.slice(indexOfFirstItem, indexOfLastItem);
 
   const plugin = useRef(
-    Autoplay({
-      delay: 2000,
-      stopOnInteraction: true,
-    }) as unknown as CreatePluginType<any, {}>
+    Autoplay({ delay: 2000, stopOnInteraction: true }) as unknown as CreatePluginType<any, {}>
   );
 
   const MediaItem: React.FC<{ src: string; alt: string; inDialog?: boolean }> = ({ src, alt, inDialog = false }) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [showControls, setShowControls] = useState(false);
+    const [blurhash, setBlurhash] = useState<string | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
   
     const isVideo = (url: string) => url.toLowerCase().endsWith(".mp4");
+  
+    useEffect(() => {
+      if (!isVideo(src)) {
+        const img = new window.Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 32;
+          canvas.height = 32;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, 32, 32);
+            const imageData = ctx.getImageData(0, 0, 32, 32);
+            const hash = encode(imageData.data, 32, 32, 4, 4);
+            setBlurhash(hash);
+            setIsLoading(false);
+          }
+        };
+        img.src = src;
+      }
+    }, [src]);
+  
+    useEffect(() => {
+      if (blurhash && canvasRef.current) {
+        const pixels = decode(blurhash, 32, 32);
+        const ctx = canvasRef.current.getContext("2d");
+        if (ctx) {
+          const imageData = ctx.createImageData(32, 32);
+          imageData.data.set(pixels);
+          ctx.putImageData(imageData, 0, 0);
+        }
+      }
+    }, [blurhash]);
   
     const handlePlay = (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -125,21 +162,25 @@ const ServicesSection: React.FC = () => {
               {isLoading ? (
                 <Loader2 className="w-12 h-12 text-white animate-spin" />
               ) : isPlaying ? (
-                <button
+                <Button
                   onClick={handleStop}
-                  className="p-2 bg-red-500 rounded-full"
+                  variant="destructive"
+                  size="icon"
+                  className="rounded-full"
                   aria-label="Stop video"
                 >
-                  <Square className="w-8 h-8 text-white" />
-                </button>
+                  <Square className="w-6 h-6" />
+                </Button>
               ) : (
-                <button
+                <Button
                   onClick={handlePlay}
-                  className="p-2 bg-green-500 rounded-full"
+                  variant="default"
+                  size="icon"
+                  className="rounded-full"
                   aria-label="Play video"
                 >
-                  <Play className="w-8 h-8 text-white" />
-                </button>
+                  <Play className="w-6 h-6" />
+                </Button>
               )}
             </div>
           )}
@@ -147,13 +188,29 @@ const ServicesSection: React.FC = () => {
       );
     } else {
       return (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
-        />
+        <div className="relative w-full h-full">
+          {isLoading && (
+            <div className="absolute inset-0 bg-gray-200 animate-pulse">
+              <canvas
+                ref={canvasRef}
+                width={32}
+                height={32}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          <Image
+            src={src}
+            alt={alt}
+            layout="fill"
+            objectFit="cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`transition-all duration-500 ease-in-out group-hover:scale-110 ${
+              isLoading ? 'opacity-0' : 'opacity-100'
+            }`}
+            onLoadingComplete={() => setIsLoading(false)}
+          />
+        </div>
       );
     }
   };
@@ -162,134 +219,123 @@ const ServicesSection: React.FC = () => {
     setCurrentPage(page);
   };
 
- // Helper function to generate page numbers for pagination
- const generatePaginationItems = () => {
-  const items = [];
-  const maxVisiblePages = 5;
+  const generatePaginationItems = () => {
+    const items = [];
+    const maxVisiblePages = 5;
 
-  if (totalPages <= maxVisiblePages) {
-    for (let i = 1; i <= totalPages; i++) {
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        items.push(
+          <PaginationItem key={i}>
+            <PaginationLink
+              onClick={() => handlePageChange(i)}
+              isActive={currentPage === i}
+            >
+              {i}
+            </PaginationLink>
+          </PaginationItem>
+        );
+      }
+    } else {
       items.push(
-        <PaginationItem key={i}>
+        <PaginationItem key={1}>
           <PaginationLink
-            onClick={() => handlePageChange(i)}
-            isActive={currentPage === i}
+            onClick={() => handlePageChange(1)}
+            isActive={currentPage === 1}
           >
-            {i}
+            1
+          </PaginationLink>
+        </PaginationItem>
+      );
+
+      if (currentPage > 3) {
+        items.push(
+          <PaginationItem key="ellipsis-start">
+            <PaginationEllipsis />
+          </PaginationItem>
+        );
+      }
+
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) {
+        items.push(
+          <PaginationItem key={i}>
+            <PaginationLink
+              onClick={() => handlePageChange(i)}
+              isActive={currentPage === i}
+            >
+              {i}
+            </PaginationLink>
+          </PaginationItem>
+        );
+      }
+
+      if (currentPage < totalPages - 2) {
+        items.push(
+          <PaginationItem key="ellipsis-end">
+            <PaginationEllipsis />
+          </PaginationItem>
+        );
+      }
+
+      items.push(
+        <PaginationItem key={totalPages}>
+          <PaginationLink
+            onClick={() => handlePageChange(totalPages)}
+            isActive={currentPage === totalPages}
+          >
+            {totalPages}
           </PaginationLink>
         </PaginationItem>
       );
     }
-  } else {
-    // Always show first page
-    items.push(
-      <PaginationItem key={1}>
-        <PaginationLink
-          onClick={() => handlePageChange(1)}
-          isActive={currentPage === 1}
-        >
-          1
-        </PaginationLink>
-      </PaginationItem>
-    );
 
-    // Add ellipsis if necessary
-    if (currentPage > 3) {
-      items.push(
-        <PaginationItem key="ellipsis-start">
-          <PaginationEllipsis />
-        </PaginationItem>
-      );
-    }
-
-    // Add pages around current page
-    const start = Math.max(2, currentPage - 1);
-    const end = Math.min(totalPages - 1, currentPage + 1);
-    for (let i = start; i <= end; i++) {
-      items.push(
-        <PaginationItem key={i}>
-          <PaginationLink
-            onClick={() => handlePageChange(i)}
-            isActive={currentPage === i}
-          >
-            {i}
-          </PaginationLink>
-        </PaginationItem>
-      );
-    }
-
-    // Add ellipsis if necessary
-    if (currentPage < totalPages - 2) {
-      items.push(
-        <PaginationItem key="ellipsis-end">
-          <PaginationEllipsis />
-        </PaginationItem>
-      );
-    }
-
-    // Always show last page
-    items.push(
-      <PaginationItem key={totalPages}>
-        <PaginationLink
-          onClick={() => handlePageChange(totalPages)}
-          isActive={currentPage === totalPages}
-        >
-          {totalPages}
-        </PaginationLink>
-      </PaginationItem>
-    );
-  }
-
-  return items;
-};
+    return items;
+  };
 
   return (
-    <section className="bg-white py-16 px-4 rounded-2xl">
-      <h2 className="text-4xl font-bold text-yellow-800 mb-8 text-center">
+    <section className="bg-white py-8 md:py-16 px-4 rounded-2xl">
+      <h2 className="text-3xl md:text-4xl font-bold text-yellow-800 mb-8 text-center">
         Our Services
       </h2>
 
-      {/* Search Bar */}
       <div className="mb-8 flex justify-center">
         <div className="relative w-full max-w-md">
-          <input
+          <Input
             type="text"
             placeholder="Search services..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-yellow-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="pr-10"
           />
           <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500" />
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex flex-wrap justify-center mb-8">
+      <div className="flex flex-wrap justify-center mb-8 gap-2">
         {furtherCategories.map((category) => (
-          <button
+          <Button
             key={category.id}
-            className={`px-6 py-3 m-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-              activeCategory === category.id
-                ? "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white shadow-lg"
-                : "bg-white text-yellow-700 hover:bg-yellow-100 hover:text-yellow-800"
-            }`}
+            variant={activeCategory === category.id ? "default" : "outline"}
+            className="m-1"
             onClick={() => {
               setActiveCategory(category.id);
               setCurrentPage(1);
             }}
           >
             {category.name}
-          </button>
+          </Button>
         ))}
       </div>
 
-      {/* Selected Category Name */}
-      <div className="text-center mb-12">
-        <h3 className="text-3xl font-semibold text-yellow-700">
+      <div className="text-center mb-8 md:mb-12">
+        <h3 className="text-2xl md:text-3xl font-semibold text-yellow-700">
           {furtherCategories.find((cat) => cat.id === activeCategory)?.name}
         </h3>
       </div>
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {currentItems.length > 0 ? (
             currentItems.map((service, serviceIndex) => (
@@ -303,33 +349,43 @@ const ServicesSection: React.FC = () => {
                 className="group"
               >
                 <Dialog>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg w-full max-h-fit">
-                    <Carousel
-                      className="w-full"
-                      onMouseEnter={plugin.current.leave}
-                    >
-                      <CarouselContent>
-                        {service.images.map((media, index) => (
-                          <CarouselItem
-                            key={index}
-                            className="h-80 flex items-center justify-center"
-                          >
-                            <DialogTrigger asChild>
-                              <div className="relative w-full h-full cursor-pointer">
-                                <MediaItem src={media} alt={service.title} />
-                              </div>
-                            </DialogTrigger>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      {service.images.length > 1 && (
-                        <>
-                          <CarouselPrevious />
-                          <CarouselNext />
-                        </>
-                      )}
-                    </Carousel>
-                  </div>
+                  <Card className="overflow-hidden">
+                    <CardContent className="p-0">
+                      <Carousel
+                        className="w-full"
+                        onMouseEnter={plugin.current.leave}
+                      >
+                        <CarouselContent>
+                          {service.images.map((media, index) => (
+                            <CarouselItem
+                              key={index}
+                              className="h-64 md:h-80 flex items-center justify-center"
+                            >
+                              <DialogTrigger asChild>
+                                <div className="relative w-full h-full cursor-pointer">
+                                  <MediaItem src={media} alt={service.title} />
+                                </div>
+                              </DialogTrigger>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        {service.images.length > 1 && (
+                          <>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                          </>
+                        )}
+                      </Carousel>
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle className="text-xl md:text-2xl font-semibold text-yellow-700">
+                        {service.title}
+                      </CardTitle>
+                      <p className="text-yellow-600 text-sm md:text-base">
+                        {service.description}
+                      </p>
+                    </CardHeader>
+                  </Card>
                   <DialogContent className="sm:max-w-[800px]">
                     <div className="grid gap-6 py-4">
                       <Carousel plugins={[plugin.current]} className="w-full">
@@ -337,12 +393,13 @@ const ServicesSection: React.FC = () => {
                           {service.images.map((media, index) => (
                             <CarouselItem
                               key={index}
-                              className="h-[400px] flex items-center justify-center"
+                              className="h-[300px] md:h-[400px] flex items-center justify-center"
                             >
                               <div className="relative w-full h-full">
                                 <MediaItem
                                   src={media}
                                   alt={`${service.title} - Media ${index + 1}`}
+                                  inDialog
                                 />
                               </div>
                             </CarouselItem>
@@ -355,24 +412,15 @@ const ServicesSection: React.FC = () => {
                           </>
                         )}
                       </Carousel>
-                      <h2 className="text-3xl font-bold text-yellow-800">
+                      <h2 className="text-2xl md:text-3xl font-bold text-yellow-800">
                         {service.title}
                       </h2>
-                      <p className="text-lg text-yellow-700">
+                      <p className="text-base md:text-lg text-yellow-700">
                         {service.description}
                       </p>
                     </div>
                   </DialogContent>
                 </Dialog>
-                {/* Non-clickable text area */}
-                <div className="bg-white p-6 rounded-lg shadow-md transform transition-all duration-500 -translate-y-8 group-hover:-translate-y-10">
-                  <h3 className="text-2xl font-semibold text-yellow-700 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-yellow-600 text-base">
-                    {service.description}
-                  </p>
-                </div>
               </motion.div>
             ))
           ) : (
@@ -383,8 +431,7 @@ const ServicesSection: React.FC = () => {
         </AnimatePresence>
       </div>
 
-     {/* Pagination */}
-     {totalPages > 1 && (
+      {totalPages > 1 && (
         <Pagination className="mt-8">
           <PaginationContent>
             <PaginationItem>
