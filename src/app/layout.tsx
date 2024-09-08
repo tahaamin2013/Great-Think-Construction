@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mulish.className} antialiased container bg-[#ebebeb]`}
+        className={`${mulish.className} antialiased sm:container px-0 bg-[#ebebeb]`}
       >
         {/* <CustomCursor /> */}
         <Suspense fallback={<Loading />}>

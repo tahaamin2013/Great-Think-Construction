@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const categories = [
   {
@@ -114,8 +115,9 @@ const Herosectionv2 = () => {
                 borderRadius: "30px",
               }}
             >
-              <img
-                src={activeCategory.image}
+              <Image
+                layout="fill"
+src={activeCategory.image}
                 alt={`${activeCategory.name} category`}
                 className="absolute top-0 left-0 w-full h-full object-cover object-center"
               />
