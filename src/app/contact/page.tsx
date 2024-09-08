@@ -21,7 +21,7 @@ const ContactUs: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-5xl font-extrabold text-center text-yellow-900 mb-12 animate-text-shadow">
-          Let's Build Together!
+          Let&apos;s Build Together!
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
