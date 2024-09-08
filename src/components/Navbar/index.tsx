@@ -15,6 +15,7 @@ import {
 const navLinks = [
   { link: "/", name: "Home" },
   { link: "/about", name: "About Us" },
+  { link: "/request-estimate", name: "Request Estimate" },
   { link: "/service", name: "Services" },
   { link: "/project", name: "Projects" },
   { link: "/contact", name: "Contact" },

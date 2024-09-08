@@ -27,6 +27,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {getBlurPlaceholder} from '@/lib/ImageUtils'
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -145,10 +146,8 @@ const ServicesSection: React.FC = () => {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
-            placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${btoa(
-              '<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#cccccc"/></svg>'
-            )}`}
+            // placeholder="blur"
+            // blurDataURL={getBlurPlaceholder(src)}
           />
         </div>
       );
