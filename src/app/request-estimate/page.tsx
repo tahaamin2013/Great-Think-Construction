@@ -1,48 +1,17 @@
-"use client";
-
-import React, { useState } from "react";
-import {
-  CheckCircleIcon,
-  ChevronDownIcon,
-  PhoneIcon,
-  MailIcon,
-  CalendarIcon,
-} from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  MailIcon,
+  PhoneIcon
+} from "lucide-react";
+import React from "react";
 
 const EstimatePage: React.FC = () => {
-  const [selectedServices, setSelectedServices] = useState<Set<string>>(
-    new Set()
-  );
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set()
-  );
-
-  const toggleService = (serviceName: string) => {
-    const newSelectedServices = new Set(selectedServices);
-    if (newSelectedServices.has(serviceName)) {
-      newSelectedServices.delete(serviceName);
-    } else {
-      newSelectedServices.add(serviceName);
-    }
-    setSelectedServices(newSelectedServices);
-  };
-
-  const toggleCategory = (categoryName: string) => {
-    const newExpandedCategories = new Set(expandedCategories);
-    if (newExpandedCategories.has(categoryName)) {
-      newExpandedCategories.delete(categoryName);
-    } else {
-      newExpandedCategories.add(categoryName);
-    }
-    setExpandedCategories(newExpandedCategories);
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
       <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
         <div className="bg-gradient-to-r from-yellow-600 to-orange-700 py-10 px-8">
           <h1 className="text-4xl font-bold text-white">

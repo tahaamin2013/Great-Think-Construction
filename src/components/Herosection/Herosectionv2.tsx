@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
+import Link from 'next/link'
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -9,18 +10,19 @@ const categories = [
   {
     name: "Residential",
     image: "/hero-bg.jpg",
-    description: "Modern solutions for residential buildings and homes."
+    description: "Modern solutions for residential buildings and homes.",
   },
   {
     name: "Commercial",
     image: "/author.png",
-    description: "Innovative approaches for commercial structures and offices."
+    description: "Innovative approaches for commercial structures and offices.",
   },
   {
     name: "Industrial",
     image: "/brick-face-work/4.jpeg",
-    description: "Cutting-edge technologies for industrial facilities and factories."
-  }
+    description:
+      "Cutting-edge technologies for industrial facilities and factories.",
+  },
 ];
 
 const Herosectionv2 = () => {
@@ -46,7 +48,10 @@ const Herosectionv2 = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#002f49] leading-tight"
         >
-          Solutions To Modern <span className="text-zinc-800 bg-gradient-to-r from-zinc-800 to-zinc-600 bg-clip-text text-transparent">industry</span>{" "}
+          Solutions To Modern{" "}
+          <span className="text-zinc-800 bg-gradient-to-r from-zinc-800 to-zinc-600 bg-clip-text text-transparent">
+            industry
+          </span>{" "}
           Challenges
         </motion.h1>
         <motion.p
@@ -62,9 +67,13 @@ const Herosectionv2 = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
+        <Link
+        href='/request-estimate'
+        >
           <Button className="w-fit py-4 sm:py-5 md:py-6 px-6 sm:px-8 md:px-10 rounded-xl text-sm sm:text-base md:text-lg font-semibold transition-all hover:scale-105">
-            Discover More
+            Book a Free Estimate
           </Button>
+        </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,11 +105,11 @@ const Herosectionv2 = () => {
             <div
               className="w-full h-full bg-white rounded-xl shadow-lg"
               style={{
-                clipPath: "polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)",
+                clipPath:
+                  "polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)",
                 borderRadius: "30px",
               }}
-            >
-            </div>
+            ></div>
           </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -111,13 +120,14 @@ const Herosectionv2 = () => {
             <div
               className="w-full pb-[100%] bg-white rounded-xl overflow-hidden border-4 border-white shadow-xl"
               style={{
-                clipPath: "polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)",
+                clipPath:
+                  "polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)",
                 borderRadius: "30px",
               }}
             >
               <Image
                 layout="fill"
-src={activeCategory.image}
+                src={activeCategory.image}
                 alt={`${activeCategory.name} category`}
                 className="absolute top-0 left-0 w-full h-full object-cover object-center"
               />
