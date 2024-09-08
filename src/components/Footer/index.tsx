@@ -9,13 +9,14 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#002f49] relative text-white px-24 py-12 my-10 rounded-[2rem]">
+    <footer className="bg-[#002f49] relative text-white px-4 sm:px-8 md:px-16 lg:px-24 py-12 my-10 rounded-[2rem]">
       {/* Decoration */}
-      <div className="w-[26rem] h-72 bg-[#0d3648] absolute z-10 top-0 left-0 rounded-br-[6rem]" />
+      <div className="w-48 sm:w-64 md:w-80 lg:w-[26rem] h-48 sm:h-56 md:h-64 lg:h-72 bg-[#0d3648] absolute z-10 top-0 left-0 rounded-br-[3rem] sm:rounded-br-[4rem] md:rounded-br-[5rem] lg:rounded-br-[6rem]" />
 
-      {/* This div */}
-      <div className="max-w-7xl mx-auto flex sm:flex-row flex-col gap-10 relative z-20">
-        <div className="col-span-1">
+      {/* Content */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 relative z-20">
+        {/* Company Info */}
+        <div className="w-full lg:w-1/3">
           <h2 className="text-2xl font-bold mb-4 flex items-center">
             <span className="text-red-500 mr-1">
               <svg
@@ -70,7 +71,9 @@ const Footer: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="ml-8 max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        {/* Links and Contact */}
+        <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10 mt-8 lg:mt-0">
           <div>
             <h3 className="font-semibold text-lg mb-2 text-white">
               About Company
@@ -116,7 +119,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center">
                 <svg
-                  className="h-5 w-5 mr-2 text-yellow-500"
+                  className="h-5 w-5 mr-2 text-yellow-500 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -132,7 +135,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <svg
-                  className="h-5 w-5 mr-2 text-yellow-500"
+                  className="h-5 w-5 mr-2 text-yellow-500 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -148,7 +151,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="h-5 w-8 mr-2 text-yellow-500 mt-1"
+                  className="h-5 w-5 mr-2 text-yellow-500 mt-1 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -173,18 +176,17 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
+      {/* Copyright */}
       <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
         <p>© Great Think Construction 2024 | All Rights Reserved</p>
-        <div className="mt-2">
-          <Link href="#" className="hover:text-white">
+        <div className="mt-2 flex flex-wrap justify-center">
+          <Link href="#" className="hover:text-white mr-4 mb-2">
             Terms & Condition
           </Link>
-          <span className="mx-2">|</span>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-white mr-4 mb-2">
             Privacy Policy
           </Link>
-          <span className="mx-2">|</span>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-white mb-2">
             Contact Us
           </Link>
         </div>

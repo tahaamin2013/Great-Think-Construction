@@ -154,7 +154,7 @@ const Navbar = () => {
                     Need Help?
                   </p>
                   <p className="text-sm font-bold text-gray-900">
-                    (907) 555-0101
+                  (718) 666-9256
                   </p>
                 </div>
               </div>
