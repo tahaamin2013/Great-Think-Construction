@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { encode, decode } from "blurhash";
 import { furtherCategories, services } from "@/store/Constructionservices";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,7 +27,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -56,46 +54,11 @@ const ServicesSection: React.FC = () => {
 
   const MediaItem: React.FC<{ src: string; alt: string; inDialog?: boolean }> = ({ src, alt, inDialog = false }) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [showControls, setShowControls] = useState(false);
-    const [blurhash, setBlurhash] = useState<string | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
   
     const isVideo = (url: string) => url.toLowerCase().endsWith(".mp4");
-  
-    useEffect(() => {
-      if (!isVideo(src)) {
-        const img = new window.Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => {
-          const canvas = document.createElement("canvas");
-          canvas.width = 32;
-          canvas.height = 32;
-          const ctx = canvas.getContext("2d");
-          if (ctx) {
-            ctx.drawImage(img, 0, 0, 32, 32);
-            const imageData = ctx.getImageData(0, 0, 32, 32);
-            const hash = encode(imageData.data, 32, 32, 4, 4);
-            setBlurhash(hash);
-            setIsLoading(false);
-          }
-        };
-        img.src = src;
-      }
-    }, [src]);
-  
-    useEffect(() => {
-      if (blurhash && canvasRef.current) {
-        const pixels = decode(blurhash, 32, 32);
-        const ctx = canvasRef.current.getContext("2d");
-        if (ctx) {
-          const imageData = ctx.createImageData(32, 32);
-          imageData.data.set(pixels);
-          ctx.putImageData(imageData, 0, 0);
-        }
-      }
-    }, [blurhash]);
   
     const handlePlay = (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -123,19 +86,6 @@ const ServicesSection: React.FC = () => {
         setIsPlaying(false);
       }
     };
-  
-    useEffect(() => {
-      if (inDialog && videoRef.current) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }, [inDialog]);
-  
-    useEffect(() => {
-      if (videoRef.current) {
-        videoRef.current.playbackRate = 0.5;
-      }
-    }, []);
   
     if (isVideo(src)) {
       return (
@@ -189,26 +139,16 @@ const ServicesSection: React.FC = () => {
     } else {
       return (
         <div className="relative w-full h-full">
-          {isLoading && (
-            <div className="absolute inset-0 bg-gray-200 animate-pulse">
-              <canvas
-                ref={canvasRef}
-                width={32}
-                height={32}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
           <Image
             src={src}
             alt={alt}
-            layout="fill"
-            objectFit="cover"
+            fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className={`transition-all duration-500 ease-in-out group-hover:scale-110 ${
-              isLoading ? 'opacity-0' : 'opacity-100'
-            }`}
-            onLoadingComplete={() => setIsLoading(false)}
+            className="object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${btoa(
+              '<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#cccccc"/></svg>'
+            )}`}
           />
         </div>
       );
