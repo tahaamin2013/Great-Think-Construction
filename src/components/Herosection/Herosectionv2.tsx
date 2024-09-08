@@ -26,7 +26,7 @@ const Herosectionv2 = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
-    <div className="container flex flex-col sm:flex-row items-center sm:justify-between justify-center bg-white shadow-sm rounded-2xl my-5 sm:my-8 md:my-12 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
+    <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center bg-white shadow-sm rounded-2xl my-5 sm:my-8 md:my-12 px-5 sm:px-8 md:px-12 lg:px-0 overflow-hidden">
       <div className="sm:ml-8 md:ml-16 lg:ml-24 my-12 sm:my-16 md:my-20 lg:my-24 w-full sm:w-[50%] md:w-[55%] flex flex-col gap-6 sm:gap-7 md:gap-9 z-30">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ const Herosectionv2 = () => {
           ))}
         </motion.div>
       </div>
-      <div className="w-full sm:w-[50%] md:w-[45%] mt-8 sm:mt-0 relative">
+      <div className="w-full sm:w-[50%] md:w-[50%] mt-8 sm:mt-0 relative">
         <div className="absolute -right-24 -top-28 sm:-right-32 sm:-top-36 rounded-3xl h-[36rem] w-[32rem] bg-gradient-to-br from-[#fcbf4a] to-[#fca94a] -rotate-[20deg]" />
 
         <div className="z-20 relative sm:mr-4 md:mr-8">
