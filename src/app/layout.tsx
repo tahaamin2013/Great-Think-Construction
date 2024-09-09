@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
-import "./globals.css";
-import Loading from "@/components/Loader";
-import { Suspense } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Loading from "@/components/Loader";
+import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import "./globals.css";
 
-const mulish = Mulish({ subsets: ["latin"] });
+// const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Great Think Construction Corp.",
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mulish.className} antialiased sm:container px-0 bg-[#ebebeb]`}
+        className={`antialiased sm:container px-0 bg-[#ebebeb]`}
       >
         {/* <CustomCursor /> */}
         <Suspense fallback={<Loading />}>

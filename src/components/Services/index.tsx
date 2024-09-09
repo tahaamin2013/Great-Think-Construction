@@ -317,10 +317,10 @@ const ServicesSection: React.FC = () => {
                       </Carousel>
                     </CardContent>
                     <CardHeader>
-                      <CardTitle className="text-xl md:text-2xl font-semibold text-yellow-700">
+                      <CardTitle className="tracking-widest text-xl md:text-2xl font-semibold">
                         {service.title}
                       </CardTitle>
-                      <p className="text-yellow-600 text-sm md:text-base">
+                      <p className="text-[#002f49] text-sm md:text-base">
                         {service.description}
                       </p>
                     </CardHeader>

@@ -68,8 +68,16 @@
   }
 }
 
+/* app/globals.css */
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: 'ProductSans', sans-serif;
 }
 
 ::selection {
@@ -77,13 +85,31 @@ body {
   color: black; /* Text color of the selected text */
 }
 
-.mask-image {
-  -webkit-mask-image: url('http://localhost:3000/toppng-com-transparent-background-house-960x705.png');
-  mask-image: url('http://localhost:3000/toppng-com-transparent-background-house-960x705.png');
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+.house-shape {
+  clip-path: polygon(
+    50% 0%,
+    100% 40%,
+    100% 100%,
+    0% 100%,
+    0% 40%
+  );
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

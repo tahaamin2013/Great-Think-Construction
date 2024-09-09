@@ -11,6 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Image from 'next/image'
 
 const navLinks = [
   { link: "/", name: "Home" },
@@ -35,8 +36,8 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`sticky top-0 left-0 right-0 z-50 rounded-lg transition-all bg-white duration-300 mx-2 ${
-        isSticky ? "shadow-md mx-0" : ""
+      className={`sticky top-0 left-0 right-0 z-50 rounded-lg transition-all bg-yellow-500/40 backdrop-blur-md duration-300 mx-2 py-4 text-white ${
+        isSticky ? "shadow-md mx-[0rem]" : ""
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -56,7 +57,7 @@ const Navbar = () => {
                     href="/"
                     className="font-bold text-2xl text-yellow-600 hover:text-yellow-500 transition-colors"
                   >
-                    GTC.
+                    <Image src="/Logo in blue.svg" alt="GTC Logo" width={200} height={200} />
                   </Link>
                 </motion.div>
               </TooltipTrigger>
@@ -74,7 +75,7 @@ const Navbar = () => {
               >
                 <Link
                   href={navlink.link}
-                  className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="text-[#0d3648] hover:bg-gray-100 px-3 py-2 rounded-md text-lg font-medium transition-colors"
                 >
                   {navlink.name}
                 </Link>
@@ -91,7 +92,9 @@ const Navbar = () => {
               <PiChatsTeardropFill className="h-6 w-6 mr-2 text-yellow-600" />
               <div>
                 <p className="text-xs font-medium">Need Help?</p>
-                <p className="text-sm font-bold">(907) 555-0101</p>
+                <p className="text-sm font-bold">
+                (718) 666-9256
+                </p>
               </div>
             </div>
           </motion.div>
