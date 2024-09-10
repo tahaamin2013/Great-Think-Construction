@@ -35,7 +35,7 @@ const AboutUs: React.FC = () => {
                   Best Quality Construction
                 </h1>
                 <p className="text-gray-600 mb-8">
-                  Construction is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
+                  Construction is simply dummy text of the printing and typesetting industry. It has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
                 </p>
 
                 {/* Features */}

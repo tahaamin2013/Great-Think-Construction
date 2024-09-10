@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-black-600 text-xl sm:text-xl mb-6"
           >
-            Insured & Licensed NYS LIC#'s 2009603
+            Insured & Licensed NYS LIC#&apos;s 2009603
           </motion.p>
 
           <motion.div

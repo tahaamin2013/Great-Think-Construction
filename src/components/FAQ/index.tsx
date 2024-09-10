@@ -35,7 +35,7 @@ const FAQSection: React.FC = () => {
         </div>
         {/* More Energetic Heading */}
         <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
-          Got Questions? We've Got Answers!
+          Got Questions? We&apos;ve Got Answers!
         </h2>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
