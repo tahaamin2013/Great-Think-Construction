@@ -11,7 +11,7 @@ const AboutUs: React.FC = () => {
             {/* Image Section */}
             <div className="lg:w-1/2 relative">
               <Image
-                src="/Author.png"
+                src="/author.png"
                 alt="Construction CEO"
                 width={800}
                 height={800}

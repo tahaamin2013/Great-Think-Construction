@@ -76,6 +76,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-Black.ttf') format('truetype');
+  font-weight: 800;
+  font-style: black;
+}
+
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-light.ttf') format('truetype');
+  font-weight: 500;
+  font-style: light;
+}
+
 body {
   font-family: 'ProductSans', sans-serif;
 }

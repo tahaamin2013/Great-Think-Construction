@@ -1,38 +1,22 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { services } from "@/store/Constructionservices";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "../ui/carouselformobile";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 
   const activeCategory = services[currentCategoryIndex];
-
-  // Handle next category
-  const handleNextCategory = () => {
-    setCurrentCategoryIndex((prevIndex) =>
-      prevIndex === services.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  // Handle previous category
-  const handlePreviousCategory = () => {
-    setCurrentCategoryIndex((prevIndex) =>
-      prevIndex === 0 ? services.length - 1 : prevIndex - 1
-    );
-  };
 
   // Handle manual category selection
   const handleCategoryChange = (index: number) => {
