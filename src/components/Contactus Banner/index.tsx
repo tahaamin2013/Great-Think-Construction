@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneCall } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'
 
 const ContactUsBanner = () => {
   return (
@@ -13,12 +14,17 @@ const ContactUsBanner = () => {
               Duis aute irure dolor in reprehenderit in voluptate 
               <br className="hidden sm:inline" /> velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
+            <Link
+            href="/request-estimate"
+            >
             <button className="bg-white text-red-600 px-4 py-2 rounded-full font-semibold flex items-center mx-auto lg:mx-0">
               GET A QUOTE
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
+            </Link>
+
             <div className="flex items-center justify-center lg:justify-start">
               <PhoneCall className="w-5 h-5 mr-2" />
               <span>(718) 666-9256</span>
@@ -28,7 +34,7 @@ const ContactUsBanner = () => {
             <div className="absolute bg-yellow-500 h-96 w-96 rounded-2xl rotate-12 -top-12 left-16" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white z-10">
               <Image
-                src="/contact-Image-1.jpg"
+                src="/contact-Image-2.jpg"
                 alt="Contact us"
                 layout="fill"
                 objectFit="cover"

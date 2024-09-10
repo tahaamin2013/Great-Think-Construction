@@ -31,7 +31,7 @@ const StartJourneyBanner = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center"
           >
-            <Sparkles className="mr-2" /> Let's Go!
+            <Sparkles className="mr-2" /> Let&apos;s Go!
           </motion.button>
         </Link>
       </motion.div>
