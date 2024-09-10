@@ -50,22 +50,21 @@ const FAQSection: React.FC = () => {
           ))}
         </Accordion>
       </div>
-      <div className="w-full md:w-1/2 bg-gradient-to-br from-zinc-800 to-zinc-800/80 animate-pulse">
         <motion.div 
-          className="rounded-2xl overflow-hidden"
+          className="rounded-2xl h-96 w-full md:w-1/2 overflow-hidden relative"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Image 
-            src="/construction-workers.jpg" 
+            src="/faqSectionImage.jpg" 
             alt="Construction workers" 
-            width={450} 
-            height={430} 
-            objectFit="cover"
-            className="rounded-2xl"
+            // width={450} 
+            // height={430} 
+            layout="fill"
+            objectFit='cover'
+            className="rounded-2xl object-cover object-center"
           />
         </motion.div>
-      </div>
     </div>
   );
 };

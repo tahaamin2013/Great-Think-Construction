@@ -28,7 +28,7 @@ const ContactUsBanner = () => {
             <div className="absolute bg-yellow-500 h-96 w-96 rounded-2xl rotate-12 -top-12 left-16" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white z-10">
               <Image
-                src="/hero-bg.jpg"
+                src="/contact-Image-1.jpg"
                 alt="Contact us"
                 layout="fill"
                 objectFit="cover"

@@ -3,6 +3,7 @@ import FAQSection from "@/components/FAQ";
 import Herosection from "@/components/Herosection/Herosection";
 import Herosectionv2 from "@/components/Herosection/Herosectionv2";
 import Services from "@/components/Services";
+import StartJourneyBanner from "@/components/startjourneybanner/page";
 import TeamMemberDashboard from "@/components/Team";
 import TestimonialsCarousel from "@/components/Testimonials";
 import WhoChooseUs from '@/components/whychooseus'
@@ -18,6 +19,7 @@ export default async function Home() {
       <TeamMemberDashboard />
       <FAQSection />
       <TestimonialsCarousel />
+      <StartJourneyBanner />
     </main>
   );
 }
