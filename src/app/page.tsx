@@ -5,7 +5,7 @@ import Herosectionv2 from "@/components/Herosection/Herosectionv2";
 import Services from "@/components/Services";
 import TeamMemberDashboard from "@/components/Team";
 import TestimonialsCarousel from "@/components/Testimonials";
-
+import WhoChooseUs from '@/components/whychooseus'
 export default async function Home() {
 
   return (
@@ -14,6 +14,7 @@ export default async function Home() {
       {/* <Herosectionv2 /> */}
       <Aboutus />
       <Services />
+      <WhoChooseUs />
       <TeamMemberDashboard />
       <FAQSection />
       <TestimonialsCarousel />

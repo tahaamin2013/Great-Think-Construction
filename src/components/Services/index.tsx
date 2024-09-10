@@ -14,15 +14,23 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Loader2, Play, Search, Square } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Loader2,
+  Play,
+  Search,
+  Square,
+} from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { furtherCategories, services } from "@/store/Constructionservices";
+import Pagination from '@/components/Pagination'
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
@@ -298,28 +306,16 @@ const ServicesSection: React.FC = () => {
               >
                 <ArrowLeft />
               </Button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
-                  <Button
-                  variant="ghost"
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`${
-                      currentPage === page
-                        ? "bg-yellow-400 text-white"
-                        : "text-gray-800 hover:bg-gray-50"
-                    }`}
-                  >
-                    {page}
-                  </Button>
-                )
-              )}
+              <Pagination 
+  currentPage={currentPage}
+  totalPages={totalPages}
+  setCurrentPage={setCurrentPage}
+/>
               <Button
                 onClick={() =>
                   setCurrentPage((prev) => Math.min(totalPages, prev + 1))
                 }
                 variant="ghost"
-
                 disabled={currentPage === totalPages}
                 className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
               >

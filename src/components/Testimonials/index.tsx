@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ContactUsBanner from '../Contactus Banner';
 
 type Testimonial = {
   id: number;
@@ -42,7 +43,9 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsCarousel: React.FC = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-24">
+    <div className="relative">
+    <ContactUsBanner />
+    <div className="py-32 pt-48 px-4 mt-64 sm:px-6 lg:px-24 bg-white rounded-3xl">
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
           What Our Clients Say
         </h2>
@@ -72,6 +75,7 @@ const TestimonialsCarousel: React.FC = () => {
           <CarouselPrevious className='sm:-left-12 left-1 !bg-yellow-400 text-black w-10 h-10' />
           <CarouselNext className='sm:-right-12 right-1 !bg-yellow-400 text-black w-10 h-10' />
         </Carousel>
+      </div>
       </div>
   );
 };

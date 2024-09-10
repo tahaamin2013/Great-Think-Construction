@@ -12,6 +12,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { services } from "@/store/Constructionservices";
+import Link from "next/link";
 
 interface Service {
   title: string;
@@ -74,11 +75,16 @@ const Herosection: React.FC = () => {
             All in One Renovation
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-black leading-tight">
-            Sustainable Solutions for Better
-          </h1>
+Great Think Construction Corp.          </h1>
           <p className="text-sm sm:text-base">
             Insured & Licensed NYS LIC#&apos;s 2009603
           </p>
+          <Link
+          href="/request-estimate"
+          >
+          <Button className="bg-yellow-500 rounded-xl py-6 px-5 z-[60] hover:bg-yellow-600">Get a Free Quote Today!</Button>
+          </Link>
+
 
           {/* Small Decorative Element */}
           <div className="absolute bottom-4 right-4 w-12 h-12 border-4 border-red-200 rounded-full" />
