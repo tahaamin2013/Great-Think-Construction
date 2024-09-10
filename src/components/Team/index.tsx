@@ -1,43 +1,46 @@
-import React from 'react';
-import Image from 'next/image';
-import { Facebook, Linkedin, Instagram, Share2 } from 'lucide-react';
+import React from "react";
+import Image from "next/image";
 
-const TeamMemberDashboard: React.FC = () => {
+const TeamMemberDashboard = () => {
+  const employeesList = [
+    { name: "Dianne Russell", role: "Worker" },
+    { name: "Wade Warren", role: "Worker" },
+    { name: "David Miller", role: "Worker" },
+  ];
+
   return (
-    <div className="bg-red-600 p-8 rounded-3xl text-white font-sans my-10">
-      <div className="flex justify-between mb-12">
-        <Image src="/api/placeholder/24/24" alt="Framer" width={24} height={24} className="invert" />
-        <Image src="/api/placeholder/24/24" alt="elastic" width={24} height={24} className="invert" />
-        <Image src="/api/placeholder/24/24" alt="Trustpilot" width={24} height={24} className="invert" />
-        <Image src="/api/placeholder/24/24" alt="Webflow" width={24} height={24} className="invert" />
-        <Image src="/api/placeholder/24/24" alt="Evernote" width={24} height={24} className="invert" />
+    <div className="relative overflow-hidden">
+      <div className="bg-red-600 p-8 rounded-[1.8rem] text-white font-sans my-10 flex flex-col items-center justify-center pb-36">
+        <div className="mb-8 flex flex-col items-center justify-center">
+          <span className="bg-yellow-400 text-red-600 px-3 py-1 rounded-full text-xs font-bold animate-bounce">
+            TEAM MEMBER
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight text-center">
+            <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Bridging</span>{" "}
+            <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">the</span>{" "}
+            <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Gap</span>
+            <br className="hidden sm:block" />
+            <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Dreams</span>{" "}
+            <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Between</span>
+          </h1>
+        </div>
       </div>
-      
-      <div className="mb-8">
-        <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold">TEAM MEMBER</span>
-        <h1 className="text-5xl font-bold mt-4 leading-tight">Bridging the Gap<br />Dreams Between</h1>
-      </div>
-      
-      <div className="flex space-x-4">
-        {['Dianne Russell', 'Wade Warren', 'David Miller'].map((name, index) => (
-          <div key={index} className="bg-white rounded-xl overflow-hidden text-black w-1/3">
-            <div className="relative h-48">
-              <Image src={`/api/placeholder/300/200`} alt={name} layout="fill" objectFit="cover" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">{name}</h3>
-              <p className="text-sm text-gray-600">{index === 1 ? 'Marketing Coordinator' : 'Web Designer'}</p>
-              <div className="flex justify-between mt-4">
-                {index === 1 ? (
-                  <div className="flex space-x-2">
-                    <Facebook size={20} className="text-gray-400" />
-                    <Linkedin size={20} className="text-gray-400" />
-                    <Instagram size={20} className="text-gray-400" />
-                  </div>
-                ) : (
-                  <Share2 size={20} className="text-gray-400" />
-                )}
-              </div>
+      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mx-4 sm:mx-8 lg:mx-32 relative bottom-44">
+        {employeesList.map((employee, index) => (
+          <div
+            key={index}
+            className="bg-white relative h-80 rounded-xl overflow-hidden text-black w-full sm:w-1/3 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
+          >
+            <Image
+              src={`/author.png`}
+              alt={employee.name}
+              layout="fill"
+              objectFit="cover"
+              className="transition-all duration-500 group-hover:scale-110"
+            />
+            <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
+              <h1 className="text-md font-extrabold">{employee.name}</h1>
+              <p className="text-sm">{employee.role}</p>
             </div>
           </div>
         ))}
