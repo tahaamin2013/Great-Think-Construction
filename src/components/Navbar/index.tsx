@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`sticky top-0 left-0 right-0 z-50 rounded-lg transition-all bg-yellow-500/40 backdrop-blur-md duration-300 mx-2 py-4 text-white ${
+      className={`sticky top-0 left-0 right-0 z-[60] rounded-lg transition-all bg-yellow-400/80 backdrop-blur-md duration-300 mx-2 py-4 text-white ${
         isSticky ? "shadow-md mx-[0rem]" : ""
       }`}
       initial={{ y: -100 }}
