@@ -26,8 +26,8 @@ export default function RootLayout({
       >
         {/* <CustomCursor /> */}
         <Suspense fallback={<Loading />}>
-        <InteriorBar />
-          <Navbar />
+        {/* <InteriorBar /> */}
+          {/* <Navbar /> */}
           {children}
           <Footer />
         </Suspense>
