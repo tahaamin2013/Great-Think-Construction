@@ -4,8 +4,8 @@ import Image from "next/image";
 const TeamMemberDashboard = () => {
   const employeesList = [
     { name: "Hasan Ali", role: "Mason", image: "/TeamMember4.jpg" },
-    { name: "Muhammad Usman", role: "Fencing Specialist", image: "/TeamMember5.jpg" },
-    { name: "Ravi Kumar", role: "Exterior Painter", image: "/TeamMember3.jpg" },
+    { name: "Ravi Kumar", role: "Fencing Specialist", image: "/TeamMember5.jpg" },
+    { name: "Muhammad Usman", role: "Exterior Painter", image: "/TeamMember3.jpg" },
   ];
 
   return (

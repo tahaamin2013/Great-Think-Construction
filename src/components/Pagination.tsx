@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setCur
     }
 
     if (currentPage <= 3) {
-      return [1, 2, 3, 4, '...', totalPages];
+      return [1, 2, 3, '...', totalPages];
     }
 
     if (currentPage >= totalPages - 2) {
@@ -31,7 +31,10 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setCur
           variant="ghost"
           key={index}
           onClick={() => typeof page === 'number' && setCurrentPage(page)}
-          className={`${
+          className={`
+            sm:px-4 sm:py-2
+px-[0.7rem] py-1
+            ${
             currentPage === page
               ? "bg-yellow-400 text-white"
               : "text-gray-800 hover:bg-gray-50"
