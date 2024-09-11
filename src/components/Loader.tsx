@@ -1,74 +1,78 @@
 "use client";
 
-import React from "react";
-import { Building2, Hammer, Ruler, HardHat, Truck } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default function Loading() {
+const Loading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        const newProgress = prevProgress + 1;
+        return newProgress > 100 ? 100 : newProgress;
+      });
+    }, 30);
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-yellow-100 to-yellow-300">
-      <div className="relative w-96 h-96">
-        {/* Animated construction tape */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="w-[200%] h-full flex items-center justify-around animate-slide">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="h-8 w-32 bg-black transform -skew-x-12 mx-4"
-              ></div>
-            ))}
-          </div>
-        </div>
+    <>
+      {loading ? (
+        <div className="relative font-sans h-screen w-screen overflow-hidden flex items-center justify-center bg-white">
+          <Image
+            src="/loader-background.jpg"
+            alt="Loader Background"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-50 animate-pulse"
+          />
 
-        {/* Central rotating gear */}
-        <div className="absolute inset-8 border-8 border-yellow-500 rounded-full animate-spin-slow">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-3/4 h-3/4 border-8 border-yellow-600 rounded-full"></div>
+
+          <div className="z-10 text-center">
+            <h1 className="text-7xl font-extrabold text-black font-sans mb-4 animate-bounce">
+              Loading
+              <span className="animate-pulse">.</span>
+              <span className="animate-pulse delay-100">.</span>
+              <span className="animate-pulse delay-200">.</span>
+            </h1>
+            
+            <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-black rounded-full transition-all duration-300 ease-out"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
           </div>
-          {[...Array(8)].map((_, i) => (
+
+          {/* Animated particles */}
+          {[...Array(20)].map((_, index) => (
             <div
-              key={i}
-              className="absolute top-1/2 left-1/2 w-6 h-24 bg-yellow-600 transform -translate-x-1/2 -translate-y-1/2 origin-bottom"
-              style={{ rotate: `${i * 45}deg` }}
-            ></div>
+              key={index}
+              className="absolute w-2 h-2 bg-white rounded-full animate-float"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${3 + Math.random() * 2}s`,
+                animationDelay: `${Math.random() * 2}s`
+              }}
+            />
           ))}
         </div>
-
-        {/* Company logo and name */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-          <Building2 className="w-24 h-24 text-yellow-700 animate-bounce" />
-          <h2 className="text-3xl font-bold text-yellow-800 mt-4 animate-pulse">
-            Great Think
-          </h2>
-          <h3 className="text-xl font-semibold text-yellow-700 animate-pulse">
-            Construction
-          </h3>
-        </div>
-
-        {/* Orbiting construction tools */}
-        <div
-          className="absolute inset-0 animate-spin-reverse"
-          style={{ animationDuration: "15s" }}
-        >
-          <HardHat className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-yellow-600 animate-wiggle" />
-          <Truck
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-12 text-yellow-600 animate-wiggle"
-            style={{ animationDelay: "0.5s" }}
-          />
-          <Ruler
-            className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-yellow-600 animate-wiggle"
-            style={{ animationDelay: "1s" }}
-          />
-          <Hammer
-            className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-12 h-12 text-yellow-600 animate-wiggle"
-            style={{ animationDelay: "1.5s" }}
-          />
-        </div>
-      </div>
-
-      {/* Loading text */}
-      <p className="mt-8 text-2xl font-semibold text-yellow-800 animate-pulse">
-        Building your future...
-      </p>
-    </div>
+      ) : (
+        children
+      )}
+    </>
   );
-}
+};
+
+export default Loading;

@@ -22,15 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased sm:container px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
-      >
+        className={`antialiased px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
+        >
         {/* <CustomCursor /> */}
-        <Suspense fallback={<Loading />}>
+        {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
+        <Loading>
+          <div className="sm:container">
           <Navbar />
           {children}
           <Footer />
-        </Suspense>
+          </div>
+          </Loading>
+        {/* </Suspense> */}
       </body>
     </html>
   );

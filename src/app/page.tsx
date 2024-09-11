@@ -1,6 +1,7 @@
 import Aboutus from "@/components/Aboutus";
 import FAQSection from "@/components/FAQ";
 import Herosection from "@/components/Herosection/Herosection";
+import Loader from "@/components/Loader";
 import Services from "@/components/Services";
 import ServiceBar from "@/components/servicesbar/ServicesETSection";
 import StartJourneyBanner from "@/components/startjourneybanner/page";
@@ -41,7 +42,6 @@ export default async function Home() {
   return (
     <main>
       <Herosection />
-
       <ServiceBar
         title="Exterior Work"
         services={exteriorServices}
@@ -55,7 +55,6 @@ export default async function Home() {
         services={interiorServices}
         side={false}
       />
-      <Link href="/our-services" className="mx-auto">Services</Link>
       <Services />
       <WhoChooseUs />
       <TeamMemberDashboard />

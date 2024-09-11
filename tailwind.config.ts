@@ -86,11 +86,30 @@ const config = {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+			  rise: {
+				'0%': { transform: 'translateY(100%)', opacity: '0' },
+				'100%': { transform: 'translateY(0)', opacity: '0.1' },
+			  },
+			  networkFloat: {
+				'0%, 100%': { 
+				  transform: 'translate(0, 0) scale(1)', 
+				  opacity: '0' 
+				},
+				'10%, 90%': { opacity: '0.6' },
+				'50%': { 
+				  transform: 'translate(120px, -60px) scale(1.5)', 
+				  opacity: '1'
+				},
+			  },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			  'rise': 'rise 2s ease-out forwards',
+			  'network-float': 'networkFloat 15s linear infinite',
+
+
   		}
   	}
   },
