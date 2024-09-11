@@ -9,15 +9,15 @@ interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setCurrentPage }) => {
   const getPageNumbers = () => {
-    if (totalPages <= 5) {
+    if (totalPages <= 4) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
 
-    if (currentPage <= 3) {
-      return [1, 2, 3, '...', totalPages];
+    if (currentPage <= 4) {
+      return [1, 2, 3, 4, '...', totalPages];
     }
 
-    if (currentPage >= totalPages - 2) {
+    if (currentPage >= totalPages - 3) {
       return [1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
     }
 
@@ -33,12 +33,10 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setCur
           onClick={() => typeof page === 'number' && setCurrentPage(page)}
           className={`
             sm:px-4 sm:py-2
-px-[0.7rem] py-1
-            ${
-            currentPage === page
-              ? "bg-yellow-400 text-white"
-              : "text-gray-800 hover:bg-gray-50"
-          } ${typeof page !== 'number' ? 'cursor-default' : ''}`}
+            px-[0.7rem] py-1
+            ${currentPage === page ? "bg-yellow-400 text-white" : "text-gray-800 hover:bg-gray-50"}
+            ${typeof page !== 'number' ? 'cursor-default' : ''}
+          `}
           disabled={typeof page !== 'number'}
         >
           {page}
