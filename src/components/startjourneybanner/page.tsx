@@ -36,7 +36,7 @@ const StartJourneyBanner = () => {
         </Link>
       </motion.div>
       <motion.div
-        className="relative h-52 w-96"
+        className="relative h-[25rem] w-[36rem]"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}

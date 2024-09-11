@@ -32,7 +32,7 @@ const ContactUsBanner = () => {
           </div>
           <div className="hidden lg:block relative w-60 h-60 mt-8 lg:mt-0 lg:ml-8">
             <div className="absolute bg-yellow-500 h-96 w-96 rounded-2xl rotate-12 -top-12 left-16" />
-            <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white z-10">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-8 bg-zinc-300 border-white z-10">
               <Image
                 src="/contact-Image-2.jpg"
                 alt="Contact us"

@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const TeamMemberDashboard = () => {
   const employeesList = [
-    { name: "Dianne Russell", role: "Worker" },
-    { name: "Wade Warren", role: "Worker" },
-    { name: "David Miller", role: "Worker" },
+    { name: "Hasan Ali", role: "Mason", image: "/TeamMember4.jpg" },
+    { name: "Muhammad Usman", role: "Fencing Specialist", image: "/TeamMember5.jpg" },
+    { name: "Ravi Kumar", role: "Exterior Painter", image: "/TeamMember3.jpg" },
   ];
 
   return (
@@ -29,14 +29,14 @@ const TeamMemberDashboard = () => {
         {employeesList.map((employee, index) => (
           <div
             key={index}
-            className="bg-white relative h-80 rounded-xl overflow-hidden text-black w-full sm:w-1/3 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
+            className="bg-white relative h-96 rounded-xl overflow-hidden text-black w-full sm:w-1/3 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
           >
             <Image
-              src={`/author.png`}
+              src={employee.image}
               alt={employee.name}
               layout="fill"
               objectFit="cover"
-              className="transition-all duration-500 group-hover:scale-110"
+              className="transition-all duration-500 group-hover:scale-110 object-top"
             />
             <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
               <h1 className="text-md font-extrabold">{employee.name}</h1>

@@ -9,7 +9,7 @@ const AboutUs: React.FC = () => {
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="lg:flex">
             {/* Image Section */}
-            <div className="lg:w-1/2 relative">
+            <div className="lg:w-1/2">
               <Image
                 src="/author.png"
                 alt="Construction CEO"
@@ -17,12 +17,6 @@ const AboutUs: React.FC = () => {
                 height={800}
                 className="object-cover w-full h-full"
               />
-              <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-full font-semibold text-sm">
-                CEO
-              </div>
-              <div className="absolute bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-full font-semibold text-sm">
-                Founder
-              </div>
             </div>
 
             {/* Content Section */}
