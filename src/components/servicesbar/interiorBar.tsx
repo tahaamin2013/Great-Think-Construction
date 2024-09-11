@@ -1,21 +1,37 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-const services = [
-  'Kitchen',
-  'Bathroom',
-  'Plumbing',
-  'Electric',
-  'Doors',
-  'Windows',
-  'Flooring',
-  'Basement Finish',
-  'California Stucco',
-  'Renovation',
+const interiorServices = [
+  "Kitchen",
+  "Bathroom",
+  "Plumbing",
+  "Electric",
+  "Doors",
+  "Windows",
+  "Flooring",
+  "Basement Finish",
+  "California Stucco",
+  "Renovation",
 ];
 
-const InteriorBar: React.FC = () => {
+const exteriorServices = [
+  "Landscaping",
+  "Roofing",
+  "Siding",
+  "Deck Construction",
+  "Fencing",
+  "Exterior Painting",
+  "Driveway Paving",
+  "Gutter Installation",
+  "Outdoor Lighting",
+  "Pool Installation",
+];
+
+const ServiceBar: React.FC<{ title: string; services: string[] }> = ({
+  title,
+  services,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +39,10 @@ const InteriorBar: React.FC = () => {
     if (!container) return;
 
     const animate = () => {
-      if (container.scrollLeft >= (container.scrollWidth - container.clientWidth)) {
+      if (
+        container.scrollLeft >=
+        container.scrollWidth - container.clientWidth
+      ) {
         container.scrollLeft = 0;
       } else {
         container.scrollLeft += 1;
@@ -37,22 +56,28 @@ const InteriorBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-black w-full text-white sticky top-0 left-0 right-0 z-[60] py-2 px-3 rounded-b-2xl overflow-hidden flex items-center">
-      <div className="mr-4 font-bold text-lg whitespace-nowrap">Interior:</div>
+    <div className="bg-black w-full text-white py-2 px-3 overflow-hidden flex items-center">
+      <div className="mr-4 font-bold text-lg whitespace-nowrap">{title}:</div>
       <div
         ref={containerRef}
         className="whitespace-nowrap overflow-hidden flex-grow"
       >
         <div className="inline-block">
           {services.map((service, index) => (
-            <span key={index} className="inline-block mx-4 text-lg font-semibold">
+            <span
+              key={index}
+              className="inline-block mx-4 text-lg font-semibold"
+            >
               {service}
             </span>
           ))}
         </div>
         <div className="inline-block">
           {services.map((service, index) => (
-            <span key={index} className="inline-block mx-4 text-lg font-semibold">
+            <span
+              key={index}
+              className="inline-block mx-4 text-lg font-semibold"
+            >
               {service}
             </span>
           ))}
@@ -62,4 +87,13 @@ const InteriorBar: React.FC = () => {
   );
 };
 
-export default InteriorBar;
+const ServicesDisplay: React.FC = () => {
+  return (
+    <div className="sticky top-0 left-0 right-0 z-[60]">
+      <ServiceBar title="Interior" services={interiorServices} />
+      <ServiceBar title="Exterior" services={exteriorServices} />
+    </div>
+  );
+};
+
+export default ServicesDisplay;

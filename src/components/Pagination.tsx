@@ -33,6 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setCur
           onClick={() => typeof page === 'number' && setCurrentPage(page)}
           className={`
             sm:px-4 sm:py-2
+            hover:bg-yellow-400
             px-[0.7rem] py-1
             ${currentPage === page ? "bg-yellow-400 text-white" : "text-gray-800 hover:bg-gray-50"}
             ${typeof page !== 'number' ? 'cursor-default' : ''}

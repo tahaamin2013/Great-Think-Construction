@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { services } from "@/store/Constructionservices";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Service {
@@ -145,13 +145,23 @@ const Herosection: React.FC = () => {
           >
             Insured & Licensed NYS LIC#&apos;s 2009603
           </motion.p>
-          <Link href="/request-estimate">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-yellow-500 rounded-xl py-6 px-5 z-[60] hover:bg-yellow-600">
-                Get a Free Quote Today!
-              </Button>
-            </motion.div>
-          </Link>
+         {/* Call to Action */}
+         <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-200">
+            <Link className="w-fit" href="/request-estimate">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-semibold flex items-center transition duration-300 ease-in-out transform hover:scale-105">
+              GET A FREE ESTIMATE
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </button>
+            </Link>
+
+            <div className="flex items-center">
+              <Phone className="h-10 w-10 text-gray-400 mr-3" />
+              <div>
+                <p className="text-xs font-medium text-gray-500">Call, Text or Whatsapp us</p>
+                <p className="text-lg font-bold text-gray-900">(718) 666-9256</p>
+              </div>
+            </div>
+          </div>
 
           {/* Small Decorative Element */}
           <motion.div
@@ -174,6 +184,9 @@ const Herosection: React.FC = () => {
               backgroundSize: "10px 10px",
             }}
           />
+
+           
+
         </motion.div>
 
         <motion.div
@@ -242,6 +255,8 @@ const Herosection: React.FC = () => {
             <ChevronRight />
           </motion.button>
           </div>
+
+           
 
           {/* Overlay Pattern */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-zinc-100/20 mix-blend-overlay" />
