@@ -18,9 +18,9 @@ const WhyChooseUs = () => {
             Learn More
           </button>
           <div className="flex justify-between mt-6 sm:mt-8 w-full bg-white rounded-2xl py-6 sm:py-8 px-4 sm:px-8 lg:px-16">
-            {['Completed Projects', 'Team Members', 'Approval Rate'].map((item, index) => (
+            {['Completed Projects', 'Approval Rate'].map((item, index) => (
               <div key={index} className="w-full sm:w-auto text-center sm:text-left mb-4 sm:mb-0">
-                <h4 className="text-xl sm:text-2xl font-bold">{index === 0 ? '10k+' : index === 1 ? '400+' : '97%'}</h4>
+                <h4 className="text-xl sm:text-2xl font-bold">{index === 0 ? '10k+' :  '97%'}</h4>
                 <p className="text-xs sm:text-sm text-gray-600">{item}</p>
               </div>
             ))}
