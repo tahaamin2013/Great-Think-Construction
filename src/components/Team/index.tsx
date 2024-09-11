@@ -25,7 +25,7 @@ const TeamMemberDashboard = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mx-4 sm:mx-8 lg:mx-32 relative bottom-44">
+      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mx-4 sm:mx-8 lg:mx-32 relative bottom-44 -mb-32">
         {employeesList.map((employee, index) => (
           <div
             key={index}

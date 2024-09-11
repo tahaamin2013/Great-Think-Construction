@@ -45,14 +45,14 @@ const TestimonialsCarousel: React.FC = () => {
   return (
     <div className="relative">
     <ContactUsBanner />
-    <div className="py-32 pt-48 px-4 mt-64 sm:px-6 lg:px-24 bg-white rounded-3xl">
+    <div className="py-16 sm:pt-48 pt-32 px-4 sm:mt-64 mt-[14rem] sm:px-6 lg:px-24 bg-white rounded-3xl">
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
           What Our Clients Say
         </h2>
         <Carousel className="w-full">
           <CarouselContent>
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className='sm:basis-1/2 basis-[100%]'>
+              <CarouselItem key={testimonial.id} className='sm:basis-1/2 basis-[100%] px-10'>
                 <div className="bg-white shadow-lg rounded-3xl p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (

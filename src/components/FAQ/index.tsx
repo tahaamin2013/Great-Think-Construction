@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 import Image from "next/image";
 import {
   Accordion,
@@ -31,7 +30,7 @@ const faqs = [
 
 const FAQSection: React.FC = () => {
   return (
-    <div className="bg-zinc-900 my-5 text-white p-6 md:p-12 rounded-3xl flex md:flex-row flex-col gap-8 md:gap-12">
+    <div className="bg-zinc-900 text-white p-6 md:p-12 rounded-3xl flex flex-col-reverse md:flex-row gap-8 md:gap-12">
       <motion.div
         className="rounded-2xl h-96 w-full md:w-1/2 overflow-hidden relative"
         whileHover={{ scale: 1.05 }}
@@ -40,8 +39,6 @@ const FAQSection: React.FC = () => {
         <Image
           src="/faqSectionImage.jpg"
           alt="Construction workers"
-          // width={450}
-          // height={430}
           layout="fill"
           objectFit="cover"
           className="rounded-2xl object-cover object-center"
@@ -54,7 +51,6 @@ const FAQSection: React.FC = () => {
             FAQ
           </span>
         </div>
-        {/* More Energetic Heading */}
         <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
           Got Questions? We&apos;ve Got Answers!
         </h2>
