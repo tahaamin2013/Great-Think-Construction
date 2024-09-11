@@ -34,24 +34,33 @@ const DialogContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => {
   const closeRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const handlePopState = () => {
-      closeRef.current?.click();
-    };
+    if (isOpen) {
+      // Push a new state to the history when the dialog opens
+      history.pushState(null, '', window.location.href);
 
-    window.addEventListener('popstate', handlePopState);
+      const handlePopState = (event: PopStateEvent) => {
+        event.preventDefault();
+        closeRef.current?.click();
+      };
 
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
+      window.addEventListener('popstate', handlePopState);
+
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [isOpen]);
 
   return (
     <DialogPortal>
       <DialogOverlay />
       <DialogPrimitive.Content
         ref={ref}
+        onOpenAutoFocus={() => setIsOpen(true)}
+        onCloseAutoFocus={() => setIsOpen(false)}
         className={cn(
           "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
           className
