@@ -84,13 +84,12 @@ const faqs = [
 ];
 
 const FAQSection: React.FC = () => {
-  
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleAccordionChange = (index: number) => {
     setOpenIndex(index);
   };
-  
+
   return (
     <div className="bg-zinc-900 text-white p-6 md:p-12 rounded-3xl flex flex-col-reverse md:flex-row gap-8 md:gap-12 relative">
       <motion.div
@@ -116,38 +115,30 @@ const FAQSection: React.FC = () => {
         <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
           Got Questions? We&apos;ve Got Answers!
         </h2>
-        <Accordion type="single" collapsible className="w-full overflow-y-scroll max-h-[16rem]">
-          {/* <Carousel
-            opts={{
-              align: "start",
-            }}
-            orientation="vertical"
-            className="w-full"
-          >
-            <CarouselContent className="-mt-1 h-[200px]"> */}
-              {faqs.map((faq, index) => (
-                // <CarouselItem key={index} className="pt-1 md:basis-1/3">
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="mb-4 border-none"
-                  >
-                    <AccordionTrigger className={`hover:no-underline bg-zinc-800 hover:bg-yellow-500 hover:text-black rounded-xl px-4 md:px-6 py-3 md:py-4 text-left ${openIndex === index ? "bg-yellow-500 text-black" : ""}`}
-                                          onClick={() => handleAccordionChange(index)}
-
-                    >
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="mt-2 px-4 md:px-6 py-3 md:py-4 bg-zinc-800 rounded-xl">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                // </CarouselItem>
-              ))}
-            {/* </CarouselContent>
-            <CarouselPrevious className="text-black absolute -top-44" />
-            <CarouselNext className="text-black" />
-          </Carousel> */}
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full overflow-y-scroll max-h-[16rem]"
+        >
+          {faqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="mb-4 border-none"
+            >
+              <AccordionTrigger
+                className={`hover:no-underline bg-zinc-800 hover:bg-yellow-500 hover:text-black rounded-xl px-4 md:px-6 py-3 md:py-4 text-left ${
+                  openIndex === index ? "bg-yellow-500 text-black" : ""
+                }`}
+                onClick={() => handleAccordionChange(index)}
+              >
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="mt-2 px-4 md:px-6 py-3 md:py-4 bg-zinc-800 rounded-xl">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </div>

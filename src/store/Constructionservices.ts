@@ -413,7 +413,7 @@ export const services = [
   },
   {
     images: ["/wet-lock-sealer/1.mp4"],
-    title: "WET LOCK SEALER",
+    title: "Wet Lock Sealer",
     description:
       "High-quality Wet Lock sealing services to protect and enhance various surfaces.",
     category: "painting-waterproofing",
@@ -427,14 +427,14 @@ export const services = [
   },
   {
     images: ["/pvc_fence_gray/1.webp"],
-    title: "PVC FENCE GRAY",
+    title: "PVC Fence Gray",
     description:
       "Durable PVC gray fence, perfect for adding privacy and style to any outdoor space.",
     category: "deck-fencing",
   },
   {
     images: ["/grandin_pointing/1.webp"],
-    title: "GRANDIN POINTING",
+    title: "Grandin Pointing",
     description:
       "delivers expert mortar work to strengthen and enhance brickwork.",
     category: "brickwork-masonry",

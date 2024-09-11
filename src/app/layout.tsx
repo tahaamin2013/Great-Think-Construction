@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import "./globals.css";
+import InteriorBar from "@/components/servicesbar/interiorBar";
 
 // const mulish = Mulish({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       >
         {/* <CustomCursor /> */}
         <Suspense fallback={<Loading />}>
+        <InteriorBar />
           <Navbar />
           {children}
           <Footer />

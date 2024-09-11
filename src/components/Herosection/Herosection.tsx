@@ -212,33 +212,36 @@ const Herosection: React.FC = () => {
               </motion.div>
             </AnimatePresence>
           )}
-          {/* Info of Selected Tab */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="absolute bottom-20 text-white mx-5 z-50"
-          >
-            <h2 className="text-3xl font-bold">{activeService.title}</h2>
-          </motion.div>
+         
 
+<div className="flex w-full absolute bottom-4 px-4 items-center justify-between">
           {/* Image Navigation Buttons */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleManualChange("prev")}
-            className="bg-white absolute bottom-4 left-4 flex space-x-2 z-50 bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
+            className="bg-white flex space-x-2 z-50 bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
           >
             <ChevronLeft />
           </motion.button>
+           {/* Info of Selected Tab */}
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-white mx-5 z-50 text-center"
+          >
+            <h2 className="text-3xl font-bold capitalize">{activeService.title}</h2>
+          </motion.div>
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleManualChange("next")}
-            className="bg-white absolute bottom-4 right-4 flex space-x-2 z-50 bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
+            className="bg-white flex space-x-2 z-50 bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
           >
             <ChevronRight />
           </motion.button>
+          </div>
 
           {/* Overlay Pattern */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-zinc-100/20 mix-blend-overlay" />
