@@ -10,7 +10,7 @@ const Loading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
 
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
@@ -28,46 +28,20 @@ const Loading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       {loading ? (
-        <div className="relative font-sans h-screen w-screen overflow-hidden flex items-center justify-center bg-white">
-          <Image
-            src="/loader-background.jpg"
-            alt="Loader Background"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-50 animate-pulse"
-          />
-
-
-          <div className="z-10 text-center">
-            <h1 className="text-7xl font-extrabold text-black font-sans mb-4 animate-bounce">
-              Loading
-              <span className="animate-pulse">.</span>
-              <span className="animate-pulse delay-100">.</span>
-              <span className="animate-pulse delay-200">.</span>
-            </h1>
-            
-            <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-black rounded-full transition-all duration-300 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
-
-          {/* Animated particles */}
-          {[...Array(20)].map((_, index) => (
-            <div
-              key={index}
-              className="absolute w-2 h-2 bg-white rounded-full animate-float"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 2}s`,
-                animationDelay: `${Math.random() * 2}s`
-              }}
-            />
-          ))}
-        </div>
+       <div className="flex items-center justify-center h-screen bg-white">
+       <div className="relative w-24 h-24">
+         {[...Array(3)].map((_, index) => (
+           <div
+             key={index}
+             className="absolute top-0 w-8 h-8 bg-black rounded-full"
+             style={{
+               left: `${index * 32}px`,
+               animation: `simpleJump 0.6s ${index * 0.15}s infinite alternate`
+             }}
+           />
+         ))}
+       </div>
+     </div>
       ) : (
         children
       )}

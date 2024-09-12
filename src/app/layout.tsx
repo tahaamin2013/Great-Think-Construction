@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import "./globals.css";
 import Menu from "@/components/Menu/Menu";
+import Loading from "@/components/Loader";
 
 // const mulish = Mulish({ subsets: ["latin"] });
 
@@ -22,17 +23,17 @@ export default function RootLayout({
       <body
         className={`antialiased px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
         >
-          <Menu />
         {/* <CustomCursor /> */}
         {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
-        {/* <Loading> */}
+        <Loading>
           <div className="sm:container">
+          <Menu />
           {/* <Navbar /> */}
           {children}
           <Footer />
           </div>
-          {/* </Loading> */}
+          </Loading>
         {/* </Suspense> */}
       </body>
     </html>

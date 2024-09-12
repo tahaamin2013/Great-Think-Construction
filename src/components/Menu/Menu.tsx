@@ -89,7 +89,7 @@ const Menu: React.FC = () => {
         services={exteriorServices}
         side={false}
       />
-      <div className="w-screen px-8 py-3 z-10 flex justify-between items-center bg-yellow-400">
+      <div className="w-full px-8 py-3 z-10 flex justify-between items-center bg-yellow-400">
         <div className="menu-logo">
           <Link
             href={"/"}
@@ -118,10 +118,10 @@ const Menu: React.FC = () => {
         </div>
 
         <div
-          className="menu-overlay fixed top-0 left-0 w-screen h-screen p-8 bg-yellow-400 z-20 flex"
+          className="menu-overlay fixed top-0 left-0 w-full h-screen p-8 bg-yellow-400 z-20 flex"
           style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
         >
-          <div className="menu-overlay-bar fixed top-0 left-0 w-screen px-8 py-3 z-10 flex justify-between items-center">
+          <div className="menu-overlay-bar fixed top-0 left-0 w-full px-8 py-3 z-10 flex justify-between items-center">
             <div className="menu-logo">
               <Link
                 href={"/"}

@@ -124,3 +124,8 @@ body {
 .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
   border-radius: 7px;
 }
+
+@keyframes simpleJump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
