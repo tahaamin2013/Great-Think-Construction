@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import Image from 'next/image'
+import Image from "next/image";
 import { MenuIcon, X } from "lucide-react";
 
 const menuLinks = [
@@ -18,7 +18,7 @@ const menuLinks = [
 const Menu: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const Logo = '/Logo v3.svg'
+  const Logo = "/Logo v3.svg";
 
   const tl = useRef<gsap.core.Timeline | null>(null);
 
@@ -59,36 +59,93 @@ const Menu: React.FC = () => {
   return (
     <div className="relative z-[60]" ref={container}>
       <div className="fixed top-0 left-0 w-screen px-8 py-3 z-10 flex justify-between items-center bg-yellow-400">
-      <div className="menu-logo">
-          <Link href={"/"} className="text-white cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center">
-          <Image src={Logo} alt="Great Think Construction Logo" width={80} height={80} className="mr-2" />
+        <div className="menu-logo">
+          <Link
+            href={"/"}
+            className="text-white cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center"
+          >
+            <Image
+              src={Logo}
+              alt="Great Think Construction Logo"
+              width={80}
+              height={80}
+              className="mr-2"
+            />
           </Link>
         </div>
-        <div className="menu-open" onClick={toggleMenu}>
-          <p className="text-white cursor-pointer font-sans text-lg font-medium uppercase tracking-wide"><MenuIcon /></p>
+        <div className="text-center flex flex-col items-center justify-center gap-0">
+          <p className="text-3xl font-bold text-center -mb-2">Great Think</p>
+          <p className="font-semibold text-xs">Construction Corp.</p>
+          <div className="h-[0.05rem] w-full bg-black" />
+          <span className="text-[0.45rem]">NEW YORK STATE</span>
         </div>
-        <div className="menu-overlay fixed top-0 left-0 w-screen h-screen p-8 bg-yellow-400 z-20 flex" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}>
-        <div className="menu-overlay-bar fixed top-0 left-0 w-screen px-8 py-3 z-10 flex justify-between items-center">
-          <div className="menu-logo">
-            <Link href={"/"} className="text-black cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center">
-            <Image src={Logo} alt="Great Think Construction Logo" width={80} height={80} className="mr-2" />
-            {/* Great Think Construction */}
-            </Link>
-          </div>
+
+        <div className="menu-open" onClick={toggleMenu}>
+          <p className="text-white cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
+            <MenuIcon />
+          </p>
+        </div>
+        <div
+          className="menu-overlay fixed top-0 left-0 w-screen h-screen p-8 bg-yellow-400 z-20 flex"
+          style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
+        >
+          <div className="menu-overlay-bar fixed top-0 left-0 w-screen px-8 py-3 z-10 flex justify-between items-center">
+            <div className="menu-logo">
+              <Link
+                href={"/"}
+                className="text-black cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center"
+              >
+                <Image
+                  src={Logo}
+                  alt="Great Think Construction Logo"
+                  width={80}
+                  height={80}
+                  className="mr-2"
+                />
+                {/* Great Think Construction */}
+              </Link>
+            </div>
+            <div className="text-center flex flex-col items-center justify-center gap-0">
+              <p className="text-3xl font-bold text-center -mb-2">
+                Great Think
+              </p>
+              <p className="font-semibold text-xs">Construction Corp.</p>
+              <div className="h-[0.05rem] w-full bg-black" />
+              <span className="text-[0.45rem]">NEW YORK STATE</span>
+            </div>{" "}
             <div className="menu-close" onClick={toggleMenu}>
-              <p className="text-black cursor-pointer font-sans text-lg font-medium uppercase tracking-wide"><X /></p>
+              <p className="text-black cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
+                <X />
+              </p>
             </div>
           </div>
 
           <div className="menu-close-icon flex-[2] flex items-end cursor-pointer">
-            <p className="text-[100px] leading-[70%] font-light" onClick={toggleMenu}>&#x2715;</p>
+            <p
+              className="text-[100px] leading-[70%] font-light"
+              onClick={toggleMenu}
+            >
+              &#x2715;
+            </p>
           </div>
           <div className="menu-copy flex-[4] flex flex-col justify-between pt-8">
             <div className="menu-links">
               {menuLinks.map((link) => (
-                <div className="menu-link-item w-max" key={link.label} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}>
-                  <div className="menu-link-item-holder relative" onClick={toggleMenu}>
-                    <Link href={link.path} className="text-black text-[72px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors">
+                <div
+                  className="menu-link-item w-max"
+                  key={link.label}
+                  style={{
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <div
+                    className="menu-link-item-holder relative"
+                    onClick={toggleMenu}
+                  >
+                    <Link
+                      href={link.path}
+                      className="text-black text-[72px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
+                    >
                       {link.label}
                     </Link>
                   </div>
@@ -97,8 +154,12 @@ const Menu: React.FC = () => {
             </div>
             <div className="menu-info flex">
               <div className="menu-info-col flex-1 flex flex-col justify-end">
-                <p className="text-black font-sans text-base font-medium">info@nextjsxgsap.com</p>
-                <p className="text-black font-sans text-base font-medium">(718) 666-9256</p>
+                <p className="text-black font-sans text-base font-medium">
+                  greatthinkconstruction92@gmail.com
+                </p>
+                <p className="text-black font-sans text-base font-medium">
+                  (718) 666-9256
+                </p>
               </div>
             </div>
           </div>
