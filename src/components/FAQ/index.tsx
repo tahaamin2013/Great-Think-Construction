@@ -93,7 +93,7 @@ const FAQSection: React.FC = () => {
   return (
     <div className="bg-zinc-900 text-white p-6 md:p-12 rounded-3xl flex flex-col-reverse md:flex-row gap-8 md:gap-12 relative">
       <motion.div
-        className="rounded-2xl h-96 w-full md:w-1/2 overflow-hidden relative"
+        className="rounded-2xl sm:h-96 h-72 w-full md:w-1/2 overflow-hidden relative"
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 300 }}
       >

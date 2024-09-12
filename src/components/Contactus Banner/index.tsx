@@ -11,8 +11,7 @@ const ContactUsBanner = () => {
           <div className="flex-grow space-y-4 text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Contact Us Now</h2>
             <p className="text-sm sm:text-base">
-              Duis aute irure dolor in reprehenderit in voluptate 
-              <br className="hidden sm:inline" /> velit esse cillum dolore eu fugiat nulla pariatur.
+            Contact Great Think Construction for questions or a custom quote. <br /> Let's build something great!
             </p>
             <Link
             href="/request-estimate"
@@ -27,7 +26,7 @@ const ContactUsBanner = () => {
 
             <div className="flex items-center justify-center lg:justify-start">
               <PhoneCall className="w-5 h-5 mr-2" />
-              <span>(718) 666-9256</span>
+              <Link href="tel:+17186669256">(718) 666-9256</Link>
             </div>
           </div>
           <div className="hidden lg:block relative w-60 h-60 mt-8 lg:mt-0 lg:ml-8">

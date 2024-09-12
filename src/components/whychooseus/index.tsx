@@ -77,11 +77,13 @@ const WhyChooseUs = () => {
           <p ref={paragraphRef} className="text-gray-600 text-sm sm:text-base mb-2">
             At Great Think Construction Corp, we offer a wide range of services from masonry and concrete work to painting and home improvements. Our experienced team ensures top-notch results in every project, big or small. We pride ourselves on our attention to detail and ability to provide full-service solutions tailored to your specific needs.
           </p>
-          <Link href="/our-services" className="w-fit">
-            <button ref={buttonRef} className="bg-red-600 text-white px-4 sm:px-6 py-2 rounded-full hover:bg-red-700 transition text-sm sm:text-base">
-              Explore Our Services
-            </button>
-          </Link>
+          
+          <Link href="/our-services" className="w-fit mt-2">
+  <button ref={buttonRef} className="bg-red-600 text-white px-4 sm:px-6 py-2 rounded-full hover:bg-red-700 transition text-sm sm:text-base mt-4">
+    Explore Our Services
+  </button>
+</Link>
+
 
           <div ref={statsRef} className="flex justify-between mt-6 sm:mt-8 w-full bg-white rounded-2xl py-6 sm:py-8 px-4 sm:px-8 lg:px-16">
             {['Services Offered', 'Client Satisfaction'].map((item, index) => (

@@ -15,9 +15,10 @@ export const services = [
       "/block_and_bricks_work/2.webp",
       "/block_and_bricks_work/3.webp",
     ],
-    title: "Block and Bricks Work",
+    blurhash: ["/block_and_bricks_work/1.webp"],
+    title: "Block & Bricks Work",
     description:
-      "Expertise in laying and constructing block and brick structures.",
+      "Expertise in laying & constructing block & brick structures.",
     category: "brickwork-masonry",
   },
   {
@@ -43,21 +44,21 @@ export const services = [
     images: ["/brick-fence/1.webp", "/brick-fence/2.webp"],
     title: "Brick Fence",
     description:
-      "Durable and stylish brick fences for residential and commercial properties.",
+      "Durable & stylish brick fences for residential & commercial properties.",
     category: "brickwork-masonry",
   },
   {
     images: ["/brick_fence_and_steps_and_pavers/1.mp4"],
-    title: "Brick Fence and Steps and Pavers",
+    title: "Brick Fence & Steps & Pavers",
     description:
-      "Comprehensive services including brick fences, steps, and pavers.",
+      "Comprehensive services including brick fences, steps, & pavers.",
     category: "brickwork-masonry",
   },
   {
     images: ["/brick_porch_and_tile_and_steps_and_plaster_and_railing/1.webp"],
-    title: "Brick Porch and Tile and Steps and Plaster and Railing",
+    title: "Brick Porch & Tile & Steps & Plaster & Railing",
     description:
-      "Complete porch solutions with brick, tile, steps, plaster, and railing.",
+      "Complete porch solutions with brick, tile, steps, plaster, & railing.",
     category: "brickwork-masonry",
   },
   {
@@ -79,15 +80,15 @@ export const services = [
   },
   {
     images: ["/steps-and-pavers/2.webp", "/steps-and-pavers/1.webp"],
-    title: "Steps and Pavers",
-    description: "Custom steps and pavers for walkways and patios.",
+    title: "Steps & Pavers",
+    description: "Custom steps & pavers for walkways & patios.",
     category: "brickwork-masonry",
   },
   {
     images: ["/steps-and-porch/1.webp"],
-    title: "Steps and Porch",
+    title: "Steps & Porch",
     description:
-      "Beautiful steps and porch designs using high-quality materials.",
+      "Beautiful steps & porch designs using high-quality materials.",
     category: "brickwork-masonry",
   },
   {
@@ -97,8 +98,8 @@ export const services = [
       "/walkway-and-steps/3.webp",
       "/walkway-and-steps/4.webp",
     ],
-    title: "Walkway and Steps",
-    description: "Elegant walkways and steps tailored to your needs.",
+    title: "Walkway & Steps",
+    description: "Elegant walkways & steps tailored to your needs.",
     category: "brickwork-masonry",
   },
   {
@@ -110,7 +111,7 @@ export const services = [
     ],
     title: "Pointing",
     description:
-      "Restoring and repairing mortar joints for enhanced durability.",
+      "Restoring & repairing mortar joints for enhanced durability.",
     category: "brickwork-masonry",
   },
   {
@@ -121,7 +122,7 @@ export const services = [
     ],
     title: "Brick Pointing",
     description:
-      "Restoring and repairing mortar joints for enhanced durability.",
+      "Restoring & repairing mortar joints for enhanced durability.",
     category: "brickwork-masonry",
   },
   {
@@ -160,14 +161,14 @@ export const services = [
   {
     images: ["/flat-roof/1.webp"],
     title: "Flat Roof",
-    description: "Expert installation and repair of flat roofing systems.",
+    description: "Expert installation & repair of flat roofing systems.",
     category: "cement-concrete",
   },
   {
     images: ["/steps-and-tile-works/1.webp"],
-    title: "Steps and Tile Works",
+    title: "Steps & Tile Works",
     description:
-      "Custom tile work for steps, enhancing aesthetics and durability.",
+      "Custom tile work for steps, enhancing aesthetics & durability.",
     category: "cement-concrete",
   },
 
@@ -179,7 +180,7 @@ export const services = [
       "/paint/4.webp",
     ],
     title: "Paint",
-    description: "Interior and exterior paint services with precision.",
+    description: "Interior & exterior paint services with precision.",
     category: "painting-waterproofing",
   },
   {
@@ -243,8 +244,8 @@ export const services = [
     images: [
       "/pvc_fence_and_pavers/1.webp",
     ],
-    title: "PVC Fence and Pavers",
-    description: "Durable and stylish PVC fences with paver installations.",
+    title: "PVC Fence & Pavers",
+    description: "Durable & stylish PVC fences with paver installations.",
     category: "deck-fencing",
   },
   {
@@ -254,7 +255,7 @@ export const services = [
       "/fence/4.webp",
     ],
     title: "Fence",
-    description: "Durable and stylish fences installations.",
+    description: "Durable & stylish fences installations.",
     category: "deck-fencing",
   },
   {
@@ -262,13 +263,13 @@ export const services = [
       "/pvc_gate/1.webp",
     ],
     title: "PVC Gate",
-    description: "Secure and durable PVC gates for residential properties.",
+    description: "Secure & durable PVC gates for residential properties.",
     category: "deck-fencing",
   },
   {
     images: ["/single_roof_and_gutters/1.webp"],
-    title: "Single Roof and Gutters",
-    description: "High-quality roofing and gutter systems for single homes.",
+    title: "Single Roof & Gutters",
+    description: "High-quality roofing & gutter systems for single homes.",
     category: "roofing-gutters",
   },
   {
@@ -285,8 +286,8 @@ export const services = [
   },
   {
     images: ["/sidings-and-gutters/1.mp4"],
-    title: "Sidings and Gutters",
-    description: "Complete siding and gutter services for enhanced protection.",
+    title: "Sidings & Gutters",
+    description: "Complete siding & gutter services for enhanced protection.",
     category: "roofing-gutters",
   },
   {
@@ -302,7 +303,7 @@ export const services = [
     images: ["/change-the-lantern/1.webp"],
     title: "Change the Lantern",
     description:
-      "Replacing lanterns for outdoor lighting and aesthetic improvement.",
+      "Replacing lanterns for outdoor lighting & aesthetic improvement.",
     category: "miscellaneous",
   },
   {
@@ -312,9 +313,9 @@ export const services = [
       "/AngleLine/3.webp",
       "/AngleLine/4.webp",
     ],
-    title: "Angle Line Power Wash and Pointing",
+    title: "Angle Line Power Wash & Pointing",
     description:
-      "Power washing and pointing services for exterior cleaning and restoration.",
+      "Power washing & pointing services for exterior cleaning & restoration.",
     category: "miscellaneous",
   },
   {
@@ -327,7 +328,7 @@ export const services = [
       "/pavers/6.webp",
     ],
     title: "Pavers",
-    description: "Installation of pavers for walkways, patios, and driveways.",
+    description: "Installation of pavers for walkways, patios, & driveways.",
     category: "miscellaneous",
   },
   {
@@ -336,13 +337,13 @@ export const services = [
     ],
     title: "Pavers Driveway",
     description:
-      "Installation of pavers driveway for walkways, patios, and driveways.",
+      "Installation of pavers driveway for walkways, patios, & driveways.",
     category: "miscellaneous",
   },
   {
     images: ["/steps-and-patio/1.webp"],
-    title: "Steps and Patio",
-    description: "Custom steps and patios for enhanced outdoor spaces.",
+    title: "Steps & Patio",
+    description: "Custom steps & patios for enhanced outdoor spaces.",
     category: "miscellaneous",
   },
   {
@@ -361,7 +362,7 @@ export const services = [
     ],
     title: "Stone Work",
     description:
-      "Expert stonework for a variety of construction and design needs.",
+      "Expert stonework for a variety of construction & design needs.",
     category: "miscellaneous",
   },
 
@@ -369,7 +370,7 @@ export const services = [
     images: ["/tile-work/1.webp", "/tile-work/2.webp", "/tile-work/3.mp4"],
     title: "Tile Work",
     description:
-      "Professional tile installation and repair services for both residential and commercial properties.",
+      "Professional tile installation & repair services for both residential & commercial properties.",
     category: "brickwork-masonry",
   },
   {
@@ -381,14 +382,14 @@ export const services = [
     ],
     title: "Steps",
     description:
-      "Custom-built steps for improved accessibility and aesthetic appeal.",
+      "Custom-built steps for improved accessibility & aesthetic appeal.",
     category: "brickwork-masonry",
   },
   {
     images: ["/steps-with-rizer/1.webp"],
     title: "Steps With Riser",
     description:
-      "Custom-built steps for improved accessibility and aesthetic appeal.",
+      "Custom-built steps for improved accessibility & aesthetic appeal.",
     category: "brickwork-masonry",
   },
   {
@@ -399,7 +400,7 @@ export const services = [
     ],
     title: "Side Walk",
     description:
-      "Durable and well-designed sidewalks for safe pedestrian access.",
+      "Durable & well-designed sidewalks for safe pedestrian access.",
     category: "cement-concrete",
   },
   {
@@ -408,35 +409,35 @@ export const services = [
     ],
     title: "Sealer",
     description:
-      "High-quality sealing services to protect and enhance various surfaces.",
+      "High-quality sealing services to protect & enhance various surfaces.",
     category: "painting-waterproofing",
   },
   {
     images: ["/wet-lock-sealer/1.mp4"],
     title: "Wet Lock Sealer",
     description:
-      "High-quality Wet Lock sealing services to protect and enhance various surfaces.",
+      "High-quality Wet Lock sealing services to protect & enhance various surfaces.",
     category: "painting-waterproofing",
   },
   {
     images: ["/awning/1.webp"],
     title: "Awning",
     description:
-      "Stylish and functional awnings to provide shade and protect from the elements.",
+      "Stylish & functional awnings to provide shade & protect from the elements.",
     category: "roofing-gutters",
   },
   {
     images: ["/pvc_fence_gray/1.webp"],
     title: "PVC Fence Gray",
     description:
-      "Durable PVC gray fence, perfect for adding privacy and style to any outdoor space.",
+      "Durable PVC gray fence, perfect for adding privacy & style to any outdoor space.",
     category: "deck-fencing",
   },
   {
     images: ["/grandin_pointing/1.webp"],
     title: "Grandin Pointing",
     description:
-      "delivers expert mortar work to strengthen and enhance brickwork.",
+      "delivers expert mortar work to strengthen & enhance brickwork.",
     category: "brickwork-masonry",
   },
 ];

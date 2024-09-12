@@ -92,9 +92,9 @@ const Navbar = () => {
               <PiChatsTeardropFill className="h-6 w-6 mr-2 text-yellow-600" />
               <div>
                 <p className="text-xs font-medium">Need Help?</p>
-                <p className="text-sm font-bold">
+                <Link href="tel:+17186669256" className="text-sm font-bold">
                 (718) 666-9256
-                </p>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -157,9 +157,9 @@ const Navbar = () => {
                   <p className="text-xs font-medium text-gray-700">
                     Need Help?
                   </p>
-                  <p className="text-sm font-bold text-gray-900">
+                  <Link href="tel:+17186669256" className="text-sm font-bold text-gray-900">
                   (718) 666-9256
-                  </p>
+                  </Link>
                 </div>
               </div>
             </div>

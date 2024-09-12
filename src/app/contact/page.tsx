@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const Contact = () => {
 
@@ -73,7 +74,7 @@ const Contact = () => {
         {/* New section for contact details */}
         <div className="w-full mb-8 p-4 bg-gray-100 rounded-lg">
           <h2 className="text-xl font-bold text-gray-800 mb-4">Our Contact Information</h2>
-          <p className="text-gray-600"><strong>Phone:</strong> (718) 666-9256</p>
+          <Link href="tel:+17186669256" className="text-gray-600"><strong>Phone:</strong> (718) 666-9256</Link>
           <p className="text-gray-600"><strong>Email:</strong> greatthinkconstruction92@gmail.com</p>
           <p className="text-gray-600"><strong>Address:</strong> 777 East 31st Street, Brooklyn, NY</p>
         </div>

@@ -31,8 +31,7 @@ const Footer: React.FC = () => {
             Great Think Cons.
           </h2>
           <p className="mb-4 text-gray-400 text-sm">
-            The point of using is that it has a more-or-less normal of letters,
-            as opposed
+          Great things start here! Reach out now!
           </p>
           <div className="flex items-center">
             <input
@@ -80,15 +79,14 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                "About Us",
-                "Service",
-                "Project",
-                "Blog & News",
-                "Contact Us",
-              ].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    — {item}
+                {label: "About Us", path: "/about"},
+                {label: "Services", path: "/our-services"},
+                {label: "Blog & News", path: "/blogs"},
+                {label: "Contact Us", path: "/contact"},
+              ].map((item, index) => (
+                <li key={index}>
+                  <Link href={item.path} className="text-gray-400 hover:text-white">
+                    — {item.label}
                   </Link>
                 </li>
               ))}
@@ -131,7 +129,7 @@ const Footer: React.FC = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span>(718) 666-9256</span>
+                <Link href="tel:+17186669256">(718) 666-9256</Link>
               </li>
               <li className="flex items-center">
                 <svg

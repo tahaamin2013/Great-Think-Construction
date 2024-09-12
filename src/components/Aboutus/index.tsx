@@ -79,7 +79,7 @@ const AboutUs: React.FC = () => {
             {/* Image Section */}
             <div ref={imageRef} className="lg:w-1/2">
               <Image
-                src="/author.png"
+                src="/author2.jpg"
                 alt="Construction CEO"
                 width={800}
                 height={800}
@@ -128,8 +128,9 @@ const AboutUs: React.FC = () => {
                 <div className="flex items-center">
                   <Phone className="h-10 w-10 text-gray-400 mr-3" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500">Contact Us</p>
-                    <p className="text-lg font-bold text-gray-900">(718) 666-9256</p>
+                    <p className="text-xs font-medium text-gray-500">Call, Text or Whatsapp us
+</p>
+<Link href="tel:+17186669256" className="text-lg font-bold text-gray-900">(718) 666-9256</Link>
                   </div>
                 </div>
               </div>

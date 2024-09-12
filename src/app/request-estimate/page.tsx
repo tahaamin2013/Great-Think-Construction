@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBuilding, FaUserAlt, FaClipboardList, FaFileContract } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ConstructionInfo: React.FC = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -144,8 +145,8 @@ const ConstructionInfo: React.FC = () => {
         >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="tel:+17186669256" className="text-teal-600 hover:text-teal-800 transition duration-300">+1 (718) 666-9256</a>
-            <a href="mailto:info@greatthink.com" className="text-teal-600 hover:text-teal-800 transition duration-300">info@greatthink.com</a>
+            <Link href="tel:+17186669256" className="text-teal-600 hover:text-teal-800 transition duration-300">+1 (718) 666-9256</Link>
+            <Link href="mailto:info@greatthink.com" className="text-teal-600 hover:text-teal-800 transition duration-300">info@greatthink.com</Link>
             <button className="text-teal-600 hover:text-teal-800 transition duration-300">Live Chat</button>
           </div>
         </motion.div>

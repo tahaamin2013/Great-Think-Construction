@@ -191,9 +191,9 @@ const Menu: React.FC = () => {
                 <p className="text-black font-sans text-base font-medium">
                   greatthinkconstruction92@gmail.com
                 </p>
-                <p className="text-black font-sans text-base font-medium">
+                <Link href="tel:+17186669256" className="text-black font-sans text-base font-medium">
                   (718) 666-9256
-                </p>
+                </Link>
               </div>
             </div>
           </div>
