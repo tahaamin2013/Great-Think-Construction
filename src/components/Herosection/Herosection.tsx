@@ -2,8 +2,9 @@
 
 import { services } from "@/store/Constructionservices";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
 
 interface Service {
@@ -68,11 +69,51 @@ const Herosection: React.FC = () => {
       className="container mx-auto px-4 sm:px-6 lg:px-8 my-10 relative overflow-hidden"
     >
       {/* Background Patterns */}
-      {/* ... (keep the background patterns as they were) ... */}
-
+      <motion.div
+        animate={{ scale: [1, 1.1, 1], rotate: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute top-0 left-0 w-24 h-24 bg-red-100 opacity-50 rounded-full -translate-x-1/2 -translate-y-1/2"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.1, 1], rotate: [0, -10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-0 right-0 w-32 h-32 bg-blue-100 opacity-50 rounded-full translate-x-1/2 translate-y-1/2"
+      />
+      
       <div className="flex flex-col-reverse lg:flex-row sm:gap-6 gap-0 relative">
-        {/* Left Section */}
-        {/* ... (keep the left section as it was) ... */}
+ {/* Left Section */}
+ <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-full lg:w-1/2 bg-white p-6 sm:p-10 lg:p-16 rounded-3xl flex flex-col items-start justify-center gap-5 relative lg:pb-0 pb-14 mt-6 lg:mt-0"
+        >
+          <motion.span whileHover={{ scale: 1.05 }} className="px-3 py-2 bg-red-500 rounded-full text-white text-sm sm:text-base">
+            All in One Renovation
+          </motion.span>
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-black leading-tight">
+            Great Think Construction Corp.
+          </h1>
+          <p className="text-sm sm:text-base">
+            Insured & Licensed NYS LIC#&apos;s 2009603
+          </p>
+          {/* Call to Action */}
+          <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-200">
+            <Link href="/request-estimate" className="w-fit">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-semibold flex items-center transition duration-300 ease-in-out transform hover:scale-105">
+                GET A FREE ESTIMATE
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+            </Link>
+            <div className="flex items-center">
+              < Phone className="h-10 w-10 text-gray-400 mr-3" />
+              <div>
+                <p className="text-xs font-medium text-gray-500">Call, Text or Whatsapp us</p>
+                <p className="text-lg font-bold text-gray-900">(718) 666-9256</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Right Section */}
         <div className="w-full lg:w-[54%] h-full relative overflow-hidden">

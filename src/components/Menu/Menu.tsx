@@ -10,10 +10,10 @@ import ServiceBar from "../servicesbar/ServicesETSection";
 
 const menuLinks = [
   { path: "/", label: "Home" },
-  { path: "/work", label: "Work" },
+  { path: "/request-estimate", label: "Request Estimate" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
-  { path: "/lab", label: "Lab" },
+  { path: "/our-services", label: "Services" },
 ];
 
 const exteriorServices = [
@@ -105,8 +105,8 @@ const Menu: React.FC = () => {
           </Link>
         </div>
         <div className="text-center flex flex-col items-center justify-center gap-0">
-          <p className="text-3xl font-bold text-center -mb-2 uppercase">Great Think</p>
-          <p className="font-semibold text-xs">Construction Corp.</p>
+          <p className="text-3xl font-bold text-center -mb-2 uppercase leading-6">Great Think</p>
+          <p className="font-semibold text-xs mt-2">Construction Corp.</p>
           <div className="h-[0.05rem] w-full bg-black" />
           <span className="text-[0.45rem]">NEW YORK STATE</span>
         </div>

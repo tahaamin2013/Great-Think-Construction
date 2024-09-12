@@ -1,14 +1,13 @@
 "use client";
-import React, { useRef, useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import { services, furtherCategories } from "@/store/Constructionservices";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 import MediaItem from "@/components/Services/MediaItem";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { furtherCategories, services } from "@/store/Constructionservices";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import React, { useRef, useState } from "react";
 import Pagination from "../Pagination";
 import { Button } from "../ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface ServiceItem {
   images: string[];
