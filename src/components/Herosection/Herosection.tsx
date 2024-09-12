@@ -37,6 +37,47 @@ const Herosection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  const [currentImage, setCurrentImage] = useState<string | null>(null);
+  const [nextImage, setNextImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadImage = (src: string) => {
+      return new Promise((resolve, reject) => {
+        const img = new window.Image();
+        img.src = src;
+        img.onload = () => resolve(src);
+        img.onerror = reject;
+      });
+    };
+
+    const preloadNextImage = async () => {
+      const nextIndex = (activeServiceIndex + 1) % filteredServices.length;
+      const nextImageSrc = filteredServices[nextIndex].images[0];
+      try {
+        await loadImage(nextImageSrc);
+        setNextImage(nextImageSrc);
+      } catch (error) {
+        console.error("Failed to preload next image:", error);
+      }
+    };
+
+    const loadCurrentImage = async () => {
+      const currentImageSrc = filteredServices[activeServiceIndex].images[0];
+      try {
+        await loadImage(currentImageSrc);
+        setCurrentImage(currentImageSrc);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Failed to load current image:", error);
+        setIsLoading(false);
+      }
+    };
+
+    setIsLoading(true);
+    loadCurrentImage();
+    preloadNextImage();
+  }, [activeServiceIndex, filteredServices]);
+
   const changeImage = useCallback((direction: "next" | "prev") => {
     setActiveServiceIndex((prevIndex) => {
       if (direction === "next") {
@@ -87,7 +128,7 @@ const Herosection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 sm:px-6 lg:px-8 my-10 mt-24 relative overflow-hidden"
+      className="container mx-auto px-4 sm:px-6 lg:px-8 my-10 relative overflow-hidden"
     >
       {/* Background Patterns */}
       <motion.div
@@ -189,42 +230,28 @@ const Herosection: React.FC = () => {
 
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full lg:w-[54%] h-full relative overflow-hidden"
-        >
-          {isLoading ? (
-            <Skeleton />
-          ) : (
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeServiceIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="w-full sm:h-[650px] h-[350px] relative"
-              >
-                <Image
-                  src={activeService.images[0]}
-                  alt={activeService.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-3xl transition-opacity duration-500"
-                  style={{
-                    WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
-                    maskImage: "url('/clip_shape_of_herosection.png')",
-                    WebkitMaskSize: "cover",
-                    maskSize: "cover",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskRepeat: "no-repeat",
-                  }}
-                />
-              </motion.div>
-            </AnimatePresence>
-          )}
+        <div className="w-full lg:w-[54%] h-full relative overflow-hidden">
+      {isLoading && !currentImage ? (
+        <Skeleton />
+      ) : (
+        <div className="w-full sm:h-[650px] h-[350px] relative">
+          <Image
+            src={currentImage || filteredServices[activeServiceIndex].images[0]}
+            alt={filteredServices[activeServiceIndex].title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-3xl"
+            style={{
+              WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
+              maskImage: "url('/clip_shape_of_herosection.png')",
+              WebkitMaskSize: "cover",
+              maskSize: "cover",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+            }}
+          />
+        </div>
+      )}
          
 
 <div className="flex w-full absolute bottom-4 px-4 items-center justify-between">
@@ -260,7 +287,7 @@ const Herosection: React.FC = () => {
 
           {/* Overlay Pattern */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-zinc-100/20 mix-blend-overlay" />
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

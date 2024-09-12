@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { MenuIcon, X } from "lucide-react";
+import ServiceBar from "../servicesbar/ServicesETSection";
 
 const menuLinks = [
   { path: "/", label: "Home" },
@@ -13,6 +14,31 @@ const menuLinks = [
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
   { path: "/lab", label: "Lab" },
+];
+
+const exteriorServices = [
+  "Roofing",
+  "Pointing",
+  "Concrete",
+  "Fence",
+  "Vinyl Fence",
+  "Steps",
+  "Sidewalks",
+  "Extensions",
+  "Brick-Block Porch",
+  "Waterproofing",
+  "Paving Stone",
+  "Gutters",
+  "Kitchen",
+  "Bathroom",
+  "Plumbing",
+  "Electric",
+  "Doors",
+  "Windows",
+  "Flooring",
+  "Basement Finish",
+  "California Stucco",
+  "Renovation",
 ];
 
 const Menu: React.FC = () => {
@@ -57,8 +83,13 @@ const Menu: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="relative z-[60]" ref={container}>
-      <div className="fixed top-0 left-0 w-screen px-8 py-3 z-10 flex justify-between items-center bg-yellow-400">
+    <div className="z-[60] sticky top-0 left-0" ref={container}>
+      <ServiceBar
+        title="Exterior Work"
+        services={exteriorServices}
+        side={false}
+      />
+      <div className="w-screen px-8 py-3 z-10 flex justify-between items-center bg-yellow-400">
         <div className="menu-logo">
           <Link
             href={"/"}
@@ -74,7 +105,7 @@ const Menu: React.FC = () => {
           </Link>
         </div>
         <div className="text-center flex flex-col items-center justify-center gap-0">
-          <p className="text-3xl font-bold text-center -mb-2">Great Think</p>
+          <p className="text-3xl font-bold text-center -mb-2 uppercase">Great Think</p>
           <p className="font-semibold text-xs">Construction Corp.</p>
           <div className="h-[0.05rem] w-full bg-black" />
           <span className="text-[0.45rem]">NEW YORK STATE</span>
@@ -85,6 +116,7 @@ const Menu: React.FC = () => {
             <MenuIcon />
           </p>
         </div>
+
         <div
           className="menu-overlay fixed top-0 left-0 w-screen h-screen p-8 bg-yellow-400 z-20 flex"
           style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
@@ -106,7 +138,7 @@ const Menu: React.FC = () => {
               </Link>
             </div>
             <div className="text-center flex flex-col items-center justify-center gap-0">
-              <p className="text-3xl font-bold text-center -mb-2">
+              <p className="text-3xl font-bold text-center -mb-2 uppercase">
                 Great Think
               </p>
               <p className="font-semibold text-xs">Construction Corp.</p>
@@ -128,6 +160,7 @@ const Menu: React.FC = () => {
               &#x2715;
             </p>
           </div>
+
           <div className="menu-copy md:flex-[4] flex-[9] flex flex-col justify-between gap-18 pt-14 mb-16">
             <div className="menu-links">
               {menuLinks.map((link) => (

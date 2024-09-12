@@ -31,20 +31,7 @@ const ServiceBar: React.FC<ServiceBarProps> = ({ title, services, side }) => {
   return (
     <div className="relative">
       <div
-        className={`flex items-center absolute bottom-[0.00rem] ${
-          side ? "justify-end" : "justify-start"
-        }`}
-      >
-        <div
-          className={`py-2 px-4 bg-gradient-to-br from-orange-500 to-yellow-600 text-white font-bold text-xl whitespace-nowrap ${
-            side ? "rounded-l-xl" : "rounded-r-xl"
-          }`}
-        >
-          {title}
-        </div>
-      </div>
-      <div
-        className={`bg-gradient-to-r from-black to-zinc-800 text-white w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl flex`}
+        className={`bg-gradient-to-r from-black to-zinc-800 text-white w-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex`}
       >
         <div
           ref={containerRef}
@@ -54,7 +41,7 @@ const ServiceBar: React.FC<ServiceBarProps> = ({ title, services, side }) => {
             {services.map((service, index) => (
               <span
                 key={index}
-                className="inline-block mx-4 text-2xl font-medium text-white transition-all duration-300"
+                className="inline-block mx-4 text-md font-semibold text-white transition-all duration-300"
               >
                 {service}
               </span>
@@ -64,7 +51,7 @@ const ServiceBar: React.FC<ServiceBarProps> = ({ title, services, side }) => {
             {services.map((service, index) => (
               <span
                 key={`duplicate-${index}`}
-                className="inline-block mx-4 text-2xl font-medium text-white transition-all duration-300"
+                className="inline-block mx-4 text-md font-semibold text-white transition-all duration-300"
               >
                 {service}
               </span>
