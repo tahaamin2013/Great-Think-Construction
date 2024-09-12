@@ -87,7 +87,7 @@ const Herosection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 sm:px-6 lg:px-8 my-5 relative overflow-hidden"
+      className="container mx-auto px-4 sm:px-6 lg:px-8 my-10 mt-24 relative overflow-hidden"
     >
       {/* Background Patterns */}
       <motion.div

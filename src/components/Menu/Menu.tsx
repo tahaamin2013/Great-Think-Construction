@@ -62,7 +62,7 @@ const Menu: React.FC = () => {
         <div className="menu-logo">
           <Link
             href={"/"}
-            className="text-white cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center"
+            className="cursor-pointer font-sans text-xl font-semibold tracking-tight flex items-center"
           >
             <Image
               src={Logo}
@@ -81,7 +81,7 @@ const Menu: React.FC = () => {
         </div>
 
         <div className="menu-open" onClick={toggleMenu}>
-          <p className="text-white cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
+          <p className="cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
             <MenuIcon />
           </p>
         </div>
@@ -120,7 +120,7 @@ const Menu: React.FC = () => {
             </div>
           </div>
 
-          <div className="menu-close-icon flex-[2] flex items-end cursor-pointer">
+          <div className="menu-close-icon flex-[2] mb-16 flex items-end cursor-pointer">
             <p
               className="text-[100px] leading-[70%] font-light"
               onClick={toggleMenu}
@@ -128,7 +128,7 @@ const Menu: React.FC = () => {
               &#x2715;
             </p>
           </div>
-          <div className="menu-copy flex-[4] flex flex-col justify-between pt-8">
+          <div className="menu-copy md:flex-[4] flex-[9] flex flex-col justify-between gap-18 pt-14 mb-16">
             <div className="menu-links">
               {menuLinks.map((link) => (
                 <div
