@@ -1,12 +1,13 @@
 import React from 'react';
 import { Building2, Target, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <header className="mb-16">
-          <h1 className="text-6xl font-extrabold text-gray-900 mb-4">
+          <h1 className="sm:text-6xl text-4xl font-extrabold text-gray-900 mb-4">
             Great Think <span className="text-yellow-600">Construction</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">Building tomorrow&apos;s landmarks with today&apos;s innovation.</p>
@@ -44,10 +45,10 @@ const AboutUs = () => {
 
         <div className="text-center">
 
-          <button className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors duration-300 flex items-center mx-auto group">
+          <Link href="/contact" className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold w-fit hover:bg-red-700 transition-colors duration-300 flex items-center mx-auto group">
             Let&apos;s build your project
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={24} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

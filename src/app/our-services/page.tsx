@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import { services, furtherCategories } from "@/store/Constructionservices";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 import MediaItem from "@/components/Services/MediaItem";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { furtherCategories, services } from "@/store/Constructionservices";
+import React, { useState } from "react";
 
 interface ServiceItem {
   images: string[];
@@ -51,27 +50,17 @@ const ServiceCard: React.FC<ServiceItem & { isActive: boolean }> = ({
   );
 };
 
-const Home: React.FC = () => {
+const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+
   const filteredServices =
-    activeCategory === "all"
-      ? services
-      : services.filter((service) => service.category === activeCategory);
+  activeCategory === "all"
+    ? services
+    : services.filter((service) => service.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Head>
-        <title>Modern Design Services</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Modern Design Services</h1>
-          <p className="text-xl">
-            Transform your space with our expert solutions
-          </p>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gray-100 py-4">
+      <h1 className="text-5xl font-bold mb-4 text-center">Our Services</h1>
 
       <main className="container mx-auto px-4 py-12">
         <div className="mb-8 flex flex-wrap justify-center gap-4">
@@ -81,7 +70,7 @@ const Home: React.FC = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                 activeCategory === category.id
-                  ? "bg-blue-600 text-white"
+                  ? "bg-red-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -91,67 +80,21 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredServices.map((service, index) => (
-            <ServiceCard
-              key={index}
-              {...service}
-              isActive={
-                activeCategory === service.category || activeCategory === "all"
-              }
-            />
-          ))}
+      
+              {filteredServices.map((service, index) => (
+                <ServiceCard
+                key={index}
+                {...service}
+                isActive={
+                  activeCategory === service.category || activeCategory === "all"
+                }
+              />              ))}
         </div>
       </main>
+     
     </div>
   );
+ 
 };
 
-export default Home;
-
-{
-  /*
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<AnimatePresence>
-  {currentItems.length > 0 ? (
-    currentItems.map((service, index) => (
-      <ServiceCard key={index} service={service} />
-    ))
-  ) : (
-    <p className="text-center text-gray-600 col-span-full text-xl">
-      No services available in this category.
-    </p>
-  )}
-</AnimatePresence>
-</div>
-
-{totalPages > 1 && (
-<div className="mt-12 flex justify-center">
-  <nav className="inline-flex rounded-md shadow-sm">
-    <Button
-      onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-      disabled={currentPage === 1}
-      variant="ghost"
-      className="rounded-l-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-    >
-      <ArrowLeft />
-    </Button>
-    <Pagination
-      currentPage={currentPage}
-      totalPages={totalPages}
-      setCurrentPage={setCurrentPage}
-    />
-    <Button
-      onClick={() =>
-        setCurrentPage((prev) => Math.min(totalPages, prev + 1))
-      }
-      variant="ghost"
-      disabled={currentPage === totalPages}
-      className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-    >
-      <ArrowRight />
-    </Button>
-  </nav>
-</div>
-)} */
-}
+export default ServicesSection;

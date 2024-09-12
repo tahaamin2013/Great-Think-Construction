@@ -69,6 +69,14 @@ const Contact = () => {
       </div>
       <div className='sm:w-[60%] p-10 flex flex-col items-start justify-center bg-gradient-to-br from-gray-50 to-white'>
         <h1 className='text-4xl font-extrabold text-gray-800 mb-8'>Need to contact us?</h1>
+        
+        {/* New section for contact details */}
+        <div className="w-full mb-8 p-4 bg-gray-100 rounded-lg">
+          <h2 className="text-xl font-bold text-gray-800 mb-4">Our Contact Information</h2>
+          <p className="text-gray-600"><strong>Phone:</strong> (718) 666-9256</p>
+          <p className="text-gray-600"><strong>Email:</strong> greatthinkconstruction92@gmail.com</p>
+          <p className="text-gray-600"><strong>Address:</strong> 777 East 31st Street, Brooklyn, NY</p>
+        </div>
         <form onSubmit={handleSubmit} className='w-full space-y-6'>
           <div>
             <label

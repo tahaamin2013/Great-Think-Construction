@@ -112,7 +112,7 @@ const Menu: React.FC = () => {
         </Link>
 
         <div className="menu-open" onClick={toggleMenu}>
-          <p className="cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
+          <p className="cursor-pointer font-sans text-xl font-medium uppercase tracking-wide">
             <MenuIcon />
           </p>
         </div>
@@ -146,13 +146,13 @@ const Menu: React.FC = () => {
               <span className="text-[0.45rem]">NEW YORK STATE</span>
             </div>{" "}
             <div className="menu-close" onClick={toggleMenu}>
-              <p className="text-black cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">
-                <X />
+              <p className="text-black cursor-pointer font-sans text-xl font-medium uppercase tracking-wide">
+                <X className="h-10 w-10" />
               </p>
             </div>
           </div>
 
-          <div className="menu-close-icon flex-[2] mb-16 flex items-end cursor-pointer">
+          <div className="md:flex hidden menu-close-icon flex-[2] mb-16 flex items-end cursor-pointer">
             <p
               className="text-[100px] leading-[70%] font-light"
               onClick={toggleMenu}
@@ -161,7 +161,7 @@ const Menu: React.FC = () => {
             </p>
           </div>
 
-          <div className="menu-copy md:flex-[4] flex-[9] flex flex-col justify-between gap-18 pt-14 mb-16">
+          <div className="menu-copy md:flex-[5] flex-[12] flex flex-col justify-between gap-18 pt-14 mb-16">
             <div className="menu-links">
               {menuLinks.map((link) => (
                 <div
@@ -179,7 +179,9 @@ const Menu: React.FC = () => {
                       href={link.path}
                       className="text-black text-[72px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
                     >
-                      {link.label}
+                      {link.label === "Request Estimate" ? (
+                        <span className=" flex items-center justify-center gap-2"><sup className="text-[30px]">Request</sup>Estimate</span>
+                      ) : link.label}
                     </Link>
                   </div>
                 </div>

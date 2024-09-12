@@ -303,7 +303,7 @@ export const services = [
     title: "Change the Lantern",
     description:
       "Replacing lanterns for outdoor lighting and aesthetic improvement.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
   {
     images: [
@@ -315,7 +315,7 @@ export const services = [
     title: "Angle Line Power Wash and Pointing",
     description:
       "Power washing and pointing services for exterior cleaning and restoration.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
   {
     images: [
@@ -328,7 +328,7 @@ export const services = [
     ],
     title: "Pavers",
     description: "Installation of pavers for walkways, patios, and driveways.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
   {
     images: [
@@ -337,13 +337,13 @@ export const services = [
     title: "Pavers Driveway",
     description:
       "Installation of pavers driveway for walkways, patios, and driveways.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
   {
     images: ["/steps-and-patio/1.webp"],
     title: "Steps and Patio",
     description: "Custom steps and patios for enhanced outdoor spaces.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
   {
     images: [
@@ -362,7 +362,7 @@ export const services = [
     title: "Stone Work",
     description:
       "Expert stonework for a variety of construction and design needs.",
-    category: "Miscellaneous",
+    category: "miscellaneous",
   },
 
   {
