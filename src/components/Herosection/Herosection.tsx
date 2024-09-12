@@ -21,8 +21,8 @@ const Herosection: React.FC = () => {
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [nextServiceIndex, setNextServiceIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [loaded, setLoaded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false); // To handle image load error
 
   const filteredServices = React.useMemo(
     () =>
@@ -53,6 +53,8 @@ const Herosection: React.FC = () => {
             filteredServices.length;
 
       setNextServiceIndex(newIndex);
+      setImageLoaded(false); // Reset imageLoaded for new image
+      setImageError(false);  // Reset imageError for new image
 
       await preloadImage(filteredServices[newIndex].images[0]);
 
@@ -142,23 +144,20 @@ const Herosection: React.FC = () => {
         {/* Right Section */}
         <div className="w-full lg:w-[54%] h-full relative overflow-hidden">
           <div className="w-full sm:h-[650px] h-[350px] relative">
-            <AnimatePresence>
               <motion.div
                 key={activeServiceIndex}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: imageLoaded ? 1 : 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                
-                {!imageLoaded && (
+                {!imageLoaded && !imageError && (
                   <Blurhash
                     hash={activeService.blurhash[0]}
-                
-                    width={350}
-                    height={350}
                     style={{
+                      width: "100%",
+                      height: "100%",
                       WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                       maskImage: "url('/clip_shape_of_herosection.png')",
                       WebkitMaskSize: "cover",
@@ -173,10 +172,10 @@ const Herosection: React.FC = () => {
                   alt={activeService.title}
                   layout="fill"
                   objectFit="cover"
-                  className={`rounded-3xl ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+                  className={`rounded-3xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
                   priority={true}
                   onLoadingComplete={() => setImageLoaded(true)}
-                  onError={() => setImageLoaded(false)}
+                  onError={() => setImageError(true)}
                   style={{
                     WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                     maskImage: "url('/clip_shape_of_herosection.png')",
@@ -187,7 +186,6 @@ const Herosection: React.FC = () => {
                   }}
                 />
               </motion.div>
-            </AnimatePresence>
           </div>
 
           <div className="flex w-full absolute bottom-4 px-4 items-end justify-between">
