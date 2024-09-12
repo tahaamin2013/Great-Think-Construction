@@ -20,6 +20,9 @@ export default function RootLayout({
   
   return (
     <html lang="en">
+         <head>
+      <meta name='theme-color' content="#000" />
+    </head>
       <body
         className={`antialiased px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
         >

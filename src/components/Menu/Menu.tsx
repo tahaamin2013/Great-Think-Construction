@@ -137,14 +137,12 @@ const Menu: React.FC = () => {
                 {/* Great Think Construction */}
               </Link>
             </div>
-            <div className="text-center flex flex-col items-center justify-center gap-0">
-              <p className="text-3xl font-bold text-center -mb-2 uppercase">
-                Great Think
-              </p>
-              <p className="font-semibold text-xs">Construction Corp.</p>
-              <div className="h-[0.05rem] w-full bg-black" />
-              <span className="text-[0.45rem]">NEW YORK STATE</span>
-            </div>{" "}
+            <Link href="/" className="text-center flex flex-col items-center justify-center gap-0">
+          <p className="text-3xl font-bold text-center -mb-2 uppercase leading-6">Great Think</p>
+          <p className="font-semibold text-xs mt-2">Construction Corp.</p>
+          <div className="h-[0.05rem] w-full bg-black" />
+          <span className="text-[0.45rem]">NEW YORK STATE</span>
+        </Link>
             <div className="menu-close" onClick={toggleMenu}>
               <p className="text-black cursor-pointer font-sans text-xl font-medium uppercase tracking-wide">
                 <X className="h-10 w-10" />
@@ -161,7 +159,7 @@ const Menu: React.FC = () => {
             </p>
           </div>
 
-          <div className="menu-copy md:flex-[5] flex-[12] flex flex-col justify-between gap-18 pt-14 mb-16">
+          <div className="menu-copy md:flex-[5] flex-[12] flex flex-col justify-between gap-18 pt-24 mb-16">
             <div className="menu-links">
               {menuLinks.map((link) => (
                 <div
@@ -177,11 +175,12 @@ const Menu: React.FC = () => {
                   >
                     <Link
                       href={link.path}
-                      className="text-black text-[72px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
+                      className="text-black sm:text-[75px] text-[37px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
                     >
-                      {link.label === "Request Estimate" ? (
+                      {/* {link.label === "Request Estimate" ? (
                         <span className=" flex items-center justify-center gap-2"><sup className="text-[30px]">Request</sup>Estimate</span>
-                      ) : link.label}
+                      ) : link.label} */}
+                      {link.label}
                     </Link>
                   </div>
                 </div>
