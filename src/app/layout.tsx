@@ -1,10 +1,8 @@
 import Footer from "@/components/Footer";
-import Loading from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import "./globals.css";
-import InteriorBar from "@/components/servicesbar/interiorBar";
+import Menu from "@/components/Menu/Menu";
 
 // const mulish = Mulish({ subsets: ["latin"] });
 
@@ -24,16 +22,17 @@ export default function RootLayout({
       <body
         className={`antialiased px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
         >
+          <Menu />
         {/* <CustomCursor /> */}
         {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
-        <Loading>
+        {/* <Loading> */}
           <div className="sm:container">
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
           <Footer />
           </div>
-          </Loading>
+          {/* </Loading> */}
         {/* </Suspense> */}
       </body>
     </html>

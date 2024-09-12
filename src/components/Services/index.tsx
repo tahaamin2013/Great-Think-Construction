@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { furtherCategories, services } from "@/store/Constructionservices";
-import Pagination from '@/components/Pagination'
+import Pagination from "@/components/Pagination";
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -236,51 +236,48 @@ const ServicesSection: React.FC = () => {
   );
 
   return (
-    <section className="bg-gray-50 py-16 px-4">
-      <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
-          Our Services
-        </h2>
+    <section className="bg-gray-50 py-16 relative">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
+        Our Services
+      </h2>
 
-        <div className="mb-12 flex flex-col items-center space-y-6">
-          <div className="relative w-full max-w-md">
-            <Input
-              type="text"
-              placeholder="Search services..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pr-10 border-gray-300 focus:border-yellow-500 focus:ring-yellow-500"
-            />
-            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-2">
-            {furtherCategories.map((category) => (
-              <Button
-                key={category.id}
-                variant={activeCategory === category.id ? "default" : "outline"}
-                className={`m-1 ${
-                  activeCategory === category.id
-                    ? "bg-yellow-400 text-white"
-                    : "text-gray-600 border-gray-300 hover:bg-yellow-50"
-                }`}
-                onClick={() => {
-                  setActiveCategory(category.id);
-                  setCurrentPage(1);
-                }}
-              >
-                {category.name}
-              </Button>
-            ))}
-          </div>
+      <main className="container mx-auto px-4 py-12">
+        <div className="relative w-full max-w-md mx-auto mb-6">
+          <Input
+            type="text"
+            placeholder="Search services..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pr-10 border-gray-300 focus:border-yellow-500 focus:ring-yellow-500"
+          />
+          <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
         </div>
 
+        {/* Categories */}
+        <div className="mb-8 flex flex-wrap justify-center gap-4">
+          {furtherCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                activeCategory === category.id
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Opened Category Heading */}
         <div className="text-center mb-12">
           <h3 className="text-3xl md:text-4xl font-semibold text-gray-700">
             {furtherCategories.find((cat) => cat.id === activeCategory)?.name}
           </h3>
         </div>
 
+        {/* Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
             {currentItems.length > 0 ? (
@@ -306,11 +303,11 @@ const ServicesSection: React.FC = () => {
               >
                 <ArrowLeft />
               </Button>
-              <Pagination 
-  currentPage={currentPage}
-  totalPages={totalPages}
-  setCurrentPage={setCurrentPage}
-/>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                setCurrentPage={setCurrentPage}
+              />
               <Button
                 onClick={() =>
                   setCurrentPage((prev) => Math.min(totalPages, prev + 1))
@@ -324,7 +321,7 @@ const ServicesSection: React.FC = () => {
             </nav>
           </div>
         )}
-      </div>
+      </main>
     </section>
   );
 };

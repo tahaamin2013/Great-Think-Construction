@@ -36,7 +36,7 @@ const ServiceBar: React.FC<ServiceBarProps> = ({ title, services, side }) => {
         }`}
       >
         <div
-          className={`py-2 px-8 bg-gradient-to-br from-orange-500 to-yellow-600 text-white font-bold text-xl whitespace-nowrap ${
+          className={`py-2 px-4 bg-gradient-to-br from-orange-500 to-yellow-600 text-white font-bold text-xl whitespace-nowrap ${
             side ? "rounded-l-xl" : "rounded-r-xl"
           }`}
         >

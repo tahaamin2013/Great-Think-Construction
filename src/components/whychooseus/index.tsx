@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
         <div className="space-y-4 sm:space-y-6">
           <h2 className="text-sm font-semibold text-gray-600 uppercase">Why Choose Us</h2>
           <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Comprehensive Expertise, Exceptional Quality</h3>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <p className="text-gray-600 text-sm sm:text-base mb-2">
             At Great Think Construction Corp, we offer a wide range of services from masonry and concrete work to painting and home improvements. Our experienced team ensures top-notch results in every project, big or small. We pride ourselves on our attention to detail and ability to provide full-service solutions tailored to your specific needs.
           </p>
           <Link href="/our-services" className="w-fit">
