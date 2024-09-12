@@ -10,24 +10,26 @@ export const furtherCategories = [
 
 export const services = [
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/block_and_bricks_work/1.webp",
       "/block_and_bricks_work/2.webp",
       "/block_and_bricks_work/3.webp",
     ],
-    blurhash: ["/block_and_bricks_work/1.webp"],
     title: "Block & Bricks Work",
     description:
       "Expertise in laying & constructing block & brick structures.",
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/block-work/1.webp"],
     title: "Block Work",
     description: "Specialized block masonry services for robust construction.",
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/brick-face-work/1.webp",
       "/brick-face-work/2.webp",
@@ -41,6 +43,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/brick-fence/1.webp", "/brick-fence/2.webp"],
     title: "Brick Fence",
     description:
@@ -48,6 +51,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/brick_fence_and_steps_and_pavers/1.mp4"],
     title: "Brick Fence & Steps & Pavers",
     description:
@@ -55,6 +59,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/brick_porch_and_tile_and_steps_and_plaster_and_railing/1.webp"],
     title: "Brick Porch & Tile & Steps & Plaster & Railing",
     description:
@@ -62,6 +67,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/brick-work/1.webp",
       "/brick-work/2.webp",
@@ -73,18 +79,21 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/brick-wall/1.webp"],
     title: "Brick Wall",
     description: "All types of professional brick wall services.",
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/steps-and-pavers/2.webp", "/steps-and-pavers/1.webp"],
     title: "Steps & Pavers",
     description: "Custom steps & pavers for walkways & patios.",
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/steps-and-porch/1.webp"],
     title: "Steps & Porch",
     description:
@@ -92,6 +101,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/walkway-and-steps/1.webp",
       "/walkway-and-steps/2.webp",
@@ -103,6 +113,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/pointing/1.webp",
       "/pointing/2.webp",
@@ -115,6 +126,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/brick-pointing/1.webp",
       "/brick-pointing/2.webp",
@@ -126,12 +138,14 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/cement-work/1.webp"],
     title: "Cement Work",
     description: "High-quality cement work for various construction projects.",
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/cement-staucco/1.webp",
       "/cement-staucco/2.webp",
@@ -145,6 +159,7 @@ export const services = [
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/california-stucco/1.webp"],
     title: "California Stucco",
     description:
@@ -152,6 +167,7 @@ export const services = [
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/driveway/1.webp"],
     title: "Driveway",
     description:
@@ -159,12 +175,14 @@ export const services = [
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/flat-roof/1.webp"],
     title: "Flat Roof",
     description: "Expert installation & repair of flat roofing systems.",
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/steps-and-tile-works/1.webp"],
     title: "Steps & Tile Works",
     description:
@@ -173,6 +191,7 @@ export const services = [
   },
 
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/paint/1.webp",
       "/paint/2.webp",
@@ -184,6 +203,7 @@ export const services = [
     category: "painting-waterproofing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/thorocoat/1.webp",
       "/thorocoat/2.webp",
@@ -195,6 +215,7 @@ export const services = [
     category: "painting-waterproofing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/waterproofing/1.webp",
       "/waterproofing/2.webp",
@@ -214,6 +235,7 @@ export const services = [
     category: "painting-waterproofing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/deck/1.webp",
       "/deck/2.webp",
@@ -241,6 +263,7 @@ export const services = [
     category: "deck-fencing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/pvc_fence_and_pavers/1.webp",
     ],
@@ -249,6 +272,7 @@ export const services = [
     category: "deck-fencing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/fence/2.webp",
       "/fence/3.webp",
@@ -259,6 +283,7 @@ export const services = [
     category: "deck-fencing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/pvc_gate/1.webp",
     ],
@@ -267,12 +292,14 @@ export const services = [
     category: "deck-fencing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/single_roof_and_gutters/1.webp"],
     title: "Single Roof & Gutters",
     description: "High-quality roofing & gutter systems for single homes.",
     category: "roofing-gutters",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/siding/1.webp",
       "/siding/2.webp",
@@ -285,12 +312,14 @@ export const services = [
     category: "roofing-gutters",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/sidings-and-gutters/1.mp4"],
     title: "Sidings & Gutters",
     description: "Complete siding & gutter services for enhanced protection.",
     category: "roofing-gutters",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/gutters/1.webp",
       "/gutters/2.webp",
@@ -300,6 +329,7 @@ export const services = [
     category: "roofing-gutters",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/change-the-lantern/1.webp"],
     title: "Change the Lantern",
     description:
@@ -307,6 +337,7 @@ export const services = [
     category: "miscellaneous",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/AngleLine/1.webp",
       "/AngleLine/2.webp",
@@ -319,6 +350,7 @@ export const services = [
     category: "miscellaneous",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/pavers/1.webp",
       "/pavers/2.webp",
@@ -332,6 +364,7 @@ export const services = [
     category: "miscellaneous",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/pavers_driveway/1.webp",
     ],
@@ -341,12 +374,14 @@ export const services = [
     category: "miscellaneous",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/steps-and-patio/1.webp"],
     title: "Steps & Patio",
     description: "Custom steps & patios for enhanced outdoor spaces.",
     category: "miscellaneous",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/stone-work/1.webp",
       "/stone-work/2.webp",
@@ -367,6 +402,7 @@ export const services = [
   },
 
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/tile-work/1.webp", "/tile-work/2.webp", "/tile-work/3.mp4"],
     title: "Tile Work",
     description:
@@ -374,6 +410,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/steps/1.webp",
       "/steps/2.webp",
@@ -386,6 +423,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/steps-with-rizer/1.webp"],
     title: "Steps With Riser",
     description:
@@ -393,6 +431,7 @@ export const services = [
     category: "brickwork-masonry",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/sidewalk/1.webp",
       "/sidewalk/2.webp",
@@ -404,6 +443,7 @@ export const services = [
     category: "cement-concrete",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: [
       "/sealer/1.webp",
     ],
@@ -413,6 +453,7 @@ export const services = [
     category: "painting-waterproofing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/wet-lock-sealer/1.mp4"],
     title: "Wet Lock Sealer",
     description:
@@ -420,6 +461,7 @@ export const services = [
     category: "painting-waterproofing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/awning/1.webp"],
     title: "Awning",
     description:
@@ -427,6 +469,7 @@ export const services = [
     category: "roofing-gutters",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/pvc_fence_gray/1.webp"],
     title: "PVC Fence Gray",
     description:
@@ -434,6 +477,7 @@ export const services = [
     category: "deck-fencing",
   },
   {
+        blurhash: ["|KJ8CYpJVsWEyDR5ogkBMxu6ozS%t6fSbHWBWAaxjYnN-=RjV?j]oKWBt7xuMxsRt7t7RjWEt7bIt7W=M{R*s.xuozWBogbJ%MNGt7RjWAxakCaxs.WCaej[ozjsRjWBoLnhRkoJM{j@ofofWVRjRkt6WXoeWWa}ayt7jY"],
     images: ["/grandin_pointing/1.webp"],
     title: "Grandin Pointing",
     description:

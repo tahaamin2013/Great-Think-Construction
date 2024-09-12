@@ -11,6 +11,7 @@ import { Blurhash } from 'react-blurhash';
 interface Service {
   title: string;
   images: string[];
+  blurhash: string[]
 }
 
 const shuffleArray = (array: Service[]) =>

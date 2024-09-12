@@ -78,7 +78,7 @@ const AboutUs: React.FC = () => {
             {/* Image Section */}
             <div ref={imageRef} className="lg:w-1/2">
               <Image
-                src="/author2.jpg"
+                src="/author2.png"
                 alt="Construction CEO"
                 width={800}
                 height={800}
