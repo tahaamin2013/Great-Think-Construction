@@ -15,7 +15,7 @@ export default async function Home() {
       <Aboutus />
       <Services />
       <WhoChooseUs />
-      <TeamMemberDashboard />
+      {/* <TeamMemberDashboard /> */}
       <FAQSection />
       <TestimonialsCarousel />
       <StartJourneyBanner />

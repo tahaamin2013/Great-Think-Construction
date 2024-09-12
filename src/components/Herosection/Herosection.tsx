@@ -11,7 +11,7 @@ import { Blurhash } from 'react-blurhash';
 interface Service {
   title: string;
   images: string[];
-  blurhash: string[]
+  blurhash: string[];
 }
 
 const shuffleArray = (array: Service[]) =>
@@ -22,6 +22,7 @@ const Herosection: React.FC = () => {
   const [nextServiceIndex, setNextServiceIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const filteredServices = React.useMemo(
     () =>
@@ -150,9 +151,13 @@ const Herosection: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                {!loaded && (
+                
+                {!imageLoaded && (
                   <Blurhash
                     hash={activeService.blurhash[0]}
+                
+                    width={350}
+                    height={350}
                     style={{
                       WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                       maskImage: "url('/clip_shape_of_herosection.png')",
@@ -168,9 +173,10 @@ const Herosection: React.FC = () => {
                   alt={activeService.title}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-3xl"
+                  className={`rounded-3xl ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
                   priority={true}
-                  onLoadingComplete={() => setLoaded(true)}
+                  onLoadingComplete={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(false)}
                   style={{
                     WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                     maskImage: "url('/clip_shape_of_herosection.png')",
@@ -184,7 +190,7 @@ const Herosection: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          <div className="flex w-full absolute bottom-4 px-4 items-center justify-between">
+          <div className="flex w-full absolute bottom-4 px-4 items-end justify-between">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

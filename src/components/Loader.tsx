@@ -10,7 +10,7 @@ const Loading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 200);
 
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
