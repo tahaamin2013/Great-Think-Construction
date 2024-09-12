@@ -18,56 +18,80 @@ const AboutUs: React.FC = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     if (sectionRef.current) {
-      const featureElements = featuresRef.current ? Array.from(featuresRef.current.children) : [];
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 60%',
           end: 'bottom 20%',
           toggleActions: 'play none none reverse',
         },
       });
 
-      tl.from(imageRef.current, {
-        x: -100,
+      // Image reveal animation
+      tl.fromTo(imageRef.current, 
+        { clipPath: 'inset(100% 0 0 0)' },
+        { clipPath: 'inset(0% 0 0 0)', duration: 1.2, ease: 'power4.inOut' }
+      );
+
+      // Content section slide and fade
+      tl.from(contentRef.current, {
+        x: 100,
         opacity: 0,
         duration: 1,
         ease: 'power3.out',
-      })
-        .from(contentRef.current, {
-          x: 100,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        }, '-=0.5')
-        .from(titleRef.current, {
+      }, '-=0.7');
+
+      // Title pop and glow effect
+      tl.from(titleRef.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+      }, '-=0.5').to(titleRef.current, {
+        boxShadow: '0 0 20px rgba(239, 68, 68, 0.7)',
+        duration: 0.3
+      });
+
+      // Paragraph reveal with split text
+      const paragraphSplit = new SplitText(paragraphRef.current, { type: 'words,chars' });
+      tl.from(paragraphSplit.chars, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.02,
+        ease: 'power4.out'
+      }, '-=0.3');
+
+      // Features staggered entrance
+      const featureElements = featuresRef.current ? Array.from(featuresRef.current.children) as HTMLElement[] : [];
+      tl.from(featureElements, {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+        onStart: function() {
+          gsap.to(this.targets(), {
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            duration: 0.3,
+            stagger: 0.1
+          });
+        }
+      }, '-=0.5');
+
+      if (ctaRef.current) {
+        const ctaElements = Array.from(ctaRef.current.children);
+        tl.from(ctaElements, {
           y: 30,
           opacity: 0,
           duration: 0.6,
-          ease: 'power3.out',
-        }, '-=0.3')
-        .from(paragraphRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-        }, '-=0.3')
-        .from(featureElements, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power3.out',
-        }, '-=0.3')
-        .from(ctaRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
+          stagger: 0.2,
           ease: 'power3.out',
         }, '-=0.3');
+      }
     }
   }, []);
 
