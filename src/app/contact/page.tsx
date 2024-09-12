@@ -60,7 +60,7 @@ const Contact = () => {
           alt="Contact Us Image" 
           layout="fill" 
           className='object-cover object-center' 
-          src="/contact-image-2.jpg" 
+          src="/contact-Image-2.jpg" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
         <div className="absolute bottom-0 left-0 p-8 text-white">
