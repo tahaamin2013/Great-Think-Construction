@@ -104,12 +104,12 @@ const Menu: React.FC = () => {
             />
           </Link>
         </div>
-        <div className="text-center flex flex-col items-center justify-center gap-0">
+        <Link href="/" className="text-center flex flex-col items-center justify-center gap-0">
           <p className="text-3xl font-bold text-center -mb-2 uppercase leading-6">Great Think</p>
           <p className="font-semibold text-xs mt-2">Construction Corp.</p>
           <div className="h-[0.05rem] w-full bg-black" />
           <span className="text-[0.45rem]">NEW YORK STATE</span>
-        </div>
+        </Link>
 
         <div className="menu-open" onClick={toggleMenu}>
           <p className="cursor-pointer font-sans text-lg font-medium uppercase tracking-wide">

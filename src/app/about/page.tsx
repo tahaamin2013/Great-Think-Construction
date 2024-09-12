@@ -14,7 +14,7 @@ const AboutUs = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-2 relative overflow-hidden rounded-3xl shadow-2xl">
-            <img src="/api/placeholder/1200/800" alt="Construction site" className="w-full h-full object-cover" />
+            <img src="/construction-enginerering-whychooseus_1.jpg" alt="Construction site" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/80 to-transparent flex items-end p-8">
               <h2 className="text-4xl font-bold text-white">Crafting Excellence</h2>
             </div>
@@ -35,7 +35,7 @@ const AboutUs = () => {
           />
 
           <div className="lg:col-span-2 relative overflow-hidden rounded-3xl shadow-2xl">
-            <img src="/api/placeholder/1200/800" alt="Completed project" className="w-full h-full object-cover" />
+            <img src="/construction-enginerering-whychooseus_2.jpg" alt="Completed project" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-l from-red-600/80 to-transparent flex items-end justify-end p-8">
               <h2 className="text-4xl font-bold text-white">Building the Future</h2>
             </div>
@@ -50,10 +50,6 @@ const AboutUs = () => {
           </button>
         </div>
       </div>
-
-      <footer className="mt-20 text-center text-gray-600">
-        <p>&copy; 2024 Great Think Construction Corp. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
