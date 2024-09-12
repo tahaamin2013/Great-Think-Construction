@@ -150,11 +150,9 @@ const Herosection: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                {/* {!loaded && (
+                {!loaded && (
                   <Blurhash
-                    src={activeService.blurhash[0]}
-                    layout="fill"
-                    objectFit="cover"
+                    hash={activeService.blurhash[0]}
                     style={{
                       WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                       maskImage: "url('/clip_shape_of_herosection.png')",
@@ -164,7 +162,7 @@ const Herosection: React.FC = () => {
                       maskRepeat: "no-repeat",
                     }}
                   />
-                )} */}
+                )}
                 <Image
                   src={activeService.images[0]}
                   alt={activeService.title}

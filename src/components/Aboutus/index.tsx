@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="lg:flex">
             {/* Image Section */}
-            <div ref={imageRef} className="lg:w-1/2">
+            <div ref={imageRef} className="lg:w-1/2 relative">
               <Image
                 src="/author2.png"
                 alt="Construction CEO"
@@ -84,6 +84,10 @@ const AboutUs: React.FC = () => {
                 height={800}
                 className="object-cover w-full h-full"
               />
+              <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
+              <h1 className="text-md font-extrabold">Muhammad Shahbaz</h1>
+              <p className="text-sm">Founder/Contractor</p>
+            </div>
             </div>
 
             {/* Content Section */}
