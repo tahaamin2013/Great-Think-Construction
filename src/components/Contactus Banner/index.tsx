@@ -11,7 +11,7 @@ const ContactUsBanner = () => {
           <div className="flex-grow space-y-4 text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Contact Us Now</h2>
             <p className="text-sm sm:text-base">
-            Contact Great Think Construction for questions or a custom quote. <br /> Let's build something great!
+            Contact Great Think Construction for questions or a custom quote. <br /> Let&apos;s build something great!
             </p>
             <Link
             href="/request-estimate"
