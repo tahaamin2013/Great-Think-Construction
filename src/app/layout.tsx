@@ -29,14 +29,14 @@ export default function RootLayout({
         {/* <CustomCursor /> */}
         {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
-        <Loading>
+        {/* <Loading> */}
           <div className="sm:container">
           <Menu />
           {/* <Navbar /> */}
           {children}
           <Footer />
           </div>
-          </Loading>
+          {/* </Loading> */}
         {/* </Suspense> */}
       </body>
     </html>
