@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
         <div className="absolute bottom-0 left-0 p-8 text-white">
           <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
-          <p className="text-sm">We're here to help and answer any question you might have.</p>
+          <p className="text-sm">We&apos;re here to help and answer any question you might have.</p>
         </div>
       </div>
       <div className='sm:w-[60%] p-10 flex flex-col items-start justify-center bg-gradient-to-br from-gray-50 to-white'>

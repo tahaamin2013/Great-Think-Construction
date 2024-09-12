@@ -9,7 +9,7 @@ const AboutUs = () => {
           <h1 className="text-6xl font-extrabold text-gray-900 mb-4">
             Great Think <span className="text-yellow-600">Construction</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl">Building tomorrow's landmarks with today's innovation.</p>
+          <p className="text-xl text-gray-600 max-w-2xl">Building tomorrow&apos;s landmarks with today&apos;s innovation.</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
@@ -45,7 +45,7 @@ const AboutUs = () => {
         <div className="text-center">
 
           <button className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors duration-300 flex items-center mx-auto group">
-            Let's build your project
+            Let&apos;s build your project
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={24} />
           </button>
         </div>

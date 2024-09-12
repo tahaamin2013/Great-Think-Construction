@@ -12,11 +12,7 @@ export default async function Home() {
   return (
     <main>
       <Herosection />
-
-
-      {/* <Herosectionv2 /> */}
       <Aboutus />
-   
       <Services />
       <WhoChooseUs />
       <TeamMemberDashboard />
