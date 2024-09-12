@@ -1,33 +1,63 @@
 "use client";
-
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
+import Head from "next/head";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { services, furtherCategories } from "@/store/Constructionservices";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Loader2,
-  Play,
-  Search,
-  Square,
-} from "lucide-react";
+import MediaItem from "@/components/Services/MediaItem";
 import Autoplay from "embla-carousel-autoplay";
-import { furtherCategories, services } from "@/store/Constructionservices";
-import Pagination from "@/components/Pagination";
+import Pagination from "../Pagination";
+import { Button } from "../ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+interface ServiceItem {
+  images: string[];
+  title: string;
+  description: string;
+  category: string;
+}
+
+const ImageDialog: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <div className="relative h-48 cursor-pointer">
+          <MediaItem src={src} alt={alt} />
+        </div>
+      </DialogTrigger>
+      <DialogContent className="max-w-3xl">
+        <div className="relative w-full h-[calc(100vh-200px)]">
+          <MediaItem src={src} alt={alt} inDialog={false} />
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+const ServiceCard: React.FC<ServiceItem & { isActive: boolean }> = ({
+  title,
+  images,
+  description,
+  isActive,
+}) => {
+  return (
+    <div
+      className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
+        isActive ? "scale-105 shadow-lg" : "scale-100 hover:shadow-lg"
+      }`}
+    >
+      <ImageDialog src={images[0]} alt={title} />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+        <p className="text-sm text-gray-600 mt-2">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 const ServicesSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 6;
@@ -51,209 +81,11 @@ const ServicesSection: React.FC = () => {
     currentPage * itemsPerPage
   );
 
-  const MediaItem: React.FC<{
-    src: string;
-    alt: string;
-    inDialog?: boolean;
-  }> = ({ src, alt, inDialog = false }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [showControls, setShowControls] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    const isVideo = (url: string): boolean =>
-      url.toLowerCase().endsWith(".mp4");
-
-    const handlePlay = (e: React.MouseEvent) => {
-      e.stopPropagation();
-      if (videoRef.current) {
-        setIsLoading(true);
-        videoRef.current
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-            setIsLoading(false);
-          })
-          .catch((error) => {
-            console.error("Error playing video:", error);
-            setIsLoading(false);
-          });
-      }
-    };
-
-    const handleStop = (e: React.MouseEvent) => {
-      e.stopPropagation();
-      if (videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-        setIsPlaying(false);
-      }
-    };
-
-    if (isVideo(src)) {
-      return (
-        <div
-          className="relative w-full h-full"
-          onMouseEnter={() => setShowControls(true)}
-          onMouseLeave={() => setShowControls(false)}
-        >
-          <video
-            ref={videoRef}
-            src={src}
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            title={alt}
-            onPlaying={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          >
-            Your browser does not support the video tag.
-          </video>
-          {showControls && !inDialog && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity">
-              {isLoading ? (
-                <Loader2 className="w-12 h-12 text-white animate-spin" />
-              ) : isPlaying ? (
-                <Button
-                  onClick={handleStop}
-                  variant="secondary"
-                  size="icon"
-                  className="rounded-full bg-white bg-opacity-50 hover:bg-opacity-75"
-                  aria-label="Stop video"
-                >
-                  <Square className="w-6 h-6 text-gray-800" />
-                </Button>
-              ) : (
-                <Button
-                  onClick={handlePlay}
-                  variant="secondary"
-                  size="icon"
-                  className="rounded-full bg-white bg-opacity-50 hover:bg-opacity-75"
-                  aria-label="Play video"
-                >
-                  <Play className="w-6 h-6 text-gray-800" />
-                </Button>
-              )}
-            </div>
-          )}
-        </div>
-      );
-    } else {
-      return (
-        <div className="relative w-full h-full">
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover object-center transition-all duration-300 ease-in-out group-hover:scale-105"
-          />
-        </div>
-      );
-    }
-  };
-
-  const ServiceCard: React.FC<{ service: any }> = ({ service }) => (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-      className="group"
-    >
-      <Dialog>
-        <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-white">
-          <CardContent className="p-0">
-            <Carousel
-              className="w-full"
-              plugins={[plugin.current] as any}
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
-            >
-              <CarouselContent>
-                {service.images.map((media: any, index: number) => (
-                  <CarouselItem key={index} className="h-64 md:h-80">
-                    <DialogTrigger asChild>
-                      <div className="relative w-full h-full cursor-pointer">
-                        <MediaItem src={media} alt={service.title} />
-                      </div>
-                    </DialogTrigger>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              {service.images.length > 1 && (
-                <>
-                  <CarouselPrevious className="bg-white text-gray-800" />
-                  <CarouselNext className="bg-white text-gray-800" />
-                </>
-              )}
-            </Carousel>
-          </CardContent>
-          <CardHeader>
-            <CardTitle className="text-xl md:text-2xl font-semibold text-gray-800">
-              {service.title}
-            </CardTitle>
-            <p className="text-gray-600 text-sm md:text-base">
-              {service.description}
-            </p>
-          </CardHeader>
-        </Card>
-        <DialogContent className="sm:max-w-[800px] bg-white">
-          <div className="grid gap-6 py-4">
-            <Carousel plugins={[plugin.current] as any} className="w-full">
-              <CarouselContent>
-                {service.images.map((media: any, index: number) => (
-                  <CarouselItem key={index} className="h-[300px] md:h-[400px]">
-                    <div className="relative w-full h-full">
-                      <MediaItem
-                        src={media}
-                        alt={`${service.title} - Media ${index + 1}`}
-                        inDialog
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              {service.images.length > 1 && (
-                <>
-                  <CarouselPrevious className="bg-white text-gray-800" />
-                  <CarouselNext className="bg-white text-gray-800" />
-                </>
-              )}
-            </Carousel>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-              {service.title}
-            </h2>
-            <p className="text-base md:text-lg text-gray-600">
-              {service.description}
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
-    </motion.div>
-  );
-
   return (
-    <section className="bg-gray-50 py-16 relative">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
-        Our Services
-      </h2>
+    <div className="min-h-screen bg-gray-100 py-4">
+      <h1 className="text-5xl font-bold mb-4 text-center">Our Services</h1>
 
       <main className="container mx-auto px-4 py-12">
-        <div className="relative w-full max-w-md mx-auto mb-6">
-          <Input
-            type="text"
-            placeholder="Search services..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="pr-10 border-gray-300 focus:border-yellow-500 focus:ring-yellow-500"
-          />
-          <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        </div>
-
-        {/* Categories */}
         <div className="mb-8 flex flex-wrap justify-center gap-4">
           {furtherCategories.map((category) => (
             <button
@@ -261,7 +93,7 @@ const ServicesSection: React.FC = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                 activeCategory === category.id
-                  ? "bg-blue-600 text-white"
+                  ? "bg-red-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -270,60 +102,58 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Opened Category Heading */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font-semibold text-gray-700">
-            {furtherCategories.find((cat) => cat.id === activeCategory)?.name}
-          </h3>
-        </div>
-
-        {/* Services Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
-            {currentItems.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      
+           {currentItems.length > 0 ? (
               currentItems.map((service, index) => (
-                <ServiceCard key={index} service={service} />
-              ))
+                <ServiceCard
+                key={index}
+                {...service}
+                isActive={
+                  activeCategory === service.category || activeCategory === "all"
+                }
+              />              ))
             ) : (
               <p className="text-center text-gray-600 col-span-full text-xl">
                 No services available in this category.
               </p>
             )}
-          </AnimatePresence>
         </div>
-
-        {totalPages > 1 && (
-          <div className="mt-12 flex justify-center">
-            <nav className="inline-flex rounded-md shadow-sm">
-              <Button
-                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-                disabled={currentPage === 1}
-                variant="ghost"
-                className="rounded-l-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-              >
-                <ArrowLeft />
-              </Button>
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                setCurrentPage={setCurrentPage}
-              />
-              <Button
-                onClick={() =>
-                  setCurrentPage((prev) => Math.min(totalPages, prev + 1))
-                }
-                variant="ghost"
-                disabled={currentPage === totalPages}
-                className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-              >
-                <ArrowRight />
-              </Button>
-            </nav>
-          </div>
-        )}
       </main>
-    </section>
+      {
+    totalPages > 1 && (
+      <div className="mt-12 flex justify-center">
+        <nav className="inline-flex rounded-md shadow-sm">
+          <Button
+            onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+            disabled={currentPage === 1}
+            variant="ghost"
+            className="rounded-l-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
+          >
+            <ArrowLeft />
+          </Button>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            setCurrentPage={setCurrentPage}
+          />
+          <Button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+            }
+            variant="ghost"
+            disabled={currentPage === totalPages}
+            className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
+          >
+            <ArrowRight />
+          </Button>
+        </nav>
+      </div>
+    )
+  }
+    </div>
   );
+ 
 };
 
 export default ServicesSection;

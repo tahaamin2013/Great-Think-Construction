@@ -18,16 +18,13 @@ const ImageDialog: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
     <Dialog>
       <DialogTrigger asChild>
         <div className="relative h-48 cursor-pointer">
-       
           <MediaItem src={src} alt={alt} />
         </div>
       </DialogTrigger>
       <DialogContent className="max-w-3xl">
-        
-        
-         <div className="relative w-full h-[calc(100vh-200px)]">
-        <MediaItem src={src} alt={alt} inDialog={false} />
-        </div> 
+        <div className="relative w-full h-[calc(100vh-200px)]">
+          <MediaItem src={src} alt={alt} inDialog={false} />
+        </div>
       </DialogContent>
     </Dialog>
   );
@@ -76,7 +73,6 @@ const Home: React.FC = () => {
         </div>
       </header>
 
-
       <main className="container mx-auto px-4 py-12">
         <div className="mb-8 flex flex-wrap justify-center gap-4">
           {furtherCategories.map((category) => (
@@ -106,17 +102,14 @@ const Home: React.FC = () => {
           ))}
         </div>
       </main>
-     
     </div>
   );
 };
 
 export default Home;
 
-
-
-
-{/*
+{
+  /*
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <AnimatePresence>
@@ -160,4 +153,5 @@ export default Home;
     </Button>
   </nav>
 </div>
-)} */}
+)} */
+}
