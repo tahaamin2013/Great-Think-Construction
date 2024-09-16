@@ -1,12 +1,11 @@
 "use client";
 
 import { services } from "@/store/Constructionservices";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
-import { Blurhash } from "react-blurhash";
 
 interface Service {
   title: string;
@@ -123,40 +122,18 @@ const Herosection: React.FC = () => {
         {/* Right Section */}
         <div className="w-full lg:w-[54%] h-full relative overflow-hidden">
       <div className="w-full sm:h-[650px] h-[350px] relative">
-          <motion.div
+          <div
             key={activeServiceIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
-            {!imageLoaded && (
-              <Blurhash
-                hash={activeService.blurhash[0]}
-                width="100%"
-                height="100%"
-                resolutionX={32}
-                resolutionY={32}
-                punch={1}
-                style={{
-                  WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
-                  maskImage: "url('/clip_shape_of_herosection.png')",
-                  WebkitMaskSize: "cover",
-                  maskSize: "cover",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskRepeat: "no-repeat",
-                }}
-              />
-            )}
+          
             <Image
               src={activeService.images[0]}
               alt={activeService.title}
               layout="fill"
+              loading="eager"
               objectFit="cover"
-              className={`rounded-3xl transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               priority={true}
-              onLoad={() => setImageLoaded(true)}
               style={{
                 WebkitMaskImage: "url('/clip_shape_of_herosection.png')",
                 maskImage: "url('/clip_shape_of_herosection.png')",
@@ -166,7 +143,7 @@ const Herosection: React.FC = () => {
                 maskRepeat: "no-repeat",
               }}
             />
-          </motion.div>
+          </div>
       </div>
 
           <div className="flex w-full absolute bottom-4 px-4 items-end justify-between">
