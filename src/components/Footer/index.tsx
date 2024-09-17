@@ -178,13 +178,13 @@ const Footer: React.FC = () => {
       <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
         <p>© Great Think Construction 2024 | All Rights Reserved</p>
         <div className="mt-2 flex flex-wrap justify-center">
-          <Link href="#" className="hover:text-white mr-4 mb-2">
+          <Link href="/terms-and-condition" className="hover:text-white mr-4 mb-2">
             Terms & Condition
           </Link>
-          <Link href="#" className="hover:text-white mr-4 mb-2">
+          <Link href="/privacy-policy" className="hover:text-white mr-4 mb-2">
             Privacy Policy
           </Link>
-          <Link href="#" className="hover:text-white mb-2">
+          <Link href="/contact" className="hover:text-white mb-2">
             Contact Us
           </Link>
         </div>

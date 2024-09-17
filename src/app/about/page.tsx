@@ -1,8 +1,14 @@
 import React from 'react';
 import { Building2, Target, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Construction Company Brooklyn | Great Think Construction Corp.",
+  description: "Top commercial construction company in Brooklyn. We're trusted general contractors in Brooklyn.",
+};
 const AboutUs = () => {
+  
   return (
     <div className="min-h-screen bg-white p-8 font-sans">
       <div className="max-w-7xl mx-auto">
