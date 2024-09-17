@@ -53,14 +53,14 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h3 className="text-xl font-semibold text-red-500 mb-2">5. Your Rights</h3>
+                        <h3 className="text-xl font-semibold text-red-500 mb-2">4. Your Rights</h3>
                         <p>
                             You have the right to access, correct, or delete your personal information. If you wish to exercise these rights or have any questions about our privacy practices, please contact us using the information provided below.
                         </p>
                     </section>
 
                     <section>
-                        <h3 className="text-xl font-semibold text-red-500 mb-2">6. Changes to This Policy</h3>
+                        <h3 className="text-xl font-semibold text-red-500 mb-2">5. Changes to This Policy</h3>
                         <p>
                             We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;last updated&quot; date.
                         </p>
