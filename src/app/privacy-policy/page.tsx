@@ -51,14 +51,12 @@ export default function PrivacyPolicy() {
                             We implement various security measures to maintain the safety of your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
                         </p>
                     </section>
-
                     <section>
                         <h3 className="text-xl font-semibold text-red-500 mb-2">4. Your Rights</h3>
                         <p>
                             You have the right to access, correct, or delete your personal information. If you wish to exercise these rights or have any questions about our privacy practices, please contact us using the information provided below.
                         </p>
                     </section>
-
                     <section>
                         <h3 className="text-xl font-semibold text-red-500 mb-2">5. Changes to This Policy</h3>
                         <p>

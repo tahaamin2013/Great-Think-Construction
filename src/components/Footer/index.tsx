@@ -9,7 +9,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#002f49] relative text-white px-4 sm:px-8 md:px-16 lg:px-24 py-12 my-10 rounded-[2rem]">
+    <footer className="bg-[#002f49] relative text-white px-4 sm:px-8 md:px-16 lg:px-24 pt-12 pb-5 my-10 rounded-[2rem]">
       {/* Decoration */}
       <div className="w-48 sm:w-64 md:w-80 lg:w-[26rem] h-48 sm:h-56 md:h-64 lg:h-72 bg-[#0d3648] absolute z-10 top-0 left-0 rounded-br-[3rem] sm:rounded-br-[4rem] md:rounded-br-[5rem] lg:rounded-br-[6rem]" />
 
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             Great Think Cons.
           </h2>
           <p className="mb-4 text-gray-400 text-sm">
-          Great things start here! Reach out now!
+            Great things start here! Reach out now!
           </p>
           <div className="flex items-center">
             <input
@@ -79,10 +79,10 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                {label: "About Us", path: "/about"},
-                {label: "Services", path: "/our-services"},
-                {label: "Blog & News", path: "/blogs"},
-                {label: "Contact Us", path: "/contact"},
+                { label: "About Us", path: "/about" },
+                { label: "Services", path: "/our-services" },
+                { label: "Blog & News", path: "/blogs" },
+                { label: "Contact Us", path: "/contact" },
               ].map((item, index) => (
                 <li key={index}>
                   <Link href={item.path} className="text-gray-400 hover:text-white">
@@ -175,17 +175,24 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Copyright */}
-      <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-        <p>© Great Think Construction 2024 | All Rights Reserved</p>
-        <div className="mt-2 flex flex-wrap justify-center">
-          <Link href="/terms-and-condition" className="hover:text-white mr-4 mb-2">
-            Terms & Condition
-          </Link>
-          <Link href="/privacy-policy" className="hover:text-white mr-4 mb-2">
-            Privacy Policy
-          </Link>
-          <Link href="/contact" className="hover:text-white mb-2">
-            Contact Us
+      <div className="mt-[50px] pt-8 flex flex-col md:flex-row items-center justify-between border-t border-gray-800 text-center text-gray-400 text-sm">
+        <div>
+          <p>© Great Think Construction 2024 | All Rights Reserved</p>
+          <div className="mt-2 flex flex-wrap">
+            <Link href="/terms-and-condition" className="hover:text-white mr-4 mb-2">
+              Terms & Condition
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-white mr-4 mb-2">
+              Privacy Policy
+            </Link>
+            <Link href="/contact" className="hover:text-white mb-2">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+        <div>
+          <Link href="https://webkin-solutions.vercel.app/" target="_blank" className="flex mb-2">
+            Design by <span className="text-white ml-1">Webkin Solutions</span>
           </Link>
         </div>
       </div>

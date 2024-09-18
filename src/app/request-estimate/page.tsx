@@ -7,8 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const EstimatePage: React.FC = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,14 +49,8 @@ const EstimatePage: React.FC = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          address: "",
-          phone: "",
-        });
+        // Redirect to the thank you page
+        router.push('/thank-you');
       } else {
         const result = await response.json();
         alert(`Failed to send message: ${result.error}`);

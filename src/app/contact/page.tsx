@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import { useRouter } from 'next/navigation';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -35,14 +35,13 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          //   message: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
           message: `${formData.message}`,
         }),
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        // Redirect to the thank you page
+        router.push('/thank-you');
       } else {
         const result = await response.json();
         alert(`Failed to send message: ${result.error}`);
@@ -52,7 +51,7 @@ const Contact = () => {
       alert("Failed to send message. Please try again later.");
     }
   };
-
+  const router = useRouter();
   return (
     <div className="bg-white my-10 rounded-3xl font-sans flex sm:flex-row flex-col shadow-2xl overflow-hidden max-w-6xl mx-auto">
       <div className="sm:w-[40%] relative h-auto min-h-[30rem] overflow-hidden">
@@ -105,7 +104,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               id="name"
-              placeholder="David"
+              placeholder="Your name"
               className="w-full bg-white border-gray-200 focus:border-red-500 focus:ring-red-500 transition-all duration-300"
             />
           </div>
