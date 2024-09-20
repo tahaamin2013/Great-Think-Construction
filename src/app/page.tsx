@@ -6,11 +6,15 @@ import StartJourneyBanner from "@/components/startjourneybanner/page";
 import TeamMemberDashboard from "@/components/Team";
 import TestimonialsCarousel from "@/components/Testimonials";
 import WhoChooseUs from "@/components/whychooseus";
+import Head from "next/head";
 
 
 export default async function Home() {
   return (
     <main>
+      <Head>
+        <meta name="google-site-verification" content="kbZftFb3pR-ngRLtJmVt4LDNKB2G6G9e6KKnTgpRSXY" />
+      </Head>
       <Herosection />
       <Aboutus />
       <Services />
