@@ -2,13 +2,14 @@ import React from 'react';
 import { Building2, Target, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { TextBoxAd } from '@/components/Google ads/TextboxAd';
 
 export const metadata: Metadata = {
   title: "Construction Company Brooklyn | Great Think Construction Corp.",
   description: "Top commercial construction company in Brooklyn. We're trusted general contractors in Brooklyn.",
 };
 const AboutUs = () => {
-  
+
   return (
     <div className="min-h-screen bg-white p-8 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -26,16 +27,18 @@ const AboutUs = () => {
               <h2 className="text-4xl font-bold text-white">Crafting Excellence</h2>
             </div>
           </div>
-
-          <Section 
-            icon={<Building2 className="text-yellow-600" size={32} />}
-            title="About Us"
-            content="At Great Think Construction Corp., we transform visions into reality. Our commitment to exceptional craftsmanship and innovation drives us to deliver outstanding results for both residential and commercial projects."
-          />
+          <div className="bg-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center mb-4">
+              <Building2 className="text-yellow-600" size={32} />
+              <h2 className="text-2xl font-bold ml-4 text-gray-800">About Us</h2>
+            </div>
+            <p className="text-gray-700 leading-relaxed">At Great Think Construction Corp., we transform visions into reality. Our commitment to exceptional craftsmanship and innovation drives us to deliver outstanding results for both residential and commercial projects.</p>
+            <TextBoxAd />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-          <Section 
+          <Section
             icon={<Target className="text-red-600" size={32} />}
             title="Our Mission"
             content="We strive to exceed expectations by fostering strong client relationships, embracing cutting-edge technologies, and upholding the highest standards of quality and sustainability in every project we undertake."

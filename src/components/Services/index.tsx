@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useRef, useState } from "react";
 import Pagination from "../Pagination";
 import { Button } from "../ui/button";
+import { ServiceAd } from "../Google ads/Service Ad"; // Importing the ad component
 
 interface ServiceItem {
   images: string[];
@@ -59,7 +60,7 @@ const ServicesSection: React.FC = () => {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
 
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
@@ -102,57 +103,59 @@ const ServicesSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      
-           {currentItems.length > 0 ? (
-              currentItems.map((service, index) => (
+          {currentItems.length > 0 ? (
+            currentItems.map((service, index) => (
+              <>
                 <ServiceCard
-                key={index}
-                {...service}
-                isActive={
-                  activeCategory === service.category || activeCategory === "all"
-                }
-              />              ))
-            ) : (
-              <p className="text-center text-gray-600 col-span-full text-xl">
-                No services available in this category.
-              </p>
-            )}
+                  key={index}
+                  {...service}
+                  isActive={
+                    activeCategory === service.category ||
+                    activeCategory === "all"
+                  }
+                />
+                {/* Insert the ad component after every third service */}
+                {(index + 1) % 3 === 0 && <ServiceAd />}
+              </>
+            ))
+          ) : (
+            <p className="text-center text-gray-600 col-span-full text-xl">
+              No services available in this category.
+            </p>
+          )}
         </div>
       </main>
-      {
-    totalPages > 1 && (
-      <div className="mt-12 flex justify-center">
-        <nav className="inline-flex rounded-md shadow-sm">
-          <Button
-            onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-            disabled={currentPage === 1}
-            variant="ghost"
-            className="rounded-l-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-          >
-            <ArrowLeft />
-          </Button>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            setCurrentPage={setCurrentPage}
-          />
-          <Button
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(totalPages, prev + 1))
-            }
-            variant="ghost"
-            disabled={currentPage === totalPages}
-            className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
-          >
-            <ArrowRight />
-          </Button>
-        </nav>
-      </div>
-    )
-  }
+      {totalPages > 1 && (
+        <div className="mt-12 flex justify-center">
+          <nav className="inline-flex rounded-md shadow-sm">
+            <Button
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              variant="ghost"
+              className="rounded-l-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
+            >
+              <ArrowLeft />
+            </Button>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              setCurrentPage={setCurrentPage}
+            />
+            <Button
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+              }
+              variant="ghost"
+              disabled={currentPage === totalPages}
+              className="rounded-r-md px-2 mx-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-50"
+            >
+              <ArrowRight />
+            </Button>
+          </nav>
+        </div>
+      )}
     </div>
   );
- 
 };
 
 export default ServicesSection;

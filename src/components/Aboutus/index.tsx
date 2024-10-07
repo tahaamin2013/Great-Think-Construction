@@ -73,7 +73,7 @@ const AboutUs: React.FC = () => {
   return (
     <section className="bg-transparent py-3 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-2xl h-[640px] overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="lg:flex">
             {/* Image Section */}
             <div ref={imageRef} className="lg:w-1/2 relative">
@@ -82,7 +82,7 @@ const AboutUs: React.FC = () => {
                 alt="Construction CEO"
                 width={800}
                 height={800}
-                className="object-top object-cover w-full h-full"
+                className="object-top object-cover w-full h-[680px]"
               />
               <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
                 <h1 className="text-md font-extrabold">Muhammad Shahbaz</h1>
