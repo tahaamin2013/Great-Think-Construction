@@ -36,16 +36,14 @@ export default function RootLayout({
           <Menu />
           {/* <Navbar /> */}
           {children}
-          <div className="bg-blue-600 h-[150px] overflow-hidden">
-            <AdComponent
-              Adclient="ca-pub-9571755808195636"
-              Adslot="5006986571"
-            />
-          </div>
           <Footer />
         </div>
         {/* </Loading> */}
         {/* </Suspense> */}
+        <AdComponent
+          Adclient="ca-pub-9571755808195636"
+          Adslot="5006986571"
+        />
       </body>
     </html>
   );

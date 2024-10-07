@@ -6,8 +6,8 @@ export const AdComponent = ({Adclient, Adslot}: any) => {
             <ins
                 className="adsbygoogle"
                 style={{ display: 'block' }}
-                data-ad-client={Adclient}
-                data-ad-slot={Adslot}
+                data-ad-client={`${Adclient}`}
+                data-ad-slot={`${Adslot}`}
                 data-ad-format="auto"
                 data-full-width-responsive="true"
             />
