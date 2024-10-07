@@ -30,8 +30,6 @@ export default async function Home() {
       <TestimonialsCarousel />
       <StartJourneyBanner />
       <Multiplex
-      // Adclient="ca-pub-9571755808195636"
-      // Adslot="5006986571"
       />
     </main>
   );
