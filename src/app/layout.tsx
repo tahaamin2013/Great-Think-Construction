@@ -41,8 +41,8 @@ export default function RootLayout({
         {/* </Loading> */}
         {/* </Suspense> */}
         <AdComponent
-          Adclient="ca-pub-9571755808195636"
-          Adslot="5006986571"
+          // Adclient="ca-pub-9571755808195636"
+          // Adslot="5006986571"
         />
       </body>
     </html>
