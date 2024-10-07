@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import GoogleAd from "@/components/ad";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -153,6 +154,7 @@ const Contact = () => {
             Send Message
           </Button>
         </form>
+
       </div>
     </div>
   );

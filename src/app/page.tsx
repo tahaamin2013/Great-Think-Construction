@@ -1,4 +1,5 @@
 import Aboutus from "@/components/Aboutus";
+import GoogleAd from "@/components/ad";
 import FAQSection from "@/components/FAQ";
 import Herosection from "@/components/Herosection/Herosection";
 import Services from "@/components/Services";

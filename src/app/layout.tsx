@@ -17,7 +17,6 @@ export default function RootLayout({
 }>) {
 
   return (
-
     <html lang="en">
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9571755808195636"
@@ -27,6 +26,7 @@ export default function RootLayout({
       <body
         className={`antialiased px-0 bg-[#ebebeb] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
       >
+
         {/* <CustomCursor /> */}
         {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
@@ -39,6 +39,17 @@ export default function RootLayout({
         </div>
         {/* </Loading> */}
         {/* </Suspense> */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9571755808195636"
+          crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-9571755808195636"
+          data-ad-slot="7006463954"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({ });
+        </script>
       </body>
     </html>
   );
