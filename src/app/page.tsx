@@ -19,7 +19,7 @@ export default async function Home() {
       <Herosection />
       <Aboutus />
       <Services />
-      <AdComponent 
+      <AdComponent
         Adclient="ca-pub-9571755808195636"
         Adslot="5006986571"
       />
@@ -28,6 +28,10 @@ export default async function Home() {
       <FAQSection />
       <TestimonialsCarousel />
       <StartJourneyBanner />
+      <AdComponent
+        Adclient="ca-pub-9571755808195636"
+        Adslot="5006986571"
+      />
     </main>
   );
 }
