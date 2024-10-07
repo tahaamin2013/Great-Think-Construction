@@ -17,7 +17,7 @@ const AboutUs: React.FC = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const featureElements = featuresRef.current ? Array.from(featuresRef.current.children) : [];
     if (sectionRef.current) {
@@ -71,7 +71,7 @@ const AboutUs: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-transparent py-3 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="lg:flex">
@@ -82,12 +82,12 @@ const AboutUs: React.FC = () => {
                 alt="Construction CEO"
                 width={800}
                 height={800}
-                className="object-cover w-full h-full"
+                className="object-top object-cover w-full h-[640px]"
               />
               <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
-              <h1 className="text-md font-extrabold">Muhammad Shahbaz</h1>
-              <p className="text-sm">Founder/Contractor</p>
-            </div>
+                <h1 className="text-md font-extrabold">Muhammad Shahbaz</h1>
+                <p className="text-sm">Founder/Contractor</p>
+              </div>
             </div>
 
             {/* Content Section */}
@@ -96,7 +96,7 @@ const AboutUs: React.FC = () => {
                 <span ref={titleRef} className="inline-block bg-red-100 text-red-600 py-1 px-4 rounded-full text-lg font-semibold tracking-wide uppercase mb-4">
                   About Us
                 </span>
-               
+
                 <p ref={paragraphRef} className="text-gray-600 mb-8">
                   At <span className="font-bold text-black">Great Think Construction</span>, we are your comprehensive solution for all your construction and renovation needs. With expertise spanning a wide range of services, we pride ourselves on delivering top-quality craftsmanship for both <span className="font-bold text-black">residential and commercial</span> projects.
                 </p>
@@ -132,8 +132,8 @@ const AboutUs: React.FC = () => {
                   <Phone className="h-10 w-10 text-gray-400 mr-3" />
                   <div>
                     <p className="text-xs font-medium text-gray-500">Call, Text or Whatsapp us
-</p>
-<Link href="tel:+17186669256" className="text-lg font-bold text-gray-900">(718) 666-9256</Link>
+                    </p>
+                    <Link href="tel:+17186669256" className="text-lg font-bold text-gray-900">(718) 666-9256</Link>
                   </div>
                 </div>
               </div>
