@@ -1,6 +1,7 @@
 import Aboutus from "@/components/Aboutus";
 import FAQSection from "@/components/FAQ";
 import { AdComponent } from "@/components/Google ads/ad";
+import { Multiplex } from "@/components/Google ads/Multiplexad";
 import Herosection from "@/components/Herosection/Herosection";
 import Services from "@/components/Services";
 import StartJourneyBanner from "@/components/startjourneybanner/page";
@@ -20,17 +21,17 @@ export default async function Home() {
       <Aboutus />
       <Services />
       <AdComponent
-        // Adclient="ca-pub-9571755808195636"
-        // Adslot="5006986571"
+      // Adclient="ca-pub-9571755808195636"
+      // Adslot="5006986571"
       />
       <WhoChooseUs />
       {/* <TeamMemberDashboard /> */}
       <FAQSection />
       <TestimonialsCarousel />
       <StartJourneyBanner />
-      <AdComponent
-        // Adclient="ca-pub-9571755808195636"
-        // Adslot="5006986571"
+      <Multiplex
+      // Adclient="ca-pub-9571755808195636"
+      // Adslot="5006986571"
       />
     </main>
   );
