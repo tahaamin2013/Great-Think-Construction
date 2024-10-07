@@ -157,7 +157,7 @@ const Contact = () => {
       </div>
 
 
-      <AdComponent
+      <AdComponent 
         Adclient="ca-pub-9571755808195636"
         Adslot="5006986571"
       />
