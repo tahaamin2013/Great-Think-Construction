@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { AdComponent } from "@/components/Google ads/ad";
 import { Multiplex } from "@/components/Google ads/Multiplexad";
+import { HorizontalAd } from "@/components/Google ads/HorizontalAd ";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -158,10 +159,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <Multiplex
-      // Adclient="ca-pub-9571755808195636"
-      // Adslot="5006986571"
-      />
+      <HorizontalAd />
     </>
   );
 };
