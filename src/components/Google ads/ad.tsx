@@ -1,7 +1,10 @@
 'use client'
 import { useEffect } from 'react';
 
-export const AdComponent = () => {
+// ca-pub-9571755808195636
+// 7006463954
+
+export const AdComponent = ({Adclient, Adslot}: any) => {
     useEffect(() => {
         try {
             // Load AdSense ads after the component mounts
@@ -16,8 +19,8 @@ export const AdComponent = () => {
             <ins
                 className="adsbygoogle"
                 style={{ display: 'block' }}
-                data-ad-client="ca-pub-9571755808195636"
-                data-ad-slot="7006463954"
+                data-ad-client={Adclient}
+                data-ad-slot={Adslot}
                 data-ad-format="auto"
                 data-full-width-responsive="true"
             />
