@@ -156,12 +156,12 @@ const Contact = () => {
         </form>
       </div>
 
-
+<body>
       <AdComponent 
         Adclient="ca-pub-9571755808195636"
         Adslot="5006986571"
       />
-
+      </body>
     </div>
   );
 };
