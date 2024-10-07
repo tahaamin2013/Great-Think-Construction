@@ -39,6 +39,7 @@ export default function RootLayout({
         </div>
         {/* </Loading> */}
         {/* </Suspense> */}
+        <span className="font-bold text-4xl">Ads</span>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9571755808195636"
           crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"
@@ -50,6 +51,17 @@ export default function RootLayout({
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({ });
         </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9571755808195636"
+          crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-format="autorelaxed"
+          data-ad-client="ca-pub-9571755808195636"
+          data-ad-slot="5006986571"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({ });
+        </script>
+
       </body>
     </html>
   );
