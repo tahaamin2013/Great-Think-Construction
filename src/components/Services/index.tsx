@@ -60,7 +60,7 @@ const ServicesSection: React.FC = () => {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 4;
 
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
@@ -80,6 +80,10 @@ const ServicesSection: React.FC = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  const getRandomIndex = (length: number) => {
+    return Math.floor(Math.random() * length);
+  };
 
   return (
     <div className="min-h-screen py-4">
@@ -104,20 +108,23 @@ const ServicesSection: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {currentItems.length > 0 ? (
-            currentItems.map((service, index) => (
-              <>
-                <ServiceCard
-                  key={index}
-                  {...service}
-                  isActive={
-                    activeCategory === service.category ||
-                    activeCategory === "all"
-                  }
-                />
-                {/* Insert the ad component after every third service */}
-                {(index + 1) % 3 === 0 && <ServiceAd />}
-              </>
-            ))
+            currentItems.map((service, index) => {
+              const randomPosition = getRandomIndex(3); // Get a random index within a set of 3 services
+
+              return (
+                <React.Fragment key={index}>
+                  {/* Render the ad randomly within every group of three services */}
+                  {index % 3 === randomPosition && <ServiceAd />}
+                  <ServiceCard
+                    {...service}
+                    isActive={
+                      activeCategory === service.category ||
+                      activeCategory === "all"
+                    }
+                  />
+                </React.Fragment>
+              );
+            })
           ) : (
             <p className="text-center text-gray-600 col-span-full text-xl">
               No services available in this category.
