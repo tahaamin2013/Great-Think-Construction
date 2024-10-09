@@ -10,12 +10,11 @@ export const HorizontalAd = () => {
             console.error('Adsense error:', error);
         }
     }, []);
-
     return (
         <div className='flex w-full justify-center items-center'>
             <ins
                 className="adsbygoogle"
-                style={{ display: 'block', width: '300px', height: '100px' }} // Set your custom width and height here
+                style={{ display: 'block', width: '100px', height: '100px' }} // Set your custom width and height here
                 data-full-width-responsive="true"
                 data-ad-format="auto"
                 data-ad-client="ca-pub-9571755808195636"
