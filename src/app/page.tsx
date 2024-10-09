@@ -21,11 +21,8 @@ export default async function Home() {
       <Aboutus />
       <Services />
       <AdComponent
-      // Adclient="ca-pub-9571755808195636"
-      // Adslot="5006986571"
       />
       <WhoChooseUs />
-      {/* <TeamMemberDashboard /> */}
       <FAQSection />
       <TestimonialsCarousel />
       <StartJourneyBanner />

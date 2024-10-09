@@ -32,7 +32,8 @@ const AboutUs = () => {
               <Building2 className="text-yellow-600" size={32} />
               <h2 className="text-2xl font-bold ml-4 text-gray-800">About Us</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed">At Great Think Construction Corp., we transform visions into reality. Our commitment to exceptional craftsmanship and innovation drives us to deliver outstanding results for both residential and commercial projects.</p>
+            <p className="text-gray-700 leading-relaxed">At Great Think Construction Corp., we transform visions into reality. Our commitment to exceptional craftsmanship and innovation drives us to deliver outstanding results for both residential and commercial projects.
+            </p>
             <TextBoxAd />
           </div>
         </div>

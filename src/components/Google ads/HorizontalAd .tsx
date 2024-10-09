@@ -12,9 +12,9 @@ export const HorizontalAd = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex w-full justify-center items-center'>
             <ins
-                className="adsbygoogle"
+                className="adsbygoogle w-[100px] md:w-[400px]"
                 style={{ display: 'block' }}
                 data-full-width-responsive="true"
                 data-ad-format="auto"
