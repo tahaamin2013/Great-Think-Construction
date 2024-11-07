@@ -7,7 +7,7 @@ import { AdComponent } from "@/components/Google ads/ad";
 // const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Construction Company Brooklyn | Great Think Construction Corp.",
+  title: "Construction Company Brooklyn - Great Think Construction",
   description: "Top commercial construction company in Brooklyn. We're trusted general contractors in Brooklyn.",
 };
 
