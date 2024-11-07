@@ -61,7 +61,7 @@ const ServicesSection: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-4">
-      <h1 className="text-5xl font-bold mb-4 text-center">Our Services</h1>
+      <span className="text-5xl font-bold mb-4 text-center">Our Services</span>
 
       <main className="container mx-auto px-4 py-12">
         <div className="mb-8 flex flex-wrap justify-center gap-4">

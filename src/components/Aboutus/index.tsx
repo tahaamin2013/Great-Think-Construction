@@ -85,7 +85,7 @@ const AboutUs: React.FC = () => {
                 className="object-top object-cover w-full h-[680px]"
               />
               <div className="absolute rounded-l-3xl bottom-6 bg-white px-5 py-3 right-0 w-52 transform transition-all duration-500 group-hover:translate-x-[-10px]">
-                <h1 className="text-md font-extrabold">Muhammad Shahbaz</h1>
+                <span className="text-md font-extrabold">Muhammad Shahbaz</span>
                 <p className="text-sm">Founder/Contractor</p>
               </div>
             </div>

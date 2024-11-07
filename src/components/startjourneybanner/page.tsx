@@ -21,11 +21,11 @@ const StartJourneyBanner = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="z-10"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-center lg:text-left">
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-center lg:text-left">
             Ready to <span className="text-orange-500 font-black">Ignite</span>{" "}
             <br className="hidden sm:inline" />
             Your <span className="text-black font-black">Project</span>?
-          </h1>
+          </span>
           <div className="flex justify-center lg:justify-start">
             <Link href="/request-estimate" className="w-fit">
               <motion.button

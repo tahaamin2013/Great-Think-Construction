@@ -11,9 +11,9 @@ export default function TermsAndConditions() {
             </Head>
 
             <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-                <h1 className="text-3xl font-bold text-red-600 mb-6">
+                <span className="text-3xl font-bold text-red-600 mb-6">
                     Terms and Conditions
-                </h1>
+                </span>
                 <h2 className="text-2xl font-semibold text-yellow-500 mb-4">
                     Great Think Construction Corp.
                 </h2>

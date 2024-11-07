@@ -74,9 +74,9 @@ const Contact = () => {
           </div>
         </div>
         <div className="sm:w-[60%] p-10 flex flex-col items-start justify-center bg-gradient-to-br from-gray-50 to-white">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
+          <span className="text-4xl font-extrabold text-gray-800 mb-8">
             Need to contact us?
-          </h1>
+          </span>
 
           {/* New section for contact details */}
           <div className="w-full mb-8 p-4 bg-gray-100 rounded-lg">

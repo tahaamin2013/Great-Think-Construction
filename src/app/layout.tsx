@@ -8,7 +8,7 @@ import { AdComponent } from "@/components/Google ads/ad";
 
 export const metadata: Metadata = {
   title: "Construction Company Brooklyn - Great Think Construction",
-  description: "Top commercial construction company in Brooklyn. We're trusted general contractors in Brooklyn.",
+  description: "Discover the best construction companies near you, from residential to commercial projects, including top-rated construction companies in NYC, Brooklyn, and across the USA. Visit top construction company websites for services.",
 };
 
 export default function RootLayout({

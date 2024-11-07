@@ -15,14 +15,14 @@ const TeamMemberDashboard = () => {
           <span className="bg-yellow-400 text-red-600 px-3 py-1 rounded-full text-xs font-bold animate-bounce">
             TEAM MEMBER
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight text-center">
+          <span className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight text-center">
             <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Bridging</span>{" "}
             <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">the</span>{" "}
             <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Gap</span>
             <br className="hidden sm:block" />
             <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Dreams</span>{" "}
             <span className="inline-block transform transition-all duration-500 hover:translate-y-[-5px]">Between</span>
-          </h1>
+          </span>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mx-4 sm:mx-8 lg:mx-32 relative bottom-44 -mb-32">
