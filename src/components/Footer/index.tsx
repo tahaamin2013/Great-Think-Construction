@@ -81,7 +81,6 @@ const Footer: React.FC = () => {
               {[
                 { label: "About Us", path: "/about" },
                 { label: "Services", path: "/our-services" },
-                { label: "Blog & News", path: "/blogs" },
                 { label: "Contact Us", path: "/contact" },
               ].map((item, index) => (
                 <li key={index}>
@@ -92,26 +91,7 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="font-semibold text-lg mb-2 text-white">
-              Our Service
-            </h3>
-            <ul className="space-y-2 text-sm">
-              {[
-                "Building Consultancy",
-                "Building Construction",
-                "Architectural Design",
-                "Building Renovation",
-                "Residential Project",
-              ].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    — {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+
           <div>
             <h3 className="font-semibold text-lg mb-2 text-white">Contact</h3>
             <ul className="space-y-2 text-sm">
