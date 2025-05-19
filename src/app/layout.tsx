@@ -2,9 +2,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import "./globals.css";
 import Menu from "@/components/Menu/Menu";
-import { AdComponent } from "@/components/Google ads/ad";
 
-// const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Construction Company Brooklyn - Great Think Construction",

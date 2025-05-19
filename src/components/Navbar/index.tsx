@@ -13,14 +13,15 @@ import {
 } from "@/components/ui/tooltip";
 import Image from 'next/image'
 
+
 const navLinks = [
-  { link: "/", name: "Home" },
   { link: "/about", name: "About Us" },
   { link: "/request-estimate", name: "Request Estimate" },
   { link: "/service", name: "Services" },
   { link: "/project", name: "Projects" },
   { link: "/contact", name: "Contact" },
 ];
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -142,7 +143,7 @@ const Navbar = () => {
                 >
                   <Link
                     href={navlink.link}
-                    className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
+                    className="text-gray-700  hover:bg-gray-100 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {navlink.name}

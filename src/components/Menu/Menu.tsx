@@ -14,7 +14,9 @@ const menuLinks = [
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
   { path: "/our-services", label: "Services" },
+  { path: "/blogs", label: "Blogs" }, // 👈 New link added here
 ];
+
 
 const exteriorServices = [
   "Roofing",
@@ -175,7 +177,7 @@ const Menu: React.FC = () => {
                   >
                     <Link
                       href={link.path}
-                      className="text-black sm:text-[75px] text-[37px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
+                      className="text-black sm:text-[65px] text-[30px] font-bold leading-[1.1] tracking-tight hover:text-gray-800 transition-colors"
                     >
                       {/* {link.label === "Request Estimate" ? (
                         <span className=" flex items-center justify-center gap-2"><sup className="text-[30px]">Request</sup>Estimate</span>
