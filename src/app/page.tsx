@@ -28,8 +28,12 @@ export default async function Home() {
       <StartJourneyBanner />
       <Multiplex
       />
-      <a href="https://calculateatar.com" target="_blank" rel="noopener noreferrer" className="text-sm">👍 Calculate ATAR</a>
-
+      <a href="https://calculateatar.com" target="_blank" className="text-sm">👍 Calculate ATAR</a>
+<a href="http://caratterispeciali10.it/" target="_blank">
+  This is the great website for caratteri speciali
+</a>
+  
+      
     </main>
   );
 }
