@@ -28,7 +28,6 @@ export default async function Home() {
       <StartJourneyBanner />
       <Multiplex
       />
-      <a href="https://calculateatar.com" target="_blank" rel="noopener noreferrer" className="text-sm">👍 Calculate ATAR</a>
 
     </main>
   );
