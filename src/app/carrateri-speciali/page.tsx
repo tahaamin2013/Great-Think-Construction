@@ -8,14 +8,11 @@ export const metadata: Metadata = {
     'Scopri come usare gli emoji su WhatsApp per rendere i messaggi più chiari, emozionanti e visivamente interessanti. Faccine, simboli, animali, cibo e altro!',
   keywords:
     'emoji WhatsApp, emoji faccine, emoji simboli, messaggi WhatsApp divertenti, caratteri speciali',
-  alternates: {
-    canonical: 'https://www.caratterispeciali10.it/blog/emoji-whatsapp',
-  },
 };
 
 export default function EmojiWhatsAppPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10 text-gray-800">
+    <main className="max-w-3xl mt-[50px] mx-auto px-4 py-10 text-gray-800">
       <h1 className="text-3xl font-bold mb-6">
         Come usare gli emoji su WhatsApp per messaggi più chiari e divertenti
       </h1>
