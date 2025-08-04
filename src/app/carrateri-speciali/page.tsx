@@ -34,7 +34,7 @@ export default function EmojiWhatsAppPage() {
       </ul>
 
       <p className="mb-4">
-        Gli emoji rendono il significato di un messaggio più facile da capire. Per esempio, una frase come "ci vediamo domani 😊" è più gentile e positiva rispetto alla stessa frase senza emoji.
+        Gli emoji rendono il significato di un messaggio più facile da capire. Per esempio, una frase come ci vediamo domani 😊 è più gentile e positiva rispetto alla stessa frase senza emoji.
       </p>
 
       <p className="mb-4">
