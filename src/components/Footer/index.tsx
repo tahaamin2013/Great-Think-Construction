@@ -165,8 +165,12 @@ const Footer: React.FC = () => {
             <Link href="/privacy-policy" className="hover:text-white mr-4 mb-2">
               Privacy Policy
             </Link>
+           
             <Link href="/contact" className="hover:text-white mb-2">
               Contact Us
+            </Link>
+             <Link href="/carrateri-speciali" className="hover:text-white mb-2">
+              speciali carrateri
             </Link>
           </div>
         </div>
