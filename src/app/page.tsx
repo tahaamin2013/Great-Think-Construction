@@ -26,8 +26,7 @@ export default async function Home() {
       <FAQSection />
       <TestimonialsCarousel />
       <StartJourneyBanner />
-      <Multiplex
-      />
+      <Multiplex />
 
     </main>
   );
