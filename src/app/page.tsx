@@ -7,6 +7,7 @@ import Link from "next/link"
 import Ad from "@/components/Ad"
 import { ServiceAd } from "@/components/Google ads/Service Ad"
 import AdInArticle from "@/components/AdInArticle"
+import { ProductUpdatesSection } from "@/components/product-updates-section"
 
 export default function BlogPage() {
   return (
@@ -77,6 +78,7 @@ export default function BlogPage() {
           </div>
         </div>
       </main>
+      <ProductUpdatesSection />
     </div>
   )
 }
