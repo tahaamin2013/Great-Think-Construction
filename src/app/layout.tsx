@@ -35,8 +35,11 @@ export default function RootLayout({
           {/* <Menu /> */}
          {/* <Navbar />  */}
           {children}
-          <Multiplex />
-          {/* <Footer /> */}
+<div className="py-10">
+            <Multiplex />
+
+  </div>   
+         {/* <Footer /> */}
         </div>
         {/* </Loading> */}
         {/* </Suspense> */}
