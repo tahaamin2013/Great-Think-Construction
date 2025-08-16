@@ -7,8 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { AdComponent } from "@/components/Google ads/ad";
-import { Multiplex } from "@/components/Google ads/Multiplexad";
 import { HorizontalAd } from "@/components/Google ads/HorizontalAd ";
 const Contact = () => {
   const [formData, setFormData] = useState({

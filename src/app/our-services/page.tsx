@@ -4,7 +4,6 @@ import MediaItem from "@/components/Services/MediaItem";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { furtherCategories, services } from "@/store/Constructionservices";
 import React, { useState } from "react";
-import { AdComponent } from "@/components/Google ads/ad";
 
 interface ServiceItem {
   images: string[];
@@ -92,10 +91,6 @@ const ServicesSection: React.FC = () => {
               />              ))}
         </div>
       </main>
-      <AdComponent
-        // Adclient="ca-pub-9571755808195636"
-        // Adslot="5006986571"
-      />
     </div>
   );
  
