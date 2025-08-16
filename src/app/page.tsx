@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Ad from "@/components/Ad"
 import { ServiceAd } from "@/components/Google ads/Service Ad"
+import AdInArticle from "@/components/AdInArticle"
 
 export default function BlogPage() {
   return (
@@ -72,6 +73,7 @@ export default function BlogPage() {
             </div>
             <Ad />
             <ServiceAd />
+            <AdInArticle />
           </div>
         </div>
       </main>

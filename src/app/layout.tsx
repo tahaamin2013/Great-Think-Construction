@@ -1,6 +1,7 @@
 // import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import "./globals.css";
+import { Multiplex } from "@/components/Google ads/Multiplexad";
 // import Navbar from "../components/Navbar";
 // import Menu from "@/components/Menu/Menu";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           {/* <Menu /> */}
          {/* <Navbar />  */}
           {children}
+          <Multiplex />
           {/* <Footer /> */}
         </div>
         {/* </Loading> */}
