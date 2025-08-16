@@ -1,23 +1,31 @@
 "use client";
 import { useEffect } from "react";
 
-export default function Ad() {
+type AdProps = {
+  slot: string;
+  layout?: string;
+  format?: string;
+};
+
+export default function Ad({ slot, layout = "in-article", format = "fluid" }: AdProps) {
   useEffect(() => {
     try {
-      // Load ad
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error("AdSense error:", e);
+      if (typeof window !== "undefined" && (window as any).adsbygoogle) {
+        (window.adsbygoogle = (window.adsbygoogle || [])).push({});
+      }
+    } catch (err) {
+      console.error("AdSense error:", err);
     }
-  }, []);
+  }, [slot]);
 
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block" }}
+      style={{ display: "block", textAlign: "center" }}
       data-ad-client="ca-pub-9571755808195636"
-      data-ad-slot="2173578983"
-      data-ad-format="auto"
+      data-ad-slot={slot}
+      data-ad-layout={layout}
+      data-ad-format={format}
       data-full-width-responsive="true"
     ></ins>
   );

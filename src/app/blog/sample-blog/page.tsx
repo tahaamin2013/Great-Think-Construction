@@ -97,7 +97,7 @@ function TableOfContents({ items }: TableOfContentsProps) {
         ))}
       </ul>
     </nav>
-    <Ad data-ad-slot="5562159657" />
+    <Ad slot="5562159657" />
 
     </>
   )
