@@ -1,11 +1,10 @@
-import { BlogHeader } from "@/components/blog/blog-header"
 import { FeaturedPostCard } from "@/components/blog/featured-post-card"
 import { RecentPostCard } from "@/components/blog/recent-post-card"
 import { featuredPost, featuredPosts, recentPosts } from "@/data/blog-data"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { HorizontalAd } from "@/components/Google ads/HorizontalAd "
+import Ad from "@/components/Ad"
 
 export default function BlogPage() {
   return (
@@ -67,7 +66,7 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
-            <HorizontalAd />
+            <Ad />
           </div>
         </div>
       </main>
