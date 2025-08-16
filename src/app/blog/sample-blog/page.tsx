@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
-import { ServiceAd } from "@/components/Google ads/Service Ad"
+import Ad from "@/components/Ad"
 
 function ReadingProgress() {
   const [progress, setProgress] = useState(0)
@@ -97,9 +97,8 @@ function TableOfContents({ items }: TableOfContentsProps) {
         ))}
       </ul>
     </nav>
-                <ServiceAd />
-    
-    
+    <Ad data-ad-slot="5562159657" />
+
     </>
   )
 }
