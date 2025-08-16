@@ -71,9 +71,9 @@ export default function BlogPage() {
             <div className="flex flex-col gap-9 py-7">
 
             </div>
-            <Ad />
+            {/* <Ad /> */}
             <ServiceAd />
-            <AdInArticle />
+            {/* <AdInArticle /> */}
           </div>
         </div>
       </main>

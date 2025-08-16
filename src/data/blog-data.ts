@@ -211,40 +211,5 @@ export const recentPosts: BlogPost[] = [
     author: "Ryan K.",
     readTime: "7 min read",
     category: "Psychology",
-  },  {
-    id: "9",
-    title: "Beyond Aesthetics: The Power of Emotional UX Design",
-    excerpt: "Delve into the realm of emotional design and discover how incorporating empathy and psychol...",
-    slug: "/sample-blog-design", // Added slug for navigation
-    image: "/top-10-modern-construction.jfif", // Updated image path as provided
-    author: "Ryan K.",
-    readTime: "7 min read",
-    category: "Psychology",
-  },  {
-    id: "9",
-    title: "Beyond Aesthetics: The Power of Emotional UX Design",
-    excerpt: "Delve into the realm of emotional design and discover how incorporating empathy and psychol...",
-    slug: "/sample-blog-design", // Added slug for navigation
-    image: "/top-10-modern-construction.jfif", // Updated image path as provided
-    author: "Ryan K.",
-    readTime: "7 min read",
-    category: "Psychology",
-  },  {
-    id: "9",
-    title: "Beyond Aesthetics: The Power of Emotional UX Design",
-    excerpt: "Delve into the realm of emotional design and discover how incorporating empathy and psychol...",
-    slug: "/sample-blog-design", // Added slug for navigation
-    image: "/top-10-modern-construction.jfif", // Updated image path as provided
-    author: "Ryan K.",
-    readTime: "7 min read",
-    category: "Psychology",
-  },  {
-    id: "9",
-    title: "Beyond Aesthetics: The Power of Emotional UX Design",
-    excerpt: "Delve into the realm of emotional design and discover how incorporating empathy and psychol...",
-    slug: "/sample-blog-design", // Added slug for navigation
-    image: "/top-10-modern-construction.jfif", // Updated image path as provided
-    author: "Ryan K.",
-    readTime: "7 min read",
-    category: "Psychology",
-  },]
+  }, 
+]
