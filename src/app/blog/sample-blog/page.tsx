@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
+import { TextBoxAd } from "@/components/Google ads/TextboxAd"
 
 function ReadingProgress() {
   const [progress, setProgress] = useState(0)
@@ -76,6 +77,7 @@ function TableOfContents({ items }: TableOfContentsProps) {
   }
 
   return (
+   <>
     <nav className="space-y-1 p-4 bg-muted/30 rounded-lg border">
       <h3 className="font-semibold text-sm text-foreground mb-4">Table of Contents</h3>
       <ul className="space-y-2">
@@ -95,6 +97,9 @@ function TableOfContents({ items }: TableOfContentsProps) {
         ))}
       </ul>
     </nav>
+    <TextBoxAd />
+    
+    </>
   )
 }
 
