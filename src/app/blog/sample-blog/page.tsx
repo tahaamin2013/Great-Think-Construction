@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
-import { TextBoxAd } from "@/components/Google ads/TextboxAd"
+import { ServiceAd } from "@/components/Google ads/Service Ad"
 
 function ReadingProgress() {
   const [progress, setProgress] = useState(0)
@@ -97,7 +97,8 @@ function TableOfContents({ items }: TableOfContentsProps) {
         ))}
       </ul>
     </nav>
-    <TextBoxAd />
+                <ServiceAd />
+    
     
     </>
   )
