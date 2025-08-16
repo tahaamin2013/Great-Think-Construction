@@ -47,7 +47,7 @@ export function ProductUpdatesSection() {
           </div>
 
           <div className="border-b border-border pb-6">
-            <h3 className="text-xl font-bold mb-2">Cut Your Editing Time with Riverside's New Editor</h3>
+            <h3 className="text-xl font-bold mb-2">Cut Your Editing Time with Riversides New Editor</h3>
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
               <span>Mar 5, 2024</span>
             </div>
