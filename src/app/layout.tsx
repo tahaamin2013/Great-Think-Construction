@@ -1,8 +1,8 @@
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import "./globals.css";
-import Menu from "@/components/Menu/Menu";
-
+// import Navbar from "../components/Navbar";
+// import Menu from "@/components/Menu/Menu";
 
 export const metadata: Metadata = {
   title: "Construction Company Brooklyn - Great Think Construction",
@@ -30,11 +30,11 @@ export default function RootLayout({
         {/* <Suspense fallback={<Loading />}> */}
         {/* <InteriorBar /> */}
         {/* <Loading> */}
-        <div className="sm:container">
-          <Menu />
-          {/* <Navbar /> */}
+        <div className="">
+          {/* <Menu /> */}
+         {/* <Navbar />  */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
         {/* </Loading> */}
         {/* </Suspense> */}
