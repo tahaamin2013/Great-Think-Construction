@@ -169,7 +169,7 @@ export default function SampleBlogPage() {
 
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Discover how modern SaaS solutions can transform your business operations, streamline workflows, and
-                  drive unprecedented growth in today's competitive landscape.
+                  drive unprecedented growth in todays competitive landscape.
                 </p>
 
                 <div className="flex items-center gap-3">
@@ -192,14 +192,14 @@ export default function SampleBlogPage() {
                   Introduction
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  In today's rapidly evolving business landscape, organizations are constantly seeking ways to optimize
+                  In todays rapidly evolving business landscape, organizations are constantly seeking ways to optimize
                   their operations and stay ahead of the competition. Software as a Service (SaaS) solutions have
                   emerged as a game-changing technology that enables businesses to streamline processes, reduce costs,
                   and enhance productivity like never before.
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  The shift towards cloud-based solutions represents more than just a technological upgrade—it's a
+                  The shift towards cloud-based solutions represents more than just a technological upgrade—its a
                   fundamental transformation in how businesses operate, collaborate, and scale. From small startups to
                   enterprise-level corporations, SaaS platforms are revolutionizing the way we work.
                 </p>
@@ -258,7 +258,7 @@ export default function SampleBlogPage() {
                 <h3 className="text-xl font-semibold text-foreground mb-3">Enhanced Collaboration</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Cloud-based solutions enable real-time collaboration among team members, regardless of their physical
-                  location. This is particularly valuable in today's remote and hybrid work environments.
+                  location. This is particularly valuable in todays remote and hybrid work environments.
                 </p>
 
                 <h3 className="text-xl font-semibold text-foreground mb-3">Data-Driven Decision Making</h3>
@@ -308,7 +308,7 @@ export default function SampleBlogPage() {
                   Measuring Success
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  To ensure your SaaS implementation is delivering the expected benefits, it's important to establish
+                  To ensure your SaaS implementation is delivering the expected benefits, its important to establish
                   key performance indicators (KPIs) and regularly monitor progress. Common metrics include:
                 </p>
 

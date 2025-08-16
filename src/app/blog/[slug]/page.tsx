@@ -84,7 +84,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <div className="prose prose-lg max-w-none">
                 <h2 id="introduction">Introduction</h2>
                 <p>
-                  In today's rapidly evolving business landscape, efficiency isn't just a competitive advantage—it's a
+                  In todays rapidly evolving business landscape, efficiency isnt just a competitive advantage—its a
                   necessity for survival. Software as a Service (SaaS) solutions have emerged as the cornerstone of
                   modern business operations, offering unprecedented opportunities to streamline processes, reduce
                   costs, and scale operations effectively.
