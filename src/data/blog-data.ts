@@ -1,5 +1,4 @@
 export interface BlogPost {
-  href: Url
   id: string
   title: string
   excerpt: string
@@ -13,8 +12,7 @@ export interface BlogPost {
 export const featuredPost: BlogPost = {
   id: "1",
   title: "Unlocking Business Efficiency with SaaS Solutions",
-  excerpt:
-    "Discover how modern SaaS platforms are revolutionizing business operations and driving unprecedented efficiency gains across industries.",
+  excerpt: "Discover how modern SaaS platforms are revolutionizing business operations and driving unprecedented efficiency gains across industries.",
   slug: "/sample-blog", // Added slug for navigation
   image: "/top-10-modern-construction.jfif", // Updated image path as provided
   author: "Jennifer Taylor",

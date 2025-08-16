@@ -9,13 +9,13 @@ import { featuredPost, featuredPosts, recentPosts } from "@/data/blog-data"
 export async function generateStaticParams() {
   const allPosts = [featuredPost, ...featuredPosts, ...recentPosts]
   return allPosts.map((post) => ({
-    slug: post.href.replace("/blog/", ""),
+    slug: post.slug.replace("/blog/", ""),
   }))
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const allPosts = [featuredPost, ...featuredPosts, ...recentPosts]
-  const post = allPosts.find((p) => p.href === `/blog/${params.slug}`)
+  const post = allPosts.find((p) => p.slug === `/blog/${params.slug}`)
 
   if (!post) {
     notFound()
@@ -165,7 +165,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                   {recentPosts.slice(0, 2).map((relatedPost) => (
                     <Link
                       key={relatedPost.id}
-                      href={relatedPost.href}
+                      href={relatedPost.slug}
                       className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
                     >
                       <div className="relative h-48">
