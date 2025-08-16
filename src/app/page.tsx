@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import Ad from "@/components/Ad"
+import { ServiceAd } from "@/components/Google ads/Service Ad"
 
 export default function BlogPage() {
   return (
@@ -66,7 +67,11 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
+            <div className="flex flex-col gap-9 py-7">
+
+            </div>
             <Ad />
+            <ServiceAd />
           </div>
         </div>
       </main>
