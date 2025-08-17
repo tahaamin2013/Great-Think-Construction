@@ -1,7 +1,6 @@
 import React from 'react';
 import { PhoneCall } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link'
 
 const ContactUsBanner = () => {
   return (
@@ -13,7 +12,7 @@ const ContactUsBanner = () => {
             <p className="text-sm sm:text-base">
             Contact Great Think Construction for questions or a custom quote. <br /> Let&apos;s build something great!
             </p>
-            <Link
+            <a
             href="/request-estimate"
             >
             <button className="bg-white mt-2 text-red-600 px-4 py-2 rounded-full font-semibold flex items-center mx-auto lg:mx-0">
@@ -22,11 +21,11 @@ const ContactUsBanner = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            </Link>
+            </a>
 
             <div className="flex items-center justify-center lg:justify-start">
               <PhoneCall className="w-5 h-5 mr-2" />
-              <Link href="tel:+17186669256">(718) 666-9256</Link>
+              <a href="tel:+17186669256">(718) 666-9256</a>
             </div>
           </div>
           <div className="hidden lg:block relative w-60 h-60 mt-8 lg:mt-0 lg:ml-8">

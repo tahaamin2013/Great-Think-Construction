@@ -14,9 +14,9 @@ export default function AuthorCard({ name, bio }: AuthorCardProps) {
           <p className="text-sm text-gray-600">Author</p>
       </div>
       <p className="text-gray-700 text-sm">{bio}</p>
-      <Link href={`/author/${name.toLowerCase().replace(/\s+/g, '-')}`} className="mt-4 inline-block text-indigo-600 font-medium text-sm hover:text-indigo-800 transition-colors">
+      <a href={`/author/${name.toLowerCase().replace(/\s+/g, '-')}`} className="mt-4 inline-block text-indigo-600 font-medium text-sm hover:text-indigo-800 transition-colors">
         View all posts
-      </Link>
+      </a>
     </div>
   );
 }

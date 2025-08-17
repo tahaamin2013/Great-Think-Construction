@@ -8,7 +8,7 @@ interface RecentPostCardProps {
 
 export function RecentPostCard({ post }: RecentPostCardProps) {
   return (
-    <Link href={`/blog/${post.slug}`} className="block">
+    <a href={`/blog/${post.slug}`} className="block">
       <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
         <div className="aspect-video relative">
           <Image src={post.image} alt={post.title} fill className="object-cover" />
@@ -26,6 +26,6 @@ export function RecentPostCard({ post }: RecentPostCardProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   )
 }

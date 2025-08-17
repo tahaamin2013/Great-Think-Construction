@@ -19,7 +19,7 @@ export default function BlogPage() {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Hero Section */}
-            <Link href={`/blog/${featuredPost.slug}`} className="relative rounded-2xl overflow-hidden mb-8">
+            <a href={`/blog/${featuredPost.slug}`} className="relative rounded-2xl overflow-hidden mb-8">
             <div className="relative rounded-2xl overflow-hidden mb-8">
               <Image
                 src={featuredPost.image || "/placeholder.svg"}
@@ -40,7 +40,7 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-            </Link>
+            </a>
 
             {/* Recent Posts Section */}
             <div className="mb-8 mt-9">

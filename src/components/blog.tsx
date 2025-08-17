@@ -70,7 +70,7 @@ const Blog: React.FC<BlogProps> = ({
 
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="lg:w-3/4">
-          <Link
+          <a
             href="/"
             className="text-green-700 hover:text-green-900 flex items-center gap-2 mb-6 group"
           >
@@ -81,7 +81,7 @@ const Blog: React.FC<BlogProps> = ({
             <span className="border-b border-transparent group-hover:border-green-700 transition-colors">
               Back to Blog
             </span>
-          </Link>
+          </a>
 
           <article className="max-w-3xl">
             <div className="mb-8">

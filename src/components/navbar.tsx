@@ -22,15 +22,15 @@ const Navbar = () => {
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <a href="/" className="flex items-center">
               <span className="text-xl font-bold text-zinc-900"><span className='text-[#0C4E1E]'>PAK</span><span className='text-[#DD8024]'>INDIA</span>WAR.COM</span>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
-              <Link 
+              <a 
                 key={item.name} 
                 href={item.path}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 
@@ -40,7 +40,7 @@ const Navbar = () => {
                   }`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 space-y-2">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.name}
               href={item.path}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
@@ -67,7 +67,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

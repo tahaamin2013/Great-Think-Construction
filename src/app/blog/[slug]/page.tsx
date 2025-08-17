@@ -30,13 +30,13 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link
+              <a
                 href="/"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to Blog
-              </Link>
+              </a>
               <div className="text-sm font-medium">Beyond UI</div>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 <h3 className="text-2xl font-bold mb-6">Related Posts</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {recentPosts.slice(0, 2).map((relatedPost) => (
-                    <Link
+                    <a
                       key={relatedPost.id}
                       href={relatedPost.slug}
                       className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
@@ -182,7 +182,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                         </h4>
                         <p className="text-sm text-muted-foreground">{relatedPost.excerpt}</p>
                       </div>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

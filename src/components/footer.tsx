@@ -49,7 +49,7 @@ const Footer: FC = () => {
                   />
                 </div>
                 <div className="ml-3">
-                  <Link href={`/blogs/${post.slug}`} className="text-sm hover:text-blue-400">{post.title}</Link>
+                  <a href={`/blogs/${post.slug}`} className="text-sm hover:text-blue-400">{post.title}</a>
                   <p className="text-xs text-gray-400 mt-1">{post.date}</p>
                 </div>
               </div>
@@ -88,10 +88,10 @@ const Footer: FC = () => {
           © 2025 PakIndiaWar.com. All Rights Reserved.
         </div>
         <div className='hidden md:flex flex-row gap-[30px]'>
-          <Link href='/about'>About</Link>
-          <Link href='/disclaimer'>Disclaimer</Link>
-          <Link href='/policy'>Policy</Link>
-          <Link href='/terms-and-conditions'>Terms </Link>
+          <a href='/about'>About</a>
+          <a href='/disclaimer'>Disclaimer</a>
+          <a href='/policy'>Policy</a>
+          <a href='/terms-and-conditions'>Terms </a>
         </div>
       </div>
     </footer>

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
 import Ad from "@/components/Ad"
+import { ServiceAd } from "@/components/Google ads/Service Ad"
 
 function ReadingProgress() {
   const [progress, setProgress] = useState(0)
@@ -122,17 +123,17 @@ export default function SampleBlogPage() {
         {/* Header */}
         <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-14 items-center">
-            <Link
+            <a
               href="/"
               className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
-            </Link>
+            </a>
             <div className="ml-auto">
-              <Link href="/" className="font-bold text-xl">
+              <a href="/" className="font-bold text-xl">
                 Great think Contsruction
-              </Link>
+              </a>
             </div>
           </div>
         </header>
@@ -366,6 +367,7 @@ export default function SampleBlogPage() {
             <aside className="lg:col-span-1">
               <div className="sticky top-24">
                 <TableOfContents items={tableOfContents} />
+                  <ServiceAd />
               </div>
             </aside>
           </div>

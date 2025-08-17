@@ -122,12 +122,12 @@ const AboutUs: React.FC = () => {
 
               {/* Call to Action */}
               <div ref={ctaRef} className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-200">
-                <Link className="w-fit" href="/request-estimate">
+                <a className="w-fit" href="/request-estimate">
                   <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-semibold flex items-center transition duration-300 ease-in-out transform hover:scale-105">
                     GET A QUOTE
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
-                </Link>
+                </a>
                 <div className="flex items-center">
                   <Phone className="h-10 w-10 text-gray-400 mr-3" />
                   <div>
