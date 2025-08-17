@@ -24,7 +24,7 @@ export default function RootLayout({
         <meta name='theme-color' content="#000" />
       </head>
       <body
-        className={`antialiased px-0 bg-[EBEBEB] scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
+        className={`antialiased px-0 scrollbar-thumb-rounded scrollbar-thumb-blue scrollbar-w-2 scrollbar-track-blue-lighter`}
       >
 
         {/* <CustomCursor /> */}
