@@ -12,7 +12,7 @@ export const Multiplex = () => {
     }, []);
 
     return (
-        <div>
+        <div className='px-auto mx-auto'>
             <ins
                 className="adsbygoogle"
                 style={{ display: 'block' }}
