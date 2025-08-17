@@ -35,7 +35,7 @@ export default function RootLayout({
           {/* <Menu /> */}
          {/* <Navbar />  */}
           {children}
-<div className="py-10">
+<div className="py-10 pl-[70px] overflow-x-hidden w-screen">
             <Multiplex />
 
   </div>   
