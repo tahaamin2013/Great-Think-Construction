@@ -71,10 +71,10 @@ export default function BlogPage() {
             </div>
             <div className="flex flex-col gap-9 py-7">
 
-            </div>
             {/* <Ad /> */}
             <ServiceAd />
-            {/* <AdInArticle /> */}
+            <AdInArticle />
+            </div>
           </div>
         </div>
       </main>
