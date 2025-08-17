@@ -49,7 +49,7 @@ const Footer: FC = () => {
                   />
                 </div>
                 <div className="ml-3">
-                  <a href={`/blogs/${post.slug}`} className="text-sm hover:text-blue-400">{post.title}</a>
+                  <a href={`/${post.slug}`} className="text-sm hover:text-blue-400">{post.title}</a>
                   <p className="text-xs text-gray-400 mt-1">{post.date}</p>
                 </div>
               </div>

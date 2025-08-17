@@ -8,7 +8,7 @@ interface FeaturedPostCardProps {
 
 export function FeaturedPostCard({ post }: FeaturedPostCardProps) {
   return (
-    <a href={`/blog/${post.slug}`} className="block">
+    <a href={`/${post.slug}`} className="block">
       <div className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer">
         <div className="flex-shrink-0">
           <Image

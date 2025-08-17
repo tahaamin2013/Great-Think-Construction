@@ -16,7 +16,7 @@ export default function RelatedArticles({ articles }: RelatedArticlesProps) {
   return (
     <div className="space-y-12">
       {articles.map((article, index) => (
-        <a href={`/blogs/${article.slug}`} key={index} className="group">
+        <a href={`/${article.slug}`} key={index} className="group">
           <div className="flex space-x-3">
             <div className="flex-shrink-0 h-16 w-16 rounded-md overflow-hidden bg-gray-200 relative">
               <Image 
